@@ -22,42 +22,40 @@ define([
     }
 
     PageController.prototype.initIntroduction = function () {
-        $('.fx-analysis-page-title').on('click', startIntro);
 
-        function startIntro(){
+
+
+        $('.intro-step').on('click', function(e){
+
             var intro = IntroJS();
+
+            intro.setOptions({ 'showButtons': true, 'showBullets': false });
+
             intro.setOptions({
                 steps: [
                     {
-                        intro: "Hello world!"
+                        intro: "Select an attribute",
+                        element: document.querySelector('.fx-catalog-modular-menu-container')
                     },
                     {
-                        element: document.querySelector('#btn'),
-                        intro: "This is a tooltip."
+                        element: document.querySelector('.fx-catalog-modular-form-wrapper'),
+                        intro: "Filter the values"
                     },
                     {
-                        element: document.querySelectorAll('#fx-widgets-stack-btn')[0],
-                        intro: "Ok, wasn't that fun?"
+                        element: document.querySelector('.fx-catalog-resume-bar'),
+                        intro: "Verify the values"
                     },
                     {
-                        element: '#fx-widgets-stack',
-                        intro: 'More features, more fun.',
+                        element: '#fx-catalog-submit-btn',
+                        intro: 'Search for data',
                         position: 'left'
-                    },
-                    {
-                        element: '#fx-navbar-collapse',
-                        intro: "Another step.",
-                        position: 'bottom'
-                    },
-                    {
-                        element: '#fx-widgets-stack',
-                        intro: 'Get it, use it.'
                     }
                 ]
             });
 
-            intro.start();
-        }
+            intro.goToStep($(e.currentTarget).data("step")).start();
+        });
+
     };
 
     //(injected)

@@ -10,7 +10,8 @@ define([
             },
             events: {
                 READY: 'fx.catalog.module.ready',
-                REMOVE: 'fx.catalog.module.remove'
+                REMOVE: 'fx.catalog.module.remove',
+                DESELECT: 'fx.catalog.module.deselect.'
             }
         }, w_commons;
 
@@ -47,16 +48,35 @@ define([
                     w_commons.raiseCustomEvent(
                         o.container,
                         o.events.READY,
-                        { value : $('label[for="'+e.currentTarget.id+'"]').html(),
+                        { value : [{label: $('label[for="'+e.currentTarget.id+'"]').html()}],
                             module:   o.module.type }
                     );
 
                 });
 
                 $(container).append($form);
+                this.bindEventListeners();
             }
         }
     };
+
+    Fx_ui_w_ResourcesType.prototype.bindEventListeners = function () {
+
+        var that = this;
+        document.body.addEventListener(o.events.DESELECT+o.module.type, function (e) {
+            that.deselectValue(e.detail);
+        }, false);
+    };
+
+    Fx_ui_w_ResourcesType.prototype.deselectValue = function () {
+        var inputs = o.container.getElementsByTagName("input");
+        for(var i = inputs.length-1;i>=0;i--){
+            if(inputs[i].getAttribute("type")==="radio"){
+                inputs[i].checked=false;
+            }
+        }
+    };
+
 
     Fx_ui_w_ResourcesType.prototype.getValue = function (e) {
         var result = $('#'+e.id).find('input[type=radio]:checked').val();

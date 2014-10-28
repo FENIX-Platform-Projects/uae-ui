@@ -33,6 +33,10 @@ define([
         return $item.get(0);
     };
 
+    Fx_Fluid_Grid.prototype.getElementsCounts = function () {
+        return this.pckry.getItemElements().length;
+    };
+
     Fx_Fluid_Grid.prototype.addItem = function (item) {
 
         var self = this;

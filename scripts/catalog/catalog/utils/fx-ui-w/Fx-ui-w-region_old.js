@@ -7,7 +7,8 @@ define([
     var o = {
         lang : 'EN',
         events: {
-            READY : "fx.catalog.module.ready"
+            READY : "fx.catalog.module.ready",
+            DESELECT: 'fx.catalog.module.deselect.'
         }
     }, w_commons;
 

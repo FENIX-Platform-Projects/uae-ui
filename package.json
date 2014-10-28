@@ -1,6 +1,6 @@
 {
   "name": "fenix-ui",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "FENIX user interface",
   "main": "index.html",
   "scripts": {

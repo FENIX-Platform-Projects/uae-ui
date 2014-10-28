@@ -7,7 +7,8 @@ define([
     var o = {
         lang : 'EN',
         events: {
-            READY : "fx.catalog.module.ready"
+            READY : "fx.catalog.module.ready" ,
+            DESELECT: 'fx.catalog.module.deselect.'
         }
     }, w_commons;
 
@@ -32,7 +33,7 @@ define([
         o.container = container;
         o.module = e;
 
-        var source, dataAdapter;
+        var source, dataAdapter, that = this;
 
         $.get( e.component.source.url, function( data ){
 
@@ -58,26 +59,41 @@ define([
             // Create a jqxListBox
             $(container).jqxListBox($.extend({ source: dataAdapter}, e.component.rendering))
                 .on('change', {container: container }, function (event) {
-                    var selected = $(event.data.container).jqxListBox("getSelectedItems");
-                    var payload = '';
+                    var selected = $(event.data.container).jqxListBox("getSelectedItems"),
+                        payload = [];
 
-                    for (var i = 0; i < selected.length; i++) {
-                        payload += selected[i].label + ", ";
-                    }
+                        for(var i=0; i<selected.length; i++){
+                            payload.push({label: selected[i].label, value:  selected[i].value })
+                        }
 
                     w_commons.raiseCustomEvent(
                         o.container,
                         o.events.READY,
-                        { value: payload.substring(0, payload.length - 2),
+                        { value: payload,
                             module: o.module.type }
                     );
                 });
 
-
+            that.bindEventListeners();
 
         }) ; // end GET
 
 
+    };
+
+
+    Fx_ui_w_geographicExtent.prototype.bindEventListeners = function () {
+
+        var that = this;
+
+        document.body.addEventListener(o.events.DESELECT+o.module.type, function (e) {
+            that.deselectValue(e.detail);
+        }, false);
+    };
+
+    Fx_ui_w_geographicExtent.prototype.deselectValue = function (obj) {
+        var item = $(o.container).jqxListBox('getItemByValue', obj.value);
+        $(o.container).jqxListBox('unselectItem', item );
     };
 
     Fx_ui_w_geographicExtent.prototype.getValue = function (e) {

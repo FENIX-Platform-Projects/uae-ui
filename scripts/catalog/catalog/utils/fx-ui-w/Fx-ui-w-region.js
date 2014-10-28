@@ -7,7 +7,8 @@ define([
     var o = {
         lang : 'EN',
         events: {
-            READY : "fx.catalog.module.ready"
+            READY : "fx.catalog.module.ready",
+            DESELECT: 'fx.catalog.module.deselect.'
         }
     }, w_commons;
 
@@ -104,13 +105,13 @@ define([
 
             var i, j, r = [];
             for(i = 0, j = data.selected.length; i < j; i++) {
-                r.push(data.instance.get_node(data.selected[i]).text);
+                r.push({label: data.instance.get_node(data.selected[i]).text, value:data.instance.get_node(data.selected[i])});
             }
 
             w_commons.raiseCustomEvent(
                 o.container,
                 o.events.READY,
-                { value: r.join(', '),
+                { value: r,
                     module: o.module.type }
             );
         });
@@ -122,6 +123,24 @@ define([
         this.$searchForm.find('.desel_all').on('click', function(){
             self.$treeContainer.jstree(true).deselect_all();
         });
+
+        this.bindEventListeners();
+
+    };
+
+    Fx_ui_w_geographicExtent.prototype.bindEventListeners = function () {
+
+        var that = this;
+
+        document.body.addEventListener(o.events.DESELECT+o.module.type, function (e) {
+            that.deselectValue(e.detail);
+        }, false);
+    };
+
+    Fx_ui_w_geographicExtent.prototype.deselectValue = function (obj) {
+        this.$treeContainer.jstree('deselect_node',[ obj.value]);
+        this.$treeContainer.jstree(true).deselect_node([ obj.value]);
+
 
     };
 

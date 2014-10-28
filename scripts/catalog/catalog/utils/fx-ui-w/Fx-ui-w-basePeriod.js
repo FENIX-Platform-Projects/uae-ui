@@ -32,7 +32,7 @@ define([
                 e.data.w_commons.raiseCustomEvent(
                     o.container,
                     o.events.READY,
-                    {   value : data.values.min + " - "+ data.values.max,
+                    {   value :[ { label: data.values.min + " - "+ data.values.max} ],
                         module: e.data.type }
                 );
         });
@@ -45,8 +45,8 @@ define([
             w_commons.raiseCustomEvent(
                 o.container,
                 o.events.READY,
-                {   value : results[0].min +" - "+ results[0].max,
-                    module: o.module.type }
+              {   value :  [ { label: results[0].min +" - "+ results[0].max} ],
+                module: o.module.type }
             );
         }, 100);
     };

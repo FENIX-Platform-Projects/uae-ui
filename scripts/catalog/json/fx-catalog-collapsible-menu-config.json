@@ -150,20 +150,7 @@
                     "icon": "fa fa-user fa-lg fa-fw"
                 }
             ]
-        },
-        {
-            "title": {
-                "EN": "PRESETS"
-            },
-            "popover": {
-                "data-container": "body",
-                "data-toggle": "popover",
-                "data-placement": "left",
-                "data-content": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus.",
-                "data-trigger": "hover"
-
-            },
-            "modules": []
         }
+
     ]
 }

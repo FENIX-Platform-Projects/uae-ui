@@ -6,7 +6,8 @@ define([
     var o = {
      lang : 'EN',
         events: {
-            READY : "fx.catalog.module.ready"
+            READY : "fx.catalog.module.ready",
+            DESELECT: 'fx.catalog.module.deselect.'
         }
     }, w_commons;
 
@@ -50,12 +51,27 @@ define([
             e.data.w_commons.raiseCustomEvent(
                 o.container,
                 o.events.READY,
-                { value : $(o.container).find("input").val(),
+                { value : [{label: $(o.container).find("input").val()}],
                   module:  e.data.type }
             );
         });
 
         $(container).append(text);
+
+        this.bindEventListeners();
+    };
+
+    Fx_ui_w_Name.prototype.bindEventListeners = function () {
+
+        var that = this;
+
+        document.body.addEventListener(o.events.DESELECT+o.module.type, function (e) {
+            that.deselectValue(e.detail);
+        }, false);
+    };
+
+    Fx_ui_w_Name.prototype.deselectValue = function () {
+        $(o.container).find('input').val('');
     };
 
     Fx_ui_w_Name.prototype.getValue = function (e) {

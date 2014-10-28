@@ -16,6 +16,11 @@ define([
         w_Commons = new W_Commons();
     }
 
+    Fx_Filterable_grid.prototype.getElementsCounts = function () {
+        return this.isotope.getItemElements().length;
+    };
+
+
     Fx_Filterable_grid.prototype.initBtns = function () {
 
         // filter items on button click
