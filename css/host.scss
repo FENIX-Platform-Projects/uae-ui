@@ -38,7 +38,7 @@ body{
 .well {
   background-color: transparent;
   border: none;
-  @include box-shadow(0, 0, 0, white);
+  @include fx-box-shadow(0, 0, 0, white);
 
 }
 
@@ -54,7 +54,7 @@ body{
       display: inline-block;
       color: white;
       text-align: center;
-      @include border-radius(3px)
+      @include fx-border-radius(3px)
     }
     input {
       margin-left: 33px;
@@ -75,7 +75,7 @@ body{
     background-color: $fenix-gray-text;
     color: white;
     border-color: $fenix-gray-text;
-    @include box-shadow(0, 0, 0, white);
+    @include fx-box-shadow(0, 0, 0, white);
   }
 
 }

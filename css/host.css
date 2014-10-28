@@ -1,8 +1,12 @@
 /* Fenix Colors */
 /* Imported by Analysis, should be deleted ASAP */
+/* Fenix CSS - Mixins */
+/* CSS TRANSFORMS */
+/* CSS TRANSITION */
+/* 3D flow */
+/* Blurred */
+/* Color Mixins */
 /* Animations */
-/* Shadow */
-/* Boreder Radius */
 html, body {
   height: 100%; }
 
@@ -28,9 +32,9 @@ body {
 .well {
   background-color: transparent;
   border: none;
-  -webkit-box-shadow: 0 0 0 white ;
-  -moz-box-shadow: 0 0 0 white ;
-  box-shadow: 0 0 0 white ; }
+  -webkit-box-shadow: 0 0 0 white;
+  -moz-box-shadow: 0 0 0 white;
+  box-shadow: 0 0 0 white; }
 
 .fx-catalog-toolbar {
   color: #666666; }
@@ -63,9 +67,9 @@ body {
     background-color: #666666;
     color: white;
     border-color: #666666;
-    -webkit-box-shadow: 0 0 0 white ;
-    -moz-box-shadow: 0 0 0 white ;
-    box-shadow: 0 0 0 white ; }
+    -webkit-box-shadow: 0 0 0 white;
+    -moz-box-shadow: 0 0 0 white;
+    box-shadow: 0 0 0 white; }
 
 /*================= Packry =================*/
 .fx-analysis-item {
@@ -93,16 +97,7 @@ body {
     height: 100%; }
     #overlay .overlay-content #catalogContainer {
       height: 100%; }
-  #overlay .modal {
-    background-color: rgba(0, 0, 0, 0.5); }
-    #overlay .modal .modal-dialog {
-      top: 50px; }
 
 .closeOverlay {
   position: absolute;
   right: 0; }
-
-body > .modal-backdrop {
-  opacity: 0 !important;
-  pointer-events: none; }
-

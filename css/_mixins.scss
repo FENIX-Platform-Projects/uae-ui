@@ -1,4 +1,4 @@
-/* Fenix UI  DSD Editor  CSS - Mixins */
+/* Fenix CSS - Mixins */
 
 @mixin retina-image($img-url, $real-width, $real-height) {
   width: $real-width;
@@ -12,7 +12,6 @@
   height: 100%;
   width: 100%;
 }
-
 
 
 /* CSS TRANSFORMS */
@@ -159,3 +158,7 @@
   -o-transition-timing-function: cubic-bezier(0.715, 0.010, 0.035, 1.010);
   transition-timing-function: cubic-bezier(0.715, 0.010, 0.035, 1.010); /* custom */
 }
+
+
+
+

@@ -59,7 +59,7 @@ body {
 
 .fx-catalog-header {
     height: 20px;
-    background-color: #6e6e6e;
+    background-color: white;
     color: #f3f3f3;
     padding-right: 30px;
 
@@ -95,27 +95,27 @@ body {
 
 /*========= FILTER CONTAINER =========*/
 .fx-catalog-modular-filter-container {
-    background-color: #E3E3E3;
+    background-color: #f1f1f1;
     min-height: 250px;
     overflow: hidden;
 }
 
 /*========= MODULAR MENU =========*/
 .fx-catalog-modular-menu-container {
-    background-color: white;
+    background-color: #f1f1f1;
     padding: 0;
     min-height: 250px;
 }
 
-.fx-catalog-modular-menu-container:after {
-    position: absolute;
-    content: "";
-    height: 900px;
-    width: 20px;
-    background-color: #f3f3f3;
-    top: 0;
-    right: -14px;
-}
+/*.fx-catalog-modular-menu-container:after {*/
+    /*position: absolute;*/
+    /*content: "";*/
+    /*height: 900px;*/
+    /*width: 20px;*/
+    /*background-color: #f3f3f3;*/
+    /*top: 0;*/
+    /*right: -14px;*/
+/*}*/
 
 .fx-catalog-modular-menu-container .btn-default:hover {
     background-color: #e1dfda;
@@ -130,7 +130,7 @@ body {
 }
 
 #fx-catalog-modular-menu .panel-heading {
-    background-color: white;
+    background-color: #f1f1f1;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
@@ -138,13 +138,18 @@ body {
 #fx-catalog-modular-menu .panel {
     -webkit-border-radius: 0;
     border-radius: 0;
+    background-color: transparent;
+    border: none;
 }
 
 #fx-catalog-modular-menu .panel-default {
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: none;
     border-bottom: 1px solid #e5e5e5;
+}
+
+#fx-catalog-modular-menu .panel-default button {
+border: none;
 }
 
 .fx-menu-category-title {
@@ -155,6 +160,7 @@ body {
     padding-left: 35px;
     text-transform: uppercase;
     text-decoration: none;
+    color: #666666;
 }
 
 .fx-catalog-modular-menu-category-plus {
@@ -191,7 +197,9 @@ body {
 /*========= FORM =========*/
 .fx-catalog-modular-form-wrapper {
     padding-right: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    min-height: 250px;
+    position: relative;
 }
 
 .fx-catalog-modular-form-container {
@@ -329,7 +337,10 @@ body {
 
 /*========= COMMONS =========*/
 .fx-typo-black {
-    font-weight: 900;
+    color: #0076ff;
+    font-weight: 100;
+    font-size: 24px;
+    font-family: "Roboto Condensed" ;
 }
 
 .fx_horegon {

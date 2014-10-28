@@ -1,9 +1,13 @@
 /* Fenix Analysis Module
 Produced By Fenix Team and Mentaltoy
 2014 All rights riserved */
+/* Fenix CSS - Mixins */
+/* CSS TRANSFORMS */
+/* CSS TRANSITION */
+/* 3D flow */
+/* Blurred */
+/* Color Mixins */
 /* Animations */
-/* Shadow */
-/* Boreder Radius */
 /* Fenix Colors */
 /* Typography */
 a {
@@ -306,3 +310,58 @@ hr {
 /****************************************************************************************************************************************************************/
 /* Large devices (large desktops, 1200px and up) */
 /****************************************************************************************************************************************************************/
+/* Fenix Catalog */
+.fx-catalog-hints {
+  background-color: #f1f1f1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 10px;
+  padding-left: 80px;
+  padding-right: 80px; }
+  .fx-catalog-hints .col-xs-3 {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    /* IE 9 */
+    -webkit-transform: translateY(-50%);
+    /* Chrome, Safari, Opera */
+    transform: translateY(-50%); }
+  .fx-catalog-hints img {
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    /* IE 9 */
+    -webkit-transform: translateX(-50%);
+    /* Chrome, Safari, Opera */
+    transform: translateX(-50%); }
+  .fx-catalog-hints h3 {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+    border: 1px solid #666666;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    padding-top: 4px;
+    text-align: center;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%; }
+  .fx-catalog-hints h4 {
+    margin-top: 0;
+    margin-bottom: 2px;
+    color: #4c647f;
+    font-size: 14px;
+    text-transform: uppercase; }
+  .fx-catalog-hints p {
+    color: #666666;
+    font-size: 12px;
+    margin-bottom: 2px; }
+  .fx-catalog-hints button {
+    padding-top: 0px;
+    padding-bottom: 2px;
+    font-size: 10px; }
