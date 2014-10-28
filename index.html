@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FENIX</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500italic,500,700,700italic,900,900italic|Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/fenix_interface_index.css">
+
+    <!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
+    <script data-main="scripts/mains/index" src="scripts/lib/require.js"></script>
+
+</head>
+<body>
+
+<div class="jumbotron">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h1>Fenix Platform</h1>
+                <p> An internet-based and scalable system able to meet different user requirements and adaptable to support global, regional and national level projects and initiatives. The main goal is to contribute to creating a global data sharing network for agriculture and food security by establishing a scalable system integrating many different data sources.
+                    FENIX adheres to the Open Data initiative and is designed to avail data and technologies to anyone as “public good” using free, open-source software and providing data at no cost. We aim at facilitating collaboration between countries and organizations to build a wide data exchange and analysis network.
+                </p>
+
+                <ul>
+                    <li>Based on Open Source software; no licensing constraints and full redistribution rights</li>
+                    <li>Using a Service-Oriented Architecture (SOA)</li>
+                    <li>Extensible: ability to plug-in new functionalities and applications  (widgets)</li>
+                    <li>Designed to facilitate data sharing through web services (APIs)</li>
+                    <li>Using diversified data collection/upload methods (online data entry; uploads from csv/xls files; mobile apps)</li>
+                    <li>Able to handle databases, geospatial data (as remote sensing, GIS layers, etc.) and text</li>
+                    <li>An advanced analytical application with the embedded “R” statistical package</li>
+                </ul>
+
+            </div>
+            <div class="col-xs-6">
+                <img src="css/img/data-network-homepage.png" alt="FENIX" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <img alt="Generic placeholder image"
+                 src="css/img/visualization-ico.png">
+
+            <h2>Visualization</h2>
+
+            <p>The main goal of data visualization is to communicate information clearly and efficiently to users via the information graphics selected, such as tables, charts and maps.</p>
+
+            <p><a role="button" href="view.html" class="btn btn-default">View details »</a></p>
+        </div>
+        <div class="col-md-4">
+            <img alt="Generic placeholder image"
+                 src="css/img/analysis-ico.png">
+
+            <h2>Analysis</h2>
+
+            <p>Analysis of data is a process of inspecting, cleaning, transforming, and modeling data with the goal of discovering useful information, suggesting conclusions, and supporting decision making.</p>
+
+            <p><a role="button" href="analysis.html" class="btn btn-default">View details »</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-md-4">
+            <img alt="Generic placeholder image"
+                 src="css/img/download-ico.png">
+
+            <h2>Modules</h2>
+
+            <p>Examples of FENIX use in several environments and projects.</p>
+
+            <p><a role="button" href="modules.html" class="btn btn-default">View details »</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+
+    <!-- START THE FEATURETTES
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-7">
+            <h2>First heading. <span
+                    class="text-muted">First heading.</span></h2>
+
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+                semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+                commodo.</p>
+        </div>
+        <div class="col-md-5">
+            <img alt="500x500" data-src="holder.js/500x500/auto" class="img-responsive"
+                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row ">
+        <div class="col-md-5">
+            <img alt="500x500" data-src="holder.js/500x500/auto" class="img-responsive"
+                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=">
+        </div>
+        <div class="col-md-7">
+            <h2>Second heading. <span class="text-muted">Second heading.</span></h2>
+
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+                semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+                commodo.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-7">
+            <h2>Third heading. <span class="text-muted">Third heading.</span></h2>
+
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+                semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+                commodo.</p>
+        </div>
+        <div class="col-md-5">
+            <img alt="500x500" data-src="holder.js/500x500/auto" class="img-responsive"
+                 src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=">
+        </div>
+    </div>-->
+
+    <hr>
+
+    <!-- /END THE FEATURETTES -->
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+
+        <p>2014 FENIX · <a href="#">Terms</a></p>
+    </footer>
+
+</div>
+
+</body>
+</html>

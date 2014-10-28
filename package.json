@@ -1,0 +1,23 @@
+{
+  "name": "fenix-ui",
+  "version": "1.0.0",
+  "description": "FENIX user interface",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FENIX-Platform/fenix-ui.git"
+  },
+  "keywords": [
+    "FENIX",
+    "interface"
+  ],
+  "author": "FENIX Development Team",
+  "license": "GPL3",
+  "bugs": {
+    "url": "https://github.com/FENIX-Platform/fenix-ui/issues"
+  },
+  "homepage": "https://github.com/FENIX-Platform/fenix-ui"
+}

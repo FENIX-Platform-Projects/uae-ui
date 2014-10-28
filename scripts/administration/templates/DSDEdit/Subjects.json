@@ -1,0 +1,79 @@
+﻿[
+{
+        "val": "",
+        "text": {
+            "EN": "Undefined"
+        }
+    },
+	{
+        "val": "item",
+        "text": {
+            "EN": "Item"
+        },
+        "dataTypes": [
+            "code",
+            "customCode",
+            "string",
+            "label",
+            "boolean",
+            "enumeration"
+        ],
+        "codelistSubject": "item"
+    },
+    {
+        "val": "time",
+        "text": {
+            "EN": "Time"
+        },
+        "dataTypes": [
+            "date",
+            "month",
+            "year",
+            "customCode",
+            "string",
+            "label",
+            "time",
+            "period"
+        ]
+    },
+    {
+        "val": "geo",
+        "text": {
+            "EN": "Geo"
+        },
+        "dataTypes": [
+            "code",
+            "customCode",
+            "string",
+            "label",
+            "enumeration"
+        ],
+        "codelistSubject": "geo"
+    },
+    {
+        "val": "flag",
+        "text": {
+            "EN": "Flag"
+        },
+        "dataTypes": [
+            "code",
+            "customCode",
+            "string",
+            "label",
+            "enumeration"
+        ],
+        "codelistSubject": "flag"
+    },
+    {
+        "val": "value",
+        "text": {
+            "EN": "Value"
+        },
+        "dataTypes": [
+            "number",
+            "percentage",
+            "string",
+            "label"
+        ]
+    }
+]
