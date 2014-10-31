@@ -1,0 +1,3 @@
+[submodule "submodules/fenix-ui-catalog"]
+	path = submodules/fenix-ui-catalog
+	url = ../fenix-ui-catalog.git
