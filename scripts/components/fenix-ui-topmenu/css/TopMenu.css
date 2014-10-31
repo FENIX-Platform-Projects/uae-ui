@@ -1,9 +1,14 @@
-body { 
-	padding-top: 70px;
+/* Top Menu */
+
+.navbar ul {
+    list-style: none;
+    padding-left: 0;
 }
 
 .navbar .container{
   position: relative;
+
+
 }
 
 .navbar-default { 

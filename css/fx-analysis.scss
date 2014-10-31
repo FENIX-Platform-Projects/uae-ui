@@ -2,14 +2,13 @@
 Produced By Fenix Team and Mentaltoy
 2014 All rights riserved */
 
-@import 'mixins';
-@import 'colors';
-@import 'typography';
-@import 'variables';
-@import 'base';
+@import 'fx-mixins';
+@import 'fx-colors';
+@import 'fx-typography';
+@import 'fx-commons';
+
 @import 'widgets';
 @import 'widgets-stack';
-@import 'queries';
 
-
+/* Pages */
 @import 'fx-catalog';

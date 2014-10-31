@@ -1,10 +1,6 @@
-@import 'colors'; /* Imported by Analysis, should be deleted ASAP */
-@import 'mixins';
-
-html, body {
-  height: 100%;
-
-}
+/* Host CSS */
+@import 'fx-mixins';
+@import 'fx-colors';
 
 $host-menu-height : 70px;
 
@@ -12,7 +8,12 @@ body{
   padding-top: $host-menu-height;
 }
 
+/* Menu Background color */
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+  background-color:$fenix-light-bg;
+  color: $fx-cool-blue
+}
 
 #overlay {
   .closeOverlay{
@@ -23,16 +24,17 @@ body{
   }
 }
 
+
 #fx-catalog-results{
   margin-top: 20px;
 }
 
 .fx-analysis-page-title{
   font-weight: 100;
-  color: $fenix-gray-text;
+  color: $fenix-text;
 }
 .fx-analysis-page-description{
-  color: $fenix-gray-text;
+  color: $fenix-text;
 }
 
 .well {
@@ -43,12 +45,12 @@ body{
 }
 
 .fx-catalog-toolbar{
-  color: $fenix-gray-text;
+  color: $fenix-text;
   .fx-widget-stack-btns{
     text-align: right;
     em{
       font-style: normal;
-      background-color: $fenix-gray-text;
+      background-color: $fenix-text;
       width: 30px;
       height: 20px;
       display: inline-block;
@@ -64,17 +66,17 @@ body{
 
 .btn{
   background-color: transparent;
-  color: $fenix-gray-text;
-  border-color: $fenix-gray-text;
+  color: $fenix-text;
+  border-color: $fenix-text;
   &:hover{
     background-color: transparent;
-    color: $fenix-gray-text;
-    border-color: $fenix-gray-text;
+    color: $fenix-text;
+    border-color: $fenix-text;
   }
   &:active{
-    background-color: $fenix-gray-text;
+    background-color: $fenix-text;
     color: white;
-    border-color: $fenix-gray-text;
+    border-color: $fenix-text;
     @include fx-box-shadow(0, 0, 0, white);
   }
 
