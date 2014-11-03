@@ -2,7 +2,7 @@
 @import 'fx-mixins';
 @import 'fx-colors';
 
-$host-menu-height : 70px;
+$host-menu-height : 50px;
 
 body{
   padding-top: $host-menu-height;
@@ -12,7 +12,31 @@ body{
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
   background-color:$fenix-light-bg;
-  color: $fx-cool-blue
+  color: $fx-cool-blue;
+
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color: $fenix-text;
+  border-color: $fenix-light-bg;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.page-header {
+  margin: 20px 0 0 0;
+  border: none;
+
+  h1{
+    text-align: center;
+    font-size: 38px;
+  }
+
+  p{
+    text-align: center;
+  }
 }
 
 #overlay {
@@ -65,18 +89,18 @@ body{
 }
 
 .btn{
-  background-color: transparent;
-  color: $fenix-text;
-  border-color: $fenix-text;
+  background-color:$fx-cool-blue;
+  color: white;
+  border-color: transparent;
   &:hover{
     background-color: transparent;
-    color: $fenix-text;
-    border-color: $fenix-text;
+    color: $fx-cool-blue;
+    border-color: $fx-cool-blue;
   }
   &:active{
-    background-color: $fenix-text;
-    color: white;
-    border-color: $fenix-text;
+    background-color: transparent;
+    color: $fx-cool-blue;
+    border-color: $fx-cool-blue;
     @include fx-box-shadow(0, 0, 0, white);
   }
 

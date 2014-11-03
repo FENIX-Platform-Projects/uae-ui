@@ -12,17 +12,18 @@
 /* Specials */
 /* Fenix Typography */
 body {
-  color: #333333;
+  color: #666666;
   font: normal normal 300 14px/normal "Roboto Condensed"; }
 
 a {
   color: #0076ff; }
 
 .navbar-default .navbar-nav > li > a {
-  color: #333; }
+  color: #666666; }
 
 .dropdown-menu > li > a {
-  font-weight: 300; }
+  font-weight: 300;
+  color: #666666; }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
   font-weight: 100;
@@ -35,6 +36,9 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 32px; }
 
+h2 {
+  font-size: 26px; }
+
 h3 {
   font-size: 20px; }
 
@@ -43,7 +47,7 @@ h4 {
 
 /*  FENIX COMMONS */
 body {
-  background-color: #e8eaef; }
+  background-color: #f8f8f8; }
 
 /* Reset Jqwidget content font */
 .jqx-widget, .jqx-widget-content, .jqx-fill-state-normal {
@@ -60,7 +64,7 @@ body {
   background-color: orangered;
   color: white; }
 
-.obj-box, .obj-box-radius10 {
+.obj-box, .obj-box-radius10, .obj-box-title {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
@@ -83,6 +87,19 @@ body {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   border-radius: 10px; }
+
+.obj-box-title {
+  padding-top: 5px; }
+  .obj-box-title h4 {
+    text-transform: uppercase;
+    color: #0076ff;
+    font-size: 14px;
+    font-weight: 300; }
+
+.title-ico {
+  height: 30px;
+  width: 30px;
+  margin: -4px 10px 0 0; }
 
 .fx-bullet-number {
   display: block;
@@ -160,7 +177,7 @@ body {
   margin-top: 20px; }
 
 .bs-docs-sidebar .nav > li > a {
-  color: #333333;
+  color: #666666;
   display: block;
   padding: 4px 20px;
   cursor: pointer;

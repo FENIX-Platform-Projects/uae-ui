@@ -11,11 +11,12 @@ a{
 }
 
 .navbar-default .navbar-nav > li > a{
-  color: #333;
+  color:$fenix-text;
 }
 
 .dropdown-menu > li > a{
   font-weight: 300;
+  color:$fenix-text;
 }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small{
@@ -30,6 +31,10 @@ h1, h2, h3, h4{
 
 h1{
   font-size: 32px;
+}
+
+h2{
+  font-size: 26px;
 }
 
 h3{

@@ -40,6 +40,24 @@ body{
   @include fx-border-radius(10px);
 }
 
+.obj-box-title{
+  @extend .obj-box;
+  padding-top: 5px;
+
+  h4{
+    text-transform: uppercase;
+    color: $fx-cool-blue;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.title-ico{
+  height: 30px;
+  width: 30px;
+  margin: -4px 10px 0 0;
+}
+
 .fx-bullet-number{
   display: block;
   float: left;

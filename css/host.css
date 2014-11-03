@@ -10,12 +10,28 @@
 /* Fenix Colors */
 /* Specials */
 body {
-  padding-top: 70px; }
+  padding-top: 50px; }
 
 /* Menu Background color */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  background-color: #e8eaef;
+  background-color: #f8f8f8;
   color: #0076ff; }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #666666;
+  border-color: #f8f8f8; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.page-header {
+  margin: 20px 0 0 0;
+  border: none; }
+  .page-header h1 {
+    text-align: center;
+    font-size: 38px; }
+  .page-header p {
+    text-align: center; }
 
 #overlay .closeOverlay {
   height: 35px;
@@ -28,10 +44,10 @@ body {
 
 .fx-analysis-page-title {
   font-weight: 100;
-  color: #333333; }
+  color: #666666; }
 
 .fx-analysis-page-description {
-  color: #333333; }
+  color: #666666; }
 
 .well {
   background-color: transparent;
@@ -41,12 +57,12 @@ body {
   box-shadow: 0 0 0 white; }
 
 .fx-catalog-toolbar {
-  color: #333333; }
+  color: #666666; }
   .fx-catalog-toolbar .fx-widget-stack-btns {
     text-align: right; }
     .fx-catalog-toolbar .fx-widget-stack-btns em {
       font-style: normal;
-      background-color: #333333;
+      background-color: #666666;
       width: 30px;
       height: 20px;
       display: inline-block;
@@ -60,17 +76,17 @@ body {
       margin-left: 33px; }
 
 .btn {
-  background-color: transparent;
-  color: #333333;
-  border-color: #333333; }
+  background-color: #0076ff;
+  color: white;
+  border-color: transparent; }
   .btn:hover {
     background-color: transparent;
-    color: #333333;
-    border-color: #333333; }
+    color: #0076ff;
+    border-color: #0076ff; }
   .btn:active {
-    background-color: #333333;
-    color: white;
-    border-color: #333333;
+    background-color: transparent;
+    color: #0076ff;
+    border-color: #0076ff;
     -webkit-box-shadow: 0 0 0 white;
     -moz-box-shadow: 0 0 0 white;
     box-shadow: 0 0 0 white; }
@@ -94,7 +110,7 @@ body {
   height: 0;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.9);
-  padding-top: 70px;
+  padding-top: 50px;
   z-index: 500;
   overflow-y: scroll; }
   #overlay .overlay-content {
