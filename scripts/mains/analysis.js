@@ -16,7 +16,7 @@ require([
         'packery': '../../node_modules/packery/dist/packery.pkgd.min',
         'draggabilly': '../../node_modules/draggabilly/dist/draggabilly.pkgd.min',
         'jstree': '../../node_modules/jstree/dist/jstree.min',
-        'jqrangeslider': 'lib/jqrangeslider',
+        'jqrangeslider': '../lib/jqrangeslider',
         'isotope': "../lib/isotope",
         'pnotify': '../lib/pnotify'
     };
