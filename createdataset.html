@@ -6,80 +6,49 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="description" content="FENIX Structure">
     <meta name="author" content="Daniele Salvatore <daniele.salvatore [at] fao.org>">
+    <meta name="author" content="Daniele Olivotti <daniele.olivotti[at]fao.org>">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700|Roboto+Condensed:700,300,400' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jqwidgets/styles/jqx.base.css" type="text/css"  rel="stylesheet"/>
     <link rel="stylesheet" href='css/fenix-jqwidgets.css'/>
 
     <!-- FENIX DEFAULT -->
     <link rel="stylesheet" href="css/fenix-interface-style.css">
+    <link rel="stylesheet" href="submodules/fenix-ui-DSDEditor/css/fenix-ui-DSDEditor.css" type="text/css" />
     <link rel="stylesheet" href="css/host.css">
 
 </head>
 <body>
 
-<div class="container">
-
-    <div class="row fx-header">
-        <div class="col-xs-12">
-            <div class="page-header">
-                <h1>Administration<small> FENIX</small></h1>
-            </div>
-        </div>
-    </div>
-
+<div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12">
-            <h2>
-                Table structure editor</h2>
+
+        <div class="col-md-12">
+            <h1>Fenix Data Editor</h1>
+
+            <p>Welcome to the Fenix Platform Data Editor. You can use the Column editor on the left (1) to add and modify columns. These are displayed in the right side (2), where you can check your personalized columns.  </p>
+
+            <!--<button id="btnEN" type="button">EN</button>-->
+            <!--<button id="btnFR" type="button">FR</button>-->
+            <div id="mainContainer" class="obj-box-radius10 row"></div>
+            <button id="btnColsEditDone" type="button" class="btn btn-default pull-right">Done</button>
         </div>
+
     </div>
-    <!-- -->
-    <!--LOADING-->
-    <div id="divLoading" class="row">
-        <div class="col-xs-12">
-            Loading</div>
-    </div>
-    <!-- -->
-    <!--Action Sel-->
-    <div id="divActionSelection" class="row" style="display: none">
-        <div class="col-xs-5">
-            <button id="btnNewStructure" type="button" class="btn btn-default">
-                New structure</button>
-            <br />
-            Upload structure<div id="dataUploadContainer" style="display: inline-block">
-        </div>
-        </div>
-    </div>
-    <!-- -->
-    <!--Table editor-->
-    <div id="divTableEditor" class="row" style="display: none">
-        <div class="col-lg-12">
-            <button id="btnTableEditorBack" type="button" class="btn btn-default">
-                <&nbspBack</button>
-            <div id="containerDSDEditor">
-            </div>
-        </div>
-    </div>
-    <!-- -->
-    <!--Data editor-->
-    <div id="divDataEditor" class="row" style="display: none">
-        <div class="col-lg-12">
-            <button id="btnDataEditorBack" type="button" class="btn btn-default">
-                <&nbspBack</button>
-            <div id="containerDataEditor">
-            </div>
-        </div>
-    </div>
+</div>
+
+
+
+<div class="container">
 
     <hr>
 

@@ -1,3 +1,6 @@
 [submodule "submodules/fenix-ui-catalog"]
 	path = submodules/fenix-ui-catalog
 	url = https://github.com/FENIX-Platform/fenix-ui-catalog.git
+[submodule "submodules/fenix-ui-DSDEditor"]
+	path = submodules/fenix-ui-DSDEditor
+	url = https://github.com/FENIX-Platform/fenix-ui-DSDEditor.git
