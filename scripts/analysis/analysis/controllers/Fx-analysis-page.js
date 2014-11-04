@@ -50,7 +50,6 @@ define([
     PageController.prototype.bridge = undefined;
 
     PageController.prototype.saveDeskToStorage = function (model) {
-
         var that = this;
 
         this.storage.getItem(this.o.storage.CATALOG, function (item) {
@@ -207,6 +206,7 @@ define([
 
         var that = this;
 
+        /*Event triggered by the catalog when "Open Data" button is clicked*/
         $(this.o.selectors.EVENTS_LISTENERS).on('analyze', function (e, payload) {
             that.closeOverlay();
             that.getData(payload, $.proxy(that.addItemToDesk, that))
