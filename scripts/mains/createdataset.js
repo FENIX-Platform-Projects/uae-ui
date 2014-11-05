@@ -16,8 +16,9 @@ define(['module'], function (module) {
     };
 
     require(['../../submodules/fenix-ui-metadata-editor/js/paths',
-        '../../submodules/fenix-ui-DSDEditor/js/paths'
-    ], function (MetadataEditor, Editor) {
+        '../../submodules/fenix-ui-DSDEditor/js/paths',
+        '../../submodules/fenix-ui-DataEditor/js/paths'
+    ], function (MetadataEditor, Editor, DataEditor) {
 
         // NOTE: This setTimeout() call is used because, for whatever reason, if you make
         //       a 'require' call in here or in the Cart without it, it will just hang
@@ -34,32 +35,55 @@ define(['module'], function (module) {
             MetadataEditor.initialize('../../submodules/fenix-ui-metadata-editor/js', override, userConfig, function () {
 
                 Editor.initialize('../../submodules/fenix-ui-DSDEditor/js', override, function () {
-                    require([
-                        'fx-editor/start',
-                        'fenix-ui-topmenu/main',
-                        'fx-DSDEditor/start'
-                    ], function (StartUp, TopMenu, E) {
 
-                        new StartUp().init(userConfig);
+                    DataEditor.initialize('../../submodules/fenix-ui-DataEditor/js', null, function () {
 
-                        new TopMenu({
-                            url: 'json/fenix-ui-topmenu_config.json', active: "createdataset"
+
+
+
+                        require([
+                            'fx-editor/start',
+                            'fenix-ui-topmenu/main',
+                            'fx-DSDEditor/start',
+                            'fx-DataEditor/start'
+                        ], function (StartUp, TopMenu, E, DE) {
+
+                            new StartUp().init(userConfig);
+
+                            new TopMenu({
+                                url: 'json/fenix-ui-topmenu_config.json', active: "createdataset"
+                            });
+
+                            E.init();
+
+                            DE.init();
+
+                            window.setTimeout(function () {
+
+                                $('#DSDEditorContainer').hide();
+                                $('#DataEditorContainer').hide();
+                            }, 2000);
+
+                            document.body.addEventListener("fx.editor.finish", function (e) {
+                                console.log(e.detail.data);
+
+                                $('#metadataEditorContainer').hide();
+                                $('#DSDEditorContainer').show();
+
+                            }, false);
+
+                            $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
+                                $('#DSDEditorContainer').hide();
+                                $('#DataEditorContainer').show();
+                                DE.set({"dsd": {columns: p.payload}  });
+                            })
+
                         });
 
-                        E.init();
-
-                        window.setTimeout(function (){
-                            $('#DSDEditorContainer').hide();
-                        }, 2000);
-
-                        document.body.addEventListener("fx.editor.finish", function (e) {
-                            console.log(e.detail.data)
-
-                            $('#metadataEditorContainer').hide();
-                            $('#DSDEditorContainer').show();
 
 
-                        }, false);
+
+
 
                     });
 
