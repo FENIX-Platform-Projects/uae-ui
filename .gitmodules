@@ -4,3 +4,6 @@
 [submodule "submodules/fenix-ui-DSDEditor"]
 	path = submodules/fenix-ui-DSDEditor
 	url = https://github.com/FENIX-Platform/fenix-ui-DSDEditor.git
+[submodule "submodules/fenix-ui-metadata-editor"]
+	path = submodules/fenix-ui-metadata-editor
+	url = https://github.com/FENIX-Platform/fenix-ui-metadata-editor.git

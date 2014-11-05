@@ -29,17 +29,7 @@
                },
                "target":"createdataset.html",
                "label":{
-                  "EN":"Create/Edit Dataset",
-                  "FR":"PI"
-               }
-            },
-            {
-               "attrs":{
-                  "id":"metadata"
-               },
-               "target":"metadata.html",
-               "label":{
-                  "EN":"Metadata Editor",
+                  "EN":"Create Dataset",
                   "FR":"PI"
                }
             }
