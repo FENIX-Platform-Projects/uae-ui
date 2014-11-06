@@ -39,8 +39,6 @@ define(['module'], function (module) {
                     DataEditor.initialize('../../submodules/fenix-ui-DataEditor/js', null, function () {
 
 
-
-
                         require([
                             'fx-editor/start',
                             'fenix-ui-topmenu/main',
@@ -73,10 +71,9 @@ define(['module'], function (module) {
                             }, false);
 
                             $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
-                                //$('#DSDEditorContainer').hide();
-                                //$('#DataEditorContainer').show();
-                                location.reload();
-                                //DE.set({"dsd": {columns: p.payload}  });
+                                $('#DSDEditorContainer').hide();
+                                $('#DataEditorContainer').show();
+                                DE.set({"dsd": {columns: p.payload}  });
                             })
 
                             $('#createDatasetEnd').on('click', function () {
@@ -84,10 +81,6 @@ define(['module'], function (module) {
                             })
 
                         });
-
-
-
-
 
 
                     });
