@@ -10,3 +10,6 @@
 [submodule "submodules/fenix-ui-DataEditor"]
 	path = submodules/fenix-ui-DataEditor
 	url = https://github.com/FENIX-Platform/fenix-ui-DataEditor.git
+[submodule "submodules/fenix-ui-analysis"]
+	path = submodules/fenix-ui-analysis
+	url = https://github.com/FENIX-Platform/fenix-ui-analysis.git

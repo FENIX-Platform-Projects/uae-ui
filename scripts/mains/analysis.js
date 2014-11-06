@@ -2,7 +2,7 @@
 //risoluzione delle dipendenze relativa alla posizione del file questo
 require([
     '../../submodules/fenix-ui-catalog/js/paths',
-    '../analysis/paths'
+    '../../submodules/fenix-ui-analysis/js/paths',
 ], function (Catalog, Analysis) {
 
     var override = {
@@ -30,7 +30,7 @@ require([
     //risoluzione delle dipendenze relativa alla posizione del file questo
     Catalog.initialize('../../submodules/fenix-ui-catalog/js', null, function () {
 
-        Analysis.initialize('../analysis', override, function () {
+        Analysis.initialize('../../submodules/fenix-ui-analysis/js/', override, function () {
 
             require([
                 'fx-ana/start'
