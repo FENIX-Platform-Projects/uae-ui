@@ -73,9 +73,14 @@ define(['module'], function (module) {
                             }, false);
 
                             $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
-                                $('#DSDEditorContainer').hide();
-                                $('#DataEditorContainer').show();
-                                DE.set({"dsd": {columns: p.payload}  });
+                                //$('#DSDEditorContainer').hide();
+                                //$('#DataEditorContainer').show();
+                                location.reload();
+                                //DE.set({"dsd": {columns: p.payload}  });
+                            })
+
+                            $('#createDatasetEnd').on('click', function () {
+                                location.reload();
                             })
 
                         });
