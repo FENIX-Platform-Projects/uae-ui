@@ -56,14 +56,29 @@ define(['module'], function (module) {
 
                             DE.init();
 
+                            var uid = "";
+
                             window.setTimeout(function () {
+                               /* E.setColumns([
+                                    {"id": "CODE", "title": {"EN": "item"}, "key": true, "dataType": "code", "domain": {"codes": [
+                                        {"idCodeList": "ECO_Commodity"}
+                                    ]}, "subject": "item", "supplemental": null},
+                                    {"id": "YEAR", "title": {"EN": "y"}, "key": true, "dataType": "year", "domain": null, "subject": "time", "supplemental": null},
+                                    {"id": "NUMBER", "title": {"EN": "measure"}, "key": false, "dataType": "number", "subject": "value", "supplemental": null},
+                                    {"id": "CODE2", "title": {"EN": "area"}, "key": false, "dataType": "code", "domain": {"codes": [
+                                        {"idCodeList": "ECO_GAUL"}
+                                    ]}, "subject": "geo", "supplemental": null}
+                                ]);*/
+
 
                                 $('#DSDEditorContainer').hide();
                                 $('#DataEditorContainer').hide();
+
                             }, 2000);
 
                             document.body.addEventListener("fx.editor.finish", function (e) {
                                 console.log(e.detail.data);
+                                uid = e.detail.data.uid;
 
                                 $('#metadataEditorContainer').hide();
                                 $('#DSDEditorContainer').show();
@@ -71,13 +86,63 @@ define(['module'], function (module) {
                             }, false);
 
                             $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
+                                var newDSD = {"columns": p.payload};
+                                //E.updateDSD("dan3", null, newDSD);
+                                //E.updateDSD(uid, null, newDSD);
+
                                 $('#DSDEditorContainer').hide();
                                 $('#DataEditorContainer').show();
-                                DE.set({"dsd": {columns: p.payload}  });
+
+                                DE.set({"dsd": newDSD  });
                             })
 
                             $('#createDatasetEnd').on('click', function () {
-                                location.reload();
+
+                                var data = DE.getData();
+                                var meta = DE.getMeta();
+                                var distincts = DE.getDistincts();
+
+                                if (distincts) {
+                                    for (var colI = 0; colI < meta.dsd.columns.length; colI++) {
+                                        var colId = meta.dsd.columns[colI].id;
+                                        var colType = meta.dsd.columns[colI].dataType;
+
+                                        if (distincts.hasOwnProperty(colId)) {
+                                            var col = meta.dsd.columns[colI];
+                                            if (colType == "code") {
+                                                var idCL = col.domain.codes[0].idCodeList;
+                                                var verCL = col.domain.codes[0].version;
+
+                                                if (verCL)
+                                                    col.values = {codes: [
+                                                        {idCodeList: idCL, version: verCL}
+                                                    ]};
+                                                else
+                                                    col.values = {codes: [
+                                                        {idCodeList: idCL}
+                                                    ]};
+                                                col.values.codes[0].codes = [];
+                                                for (var i = 0; i < distincts[colId].length; i++) {
+                                                    col.values.codes[0].codes.push({code: distincts[colId][i]});
+                                                }
+                                            }
+                                            else {
+                                                col.values = {timeList: distincts[colId]};
+                                            }
+                                        }
+                                    }
+
+                                }
+                                //console.log(meta.dsd);
+                                /*console.log("data");
+                                console.log(data);*/
+
+
+                                DE.updateData(uid, null, data);
+                                DE.updateDSD(uid, null, meta.dsd);
+
+
+                                //location.reload();
                             })
 
                         });
