@@ -138,11 +138,14 @@ define(['module'], function (module) {
                                 console.log(data);*/
 
 
-                                DE.updateData(uid, null, data);
-                                DE.updateDSD(uid, null, meta.dsd);
+                                DE.updateData(uid, null, data, function () {
+                                    DE.updateDSD(uid, null, meta.dsd, function () {
+                                        location.refresh();
+                                    });
+                                });
 
 
-                                //location.reload();
+
                             })
 
                         });
