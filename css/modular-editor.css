@@ -1,3 +1,10 @@
+/* Fenix UI  DSD Editor  CSS - Mixins */
+/* CSS TRANSFORMS */
+/* CSS TRANSITION */
+/* 3D flow */
+/* Blurred */
+/* Color Mixins */
+/* Animations */
 /*========= HEADER =========*/
 .fx-editor-header {
   height: 20px;
@@ -22,13 +29,11 @@
 
 /*========= DATA ENTRY CONTAINER =========*/
 .fx-editor-data-entry-container {
-  background-color: #E3E3E3;
   min-height: 250px;
   overflow: hidden; }
 
 /*========= MENU =========*/
 .fx-editor-menu-container {
-  background-color: white;
   padding: 0;
   min-height: 250px; }
 
@@ -37,12 +42,8 @@
   content: "";
   height: 900px;
   width: 20px;
-  background-color: #f3f3f3;
   top: 0;
   right: -14px; }
-
-.fx-editor-menu-container .btn-default:hover {
-  background-color: #e1dfda; }
 
 .panel-default:last-child {
   border-bottom-width: 0px !important; }
@@ -94,27 +95,20 @@
   content: "\002A"; }
 
 #fx-editor-menu .panel-heading {
-  background-color: #fff;
   -webkit-border-radius: 0;
   border-radius: 0; }
-
-#fx-editor-menu .panel-heading.fx-editor-active-panel, #fx-editor-form .panel-heading.fx-editor-active-panel {
-  background-color: #3276b1;
-  color: #fff; }
-
-#fx-editor-menu .panel-heading.fx-editor-sub-entity-active-panel {
-  background-color: #E1DFDA; }
 
 #fx-editor-menu .panel-heading.fx-editor-sub-entity {
   /** padding: 5px 5px;**/ }
 
 #fx-editor-menu .panel-heading.fx-editor-entity {
-  border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5; }
 
 #fx-editor-menu .panel-default > .panel-heading + .panel-collapse .panel-body {
-  border-color: #fff;
   padding: 5px 10px 10px 10px; }
+
+.panel-default > .panel-heading {
+  background-color: transparent; }
 
 #fx-editor-menu .panel-group .panel + .panel {
   margin-top: 0; }
@@ -171,8 +165,7 @@ input[type=text]::-ms-clear {
      position: relative;
  }*/
 #fx-editor-form .control-label, .form-control {
-  font-size: 12px;
-  font-weight: 700; }
+  font-size: 12px; }
 
 #fx-editor-form .fnx-control-subtitle label {
   font-size: 12px;
@@ -243,7 +236,7 @@ input[type=text]::-ms-clear {
 /**.bootstrap-tagsinput input {
     font-size: 11px;
 }    **/
-fx-editor-form-module {
+.fx-editor-form-module {
   width: 50%;
   background-color: white;
   border: 10px solid #E3E3E3;
@@ -266,7 +259,22 @@ fx-editor-form-module {
   overflow: hidden; }
 
 .fx-editor-modular-form-container {
-  background-color: #E3E3E3; }
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: white;
+  border-color: #D8D8D8;
+  border-image: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px 1px 2px;
+  margin: 10px 0 20px;
+  padding: 20px;
+  width: auto; }
 
 .fx-editor-form-module {
   /*padding: 7px;  */
