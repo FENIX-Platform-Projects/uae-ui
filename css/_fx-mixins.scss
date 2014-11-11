@@ -131,6 +131,7 @@
   transition: all 0.3s ease 0s;
 }
 
+
 @mixin animate-in-out {
   -webkit-transition: all 800ms cubic-bezier(0.715, 0.010, 0.035, 1); /* older webkit */
   -webkit-transition: all 800ms cubic-bezier(0.715, 0.010, 0.035, 1.010);

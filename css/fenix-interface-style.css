@@ -228,6 +228,7 @@ body {
   .bs-docs-sidebar.affix-bottom, .bs-docs-sidebar.affix {
     width: 263px; } }
 /* Pages */
+/*@import 'fx-home'; /* Home with background image */
 /* HOMEPAGE */
 .fx-home-header {
   text-align: center;
