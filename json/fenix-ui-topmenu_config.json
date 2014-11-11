@@ -48,16 +48,6 @@
             "EN":"Modules",
             "FR":"PI"
          }
-      },
-      {
-         "attrs":{
-            "id":"showcase"
-         },
-         "target":"showcase.html",
-         "label":{
-            "EN":"Showcase",
-            "FR":"PI"
-         }
       }
    ],
    "brand":{

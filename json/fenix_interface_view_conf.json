@@ -140,16 +140,6 @@
                 }
             ]
          },
-         {
-              "page":"event_pg_3",
-              "label":{
-                  "EN":"Map & Chart",
-                  "IT":"Elemento 2"
-              },
-              "children":[
-
-              ]
-          },
           {
               "page":"event_pg_4",
               "label":{
@@ -178,16 +168,6 @@
                           "IT":"Elemento 1.1"
                       }
                   }
-
-              ]
-          },
-          {
-              "page":"event_pg_5",
-              "label":{
-                  "EN":"OLAP",
-                  "IT":"Elemento 2"
-              },
-              "children":[
 
               ]
           }

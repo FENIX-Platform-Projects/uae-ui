@@ -59,7 +59,7 @@ define(['module'], function (module) {
                             var uid = "";
 
                             window.setTimeout(function () {
-                               /* E.setColumns([
+                                /*E.setColumns([
                                     {"id": "CODE", "title": {"EN": "item"}, "key": true, "dataType": "code", "domain": {"codes": [
                                         {"idCodeList": "ECO_Commodity"}
                                     ]}, "subject": "item", "supplemental": null},
@@ -88,7 +88,7 @@ define(['module'], function (module) {
                             $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
                                 var newDSD = {"columns": p.payload};
                                 //E.updateDSD("dan3", null, newDSD);
-                                //E.updateDSD(uid, null, newDSD);
+                                E.updateDSD(uid, null, newDSD);
 
                                 $('#DSDEditorContainer').hide();
                                 $('#DataEditorContainer').show();
@@ -140,7 +140,7 @@ define(['module'], function (module) {
 
                                 DE.updateData(uid, null, data, function () {
                                     DE.updateDSD(uid, null, meta.dsd, function () {
-                                        location.refresh();
+                                        window.location.reload();
                                     });
                                 });
 
