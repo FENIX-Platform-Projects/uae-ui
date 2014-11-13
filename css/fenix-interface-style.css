@@ -1,5 +1,69 @@
 /* Fenix Interace Common Style */
 /* Produced By Fenix Team and Mentaltoy 2014 All rights riserved */
+/* columns of same height styles */
+.container-xs-height {
+  display: table;
+  padding-left: 0px;
+  padding-right: 0px; }
+
+.row-xs-height {
+  display: table-row; }
+
+.col-xs-height {
+  display: table-cell;
+  float: none; }
+
+@media (min-width: 768px) {
+  .container-sm-height {
+    display: table;
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .row-sm-height {
+    display: table-row; }
+
+  .col-sm-height {
+    display: table-cell;
+    float: none; } }
+@media (min-width: 992px) {
+  .container-md-height {
+    display: table;
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .row-md-height {
+    display: table-row; }
+
+  .col-md-height {
+    display: table-cell;
+    float: none; } }
+@media (min-width: 1200px) {
+  .container-lg-height {
+    display: table;
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .row-lg-height {
+    display: table-row; }
+
+  .col-lg-height {
+    display: table-cell;
+    float: none; } }
+/* Alignment */
+/* firefox fix */
+.img-responsive {
+  width: 100%; }
+
+/* vertical alignment styles */
+.col-top {
+  vertical-align: top; }
+
+.col-middle {
+  vertical-align: middle; }
+
+.col-bottom {
+  vertical-align: bottom; }
+
 /* Fenix UI  DSD Editor  CSS - Mixins */
 /* CSS TRANSFORMS */
 /* CSS TRANSITION */
@@ -13,10 +77,12 @@
 /* Fenix Typography */
 body {
   color: #666666;
-  font: normal normal 300 14px/normal "Roboto Condensed"; }
+  font: normal normal 300 12px/normal "Roboto Condensed";
+  text-align: justify;
+  text-justify: inter-word; }
 
 a {
-  color: #0076ff; }
+  color: #986e2e; }
 
 .navbar-default .navbar-nav > li > a {
   color: #666666; }
@@ -27,31 +93,45 @@ a {
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
   font-weight: 100;
-  color: #0076ff; }
+  color: #986e2e; }
 
 h1, h2, h3, h4 {
-  font-family: Roboto;
+  font-family: 'fontinregular';
   font-weight: 100; }
 
 h1 {
   font-size: 32px; }
 
 h2 {
-  font-size: 26px; }
+  font-size: 20px;
+  color: #986e2e; }
+  h2 .title-small-text {
+    top: 0; }
 
 h3 {
   font-size: 20px; }
 
 h4 {
-  font-family: "Roboto Condensed"; }
+  font-family: "Roboto Condensed";
+  font-size: 16px; }
 
+/* Font Faces */
+@font-face {
+  font-family: 'fontinregular';
+  src: url("fonts/fontin/fontin-regular-webfont.eot");
+  src: url("fonts/fontin/fontin-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/fontin/fontin-regular-webfont.woff") format("woff"), url("fonts/fontin/fontin-regular-webfont.ttf") format("truetype"), url("fonts/fontin/fontin-regular-webfont.svg#fontinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 /*  FENIX COMMONS */
 body {
-  background-color: #f8f8f8; }
+  background-color: #f9f7f3; }
 
 /* Reset Jqwidget content font */
 .jqx-widget, .jqx-widget-content, .jqx-fill-state-normal {
-  font: normal normal 300 14px/normal "Roboto Condensed"; }
+  font: normal normal 300 12px/normal "Roboto Condensed"; }
+
+hr {
+  border-color: #dddddd; }
 
 .fx-validation {
   -webkit-transition: all 0.3s ease 0s;
@@ -92,7 +172,7 @@ body {
   padding-top: 5px; }
   .obj-box-title h4 {
     text-transform: uppercase;
-    color: #0076ff;
+    color: #986e2e;
     font-size: 14px;
     font-weight: 300; }
 
@@ -110,7 +190,7 @@ body {
   line-height: 20px;
   text-align: center;
   font-style: normal;
-  background-color: #0076ff;
+  background-color: #986e2e;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -185,14 +265,14 @@ body {
 
 .bs-docs-sidebar .nav > li > a:hover, .bs-docs-sidebar .nav > li > a:focus {
   background-color: transparent;
-  border-left: 1px solid #0076ff;
-  color: #007AFF;
+  border-left: 1px solid #986e2e;
+  color: #986e2e;
   text-decoration: none; }
 
 .bs-docs-sidebar .nav > .active > a, .bs-docs-sidebar .nav > .active:hover > a, .bs-docs-sidebar .nav > .active:focus > a {
   background-color: transparent;
-  border-left: 1px solid #0076ff;
-  color: #007AFF;
+  border-left: 1px solid #986e2e;
+  color: #986e2e;
   font-weight: 700; }
 
 .bs-docs-sidebar .nav .nav {
@@ -230,6 +310,7 @@ body {
 /* Pages */
 /*@import 'fx-home'; /* Home with background image */
 /* HOMEPAGE */
+/* FENIX UAE - DEMO */
 .fx-home-header {
   text-align: center;
   color: white;
@@ -262,14 +343,7 @@ body {
     position: absolute;
     left: 0;
     top: 2px; }
-  .fx-home-content-grid h1 {
-    font-family: Roboto;
-    font-weight: 100;
-    font-size: 18px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    color: #0076ff; }
-  .fx-home-content-grid h2 {
+  .fx-home-content-grid h3 {
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 400;
@@ -329,6 +403,121 @@ p.fx-strong {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; } }
+/* Map */
+.fm-box {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  display: none; }
+
+.fx-map {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.fx-map-description h2:first-child {
+  margin-top: 0; }
+
+/* Highchart tabs */
+.nav-tabs > li > a {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  border-color: transparent;
+  padding: 4px 12px;
+  color: #666666; }
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+  border-color: transparent; }
+
+.nav-tabs {
+  border: 0; }
+
+.tab-content {
+  margin-top: 20px; }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: transparent;
+  color: #986e2e;
+  border-color: #986e2e; }
+
+.fx-chart-description h2:first-child {
+  margin-top: 70px; }
+
+/* News */
+.news-title {
+  margin-top: 5px; }
+
+.title-small-text.news {
+  top: 0;
+  font-weight: 700; }
+
+.title-small-text {
+  font-family: Roboto;
+  font-size: 10px;
+  top: -9px;
+  position: relative;
+  font-style: normal; }
+
+.fx-big-data {
+  font-size: 25px;
+  font-weight: 700;
+  position: relative; }
+
+/* SWIPER */
+.jumbotron, .jumbotron-wrapper {
+  background-color: #ca1a33; }
+
+.jumbotron, .jumbotron h1, .jumbotron h2 {
+  color: white;
+  font-weight: normal; }
+
+.container .jumbotron {
+  padding: 0;
+  margin: 0; }
+
+.jumbotron p {
+  font-size: 12px; }
+
+.jumbotron h1 {
+  font-size: 30px; }
+
+.jumbotron .swiper-container {
+  width: 100%;
+  height: 250px;
+  color: white; }
+
+.jumbotron {
+  background-color: #ca1a33; }
+  .jumbotron .btn {
+    border-color: white;
+    padding: 3px 12px; }
+    .jumbotron .btn:hover {
+      border-color: white; }
+  .jumbotron .btn-default:hover, .jumbotron .btn-default:focus, .jumbotron .btn-default:active, .jumbotron .btn-default.active, .jumbotron .open > .dropdown-toggle.btn-default {
+    background-color: white;
+    color: #ca1a33; }
+
+.swiper-container {
+  width: 100%;
+  color: white; }
+
+.swiper-slide .title {
+  font-style: italic;
+  font-size: 42px;
+  margin-top: 80px;
+  margin-bottom: 0;
+  line-height: 45px; }
+
+.swiper-visible-switch {
+  background: #dddddd; }
+
+.swiper-active-switch {
+  background: white; }
+
 /* ECO training website override*/
 .fx-eco-header {
   margin-top: 25px; }

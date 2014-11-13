@@ -16,13 +16,13 @@
 .bs-docs-sidebar .nav > li > a:hover, .bs-docs-sidebar .nav > li > a:focus {
   background-color: rgba(0, 0, 0, 0);
   border-left: 1px solid $fx-cool-blue;
-  color: #007AFF;
+  color: $fx-cool-blue;
   text-decoration: none;
 }
 .bs-docs-sidebar .nav > .active > a, .bs-docs-sidebar .nav > .active:hover > a, .bs-docs-sidebar .nav > .active:focus > a {
   background-color: rgba(0, 0, 0, 0);
   border-left: 1px solid $fx-cool-blue;
-  color: #007AFF;
+  color: $fx-cool-blue;
   font-weight: 700;
 }
 .bs-docs-sidebar .nav .nav {

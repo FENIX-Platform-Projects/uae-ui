@@ -8,6 +8,12 @@ body{
   padding-top: $host-menu-height;
 }
 
+
+.navbar-brand{
+  background-image: url("img/uae-ico.svg") !important; /* To be removed */
+  background-size: 34px 44px !important;
+}
+
 /* Menu Background color */
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
@@ -95,9 +101,13 @@ body{
 }
 
 .btn{
-  background-color:$fx-cool-blue;
-  color: white;
-  border-color: transparent;
+  background-color:transparent;
+  color: $fenix-text;
+  border-color: $fenix-text;
+  @include fx-border-radius(0);
+  font-weight: 300;
+  padding: 3px 12px;
+
   &:hover{
     background-color: transparent;
     color: $fx-cool-blue;
@@ -111,6 +121,24 @@ body{
   }
 
 }
+
+
+.btn[disabled]{
+  background-color:transparent;
+  color: $fenix-text;
+  border-color: $fenix-text;
+  @include fx-border-radius(0);
+  font-weight: 300;
+  padding: 3px 12px;
+}
+
+.white-inverted{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+
 
 /*================= Packry =================*/
 .fx-analysis-item {
@@ -158,3 +186,44 @@ body{
     padding: 0;
   }
 }
+
+
+/* //////////////////// THEMING ///////////////////// */
+
+
+/*///////////////* ANALYSIS */
+
+/*  CATALOG THEMING */
+
+#fx-catalog-submit-btn{
+  background-color: $fx-cool-blue;
+}
+
+.fx-catalog-resume-title{
+  color: $fx-cool-blue;
+}
+
+.fx-resume-item-selected{
+
+  .fx-resume-module-title{
+
+    em{
+      color: $fx-cool-blue;
+    }
+
+  }
+
+}
+
+/*///////////////* DATA EDIT */
+
+#metadataEditorContainer #fx-editor-form .panel-heading{
+  color: $fx-cool-blue;
+}
+
+#metadataEditorContainer #fx-editor-form .btn-success{
+  background-color: $fx-cool-blue;
+}
+
+
+

@@ -12,14 +12,19 @@
 body {
   padding-top: 50px; }
 
+.navbar-brand {
+  background-image: url("img/uae-ico.svg") !important;
+  /* To be removed */
+  background-size: 34px 44px !important; }
+
 /* Menu Background color */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  background-color: #f8f8f8;
-  color: #0076ff; }
+  background-color: #f9f7f3;
+  color: #986e2e; }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #666666;
-  border-color: #f8f8f8; }
+  border-color: #f9f7f3; }
 
 .navbar {
   margin-bottom: 0; }
@@ -80,20 +85,42 @@ body {
       margin-left: 33px; }
 
 .btn {
-  background-color: #0076ff;
-  color: white;
-  border-color: transparent; }
+  background-color: transparent;
+  color: #666666;
+  border-color: #666666;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  font-weight: 300;
+  padding: 3px 12px; }
   .btn:hover {
     background-color: transparent;
-    color: #0076ff;
-    border-color: #0076ff; }
+    color: #986e2e;
+    border-color: #986e2e; }
   .btn:active {
     background-color: transparent;
-    color: #0076ff;
-    border-color: #0076ff;
+    color: #986e2e;
+    border-color: #986e2e;
     -webkit-box-shadow: 0 0 0 white;
     -moz-box-shadow: 0 0 0 white;
     box-shadow: 0 0 0 white; }
+
+.btn[disabled] {
+  background-color: transparent;
+  color: #666666;
+  border-color: #666666;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  font-weight: 300;
+  padding: 3px 12px; }
+
+.white-inverted {
+  background-color: transparent;
+  border-color: white;
+  color: white; }
 
 /*================= Packry =================*/
 .fx-analysis-item {
@@ -128,3 +155,22 @@ body {
 
 #DSDEditorContainer .obj-box {
   padding: 0; }
+
+/* //////////////////// THEMING ///////////////////// */
+/*///////////////* ANALYSIS */
+/*  CATALOG THEMING */
+#fx-catalog-submit-btn {
+  background-color: #986e2e; }
+
+.fx-catalog-resume-title {
+  color: #986e2e; }
+
+.fx-resume-item-selected .fx-resume-module-title em {
+  color: #986e2e; }
+
+/*///////////////* DATA EDIT */
+#metadataEditorContainer #fx-editor-form .panel-heading {
+  color: #986e2e; }
+
+#metadataEditorContainer #fx-editor-form .btn-success {
+  background-color: #986e2e; }

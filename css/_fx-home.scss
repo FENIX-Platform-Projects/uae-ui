@@ -1,4 +1,5 @@
 /* HOMEPAGE */
+/* FENIX UAE - DEMO */
 
 .fx-home-header{
   text-align: center;
@@ -33,7 +34,7 @@
 .fx-home-ico-holder{
   height: 50px;
   width: 50px;
-  border: 1px solid #ffffff;
+  border: 1px solid $fenix-text;
   padding: 5px;
 
   img {
@@ -44,7 +45,7 @@
 
 .fx-home-content-grid{
   text-align: justify;
-  color: white;
+
 
   .fx-home-ico-holder{
     position: absolute;
@@ -52,16 +53,9 @@
     top: 2px;
   }
 
-  h1{
-    font-family: Roboto;
-    font-weight: 100;
-    font-size: 18px;
-    margin-top: 50px;
-    margin-bottom: 20px;
 
-  }
 
-  h2 {
+  h3 {
     margin-top:0;
     margin-bottom: 0;
     font-weight: 400;
@@ -92,7 +86,7 @@
         height: 15px;
         width: 15px;
         @include fx-border-radius(15px);
-        border: 1px solid white;
+        border: 1px solid $fenix-text;
         display: inline-block;
         line-height: 1.3;
         text-align: center;
@@ -118,11 +112,10 @@ p.fx-strong{
 font-weight: 700;
 }
 
-
 .fx-background-image{
-  height: 100%;
+  height: 210px;
   width: 100%;
-  position: fixed;
+  position: absolute;
 
   background-image: url(img/background-home.jpg);
 
@@ -132,14 +125,206 @@ font-weight: 700;
   -o-background-size: cover;
   background-size: cover;
 
-  background-attachment: fixed;
 
 }
 
-footer{
-  color: white;
-  a{
-    color: white;
+@media (max-width: 490px) {
+  .fx-background-image{
+    height: 286px;
+    width: 100%;
+    position: absolute;
+
+    background-image: url(img/background-home.jpg);
+
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
   }
 }
+
+
+//////////////////////////////////////
+
+
+/* Map */
+.fm-box{
+  @include fx-border-radius(0);
+  display: none;
+}
+
+.fx-map{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fx-map-description{
+  h2:first-child{
+    margin-top:0;
+  }
+
+}
+
+
+/* Highchart tabs */
+.nav-tabs > li > a{
+  @include fx-border-radius(0px);
+  border-color: transparent;
+  padding: 4px 12px;
+  color: $fenix-text;
+}
+
+.nav > li > a:hover, .nav > li > a:focus{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs{
+  border: 0;
+}
+
+.tab-content{
+  margin-top: 20px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: transparent;
+  color: $fx-cool-blue;
+  border-color: $fx-cool-blue;
+
+}
+
+.fx-chart-description{
+  h2:first-child{
+    margin-top:70px;
+  }
+
+}
+
+
+/* News */
+.news-title{
+  margin-top: 5px;
+}
+
+.title-small-text.news{
+  top: 0;
+  font-weight: 700;
+}
+
+
+
+.title-small-text{
+  font-family: Roboto;
+  font-size: 10px;
+  top: -9px;
+  position: relative;
+  font-style: normal;
+}
+
+.fx-big-data{
+  font-size: 25px;
+  font-weight: 700;
+  position: relative;
+
+
+}
+
+
+
+/* SWIPER */
+
+.jumbotron, .jumbotron-wrapper {
+  background-color: $custom-color1;
+}
+
+
+.jumbotron, .jumbotron h1, .jumbotron h2 {
+  color: white;
+  font-weight: normal;
+}
+
+.container .jumbotron {
+  padding: 0;
+  margin: 0;
+}
+
+.jumbotron p {
+  font-size:12px;
+}
+
+.jumbotron h1 {
+  font-size:30px;
+}
+
+.jumbotron .swiper-container {
+  width: 100%;
+  height: 250px;
+  color: white;
+}
+
+.jumbotron {
+
+  background-color: $custom-color1;
+
+  .btn{
+    border-color: white;
+    padding: 3px 12px;
+
+    &:hover{
+      border-color: white;
+    }
+
+  }
+
+  .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{
+    background-color: white;
+    color: $custom-color1;
+
+  }
+
+}
+
+
+.swiper-container {
+  width: 100%;
+
+  color: white;
+
+}
+
+.red-slide {
+
+}
+.blue-slide {
+
+}
+.orange-slide {
+
+}
+.green-slide {
+
+}
+.pink-slide {
+
+}
+.swiper-slide .title {
+  font-style: italic;
+  font-size: 42px;
+  margin-top: 80px;
+  margin-bottom: 0;
+  line-height: 45px;
+}
+.swiper-visible-switch {
+  background: $fenix-light-gray;
+}
+
+.swiper-active-switch {
+  background: white;
+}
+
 
