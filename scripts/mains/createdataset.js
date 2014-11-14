@@ -52,7 +52,15 @@ define(['module'], function (module) {
                                 url: 'json/fenix-ui-topmenu_config.json', active: "createdataset"
                             });
 
-                            E.init();
+                            //E.init();
+                            E.init({
+                                codelists: "config/submodules/DSDEditor/CodelistsUAE.json"
+                            }, function () {
+                                $('#DSDEditorContainer').hide();
+                            });
+
+                            var datasource = "CountrySTAT";
+                            var contextSys = "CountrySTAT";
 
                             DE.init();
 
@@ -60,18 +68,18 @@ define(['module'], function (module) {
 
                             window.setTimeout(function () {
                                 /*E.setColumns([
-                                    {"id": "CODE", "title": {"EN": "item"}, "key": true, "dataType": "code", "domain": {"codes": [
-                                        {"idCodeList": "ECO_Commodity"}
-                                    ]}, "subject": "item", "supplemental": null},
-                                    {"id": "YEAR", "title": {"EN": "y"}, "key": true, "dataType": "year", "domain": null, "subject": "time", "supplemental": null},
-                                    {"id": "NUMBER", "title": {"EN": "measure"}, "key": false, "dataType": "number", "subject": "value", "supplemental": null},
-                                    {"id": "CODE2", "title": {"EN": "area"}, "key": false, "dataType": "code", "domain": {"codes": [
-                                        {"idCodeList": "ECO_GAUL"}
-                                    ]}, "subject": "geo", "supplemental": null}
-                                ]);*/
+                                 {"id": "CODE", "title": {"EN": "item"}, "key": true, "dataType": "code", "domain": {"codes": [
+                                 {"idCodeList": "ECO_Commodity"}
+                                 ]}, "subject": "item", "supplemental": null},
+                                 {"id": "YEAR", "title": {"EN": "y"}, "key": true, "dataType": "year", "domain": null, "subject": "time", "supplemental": null},
+                                 {"id": "NUMBER", "title": {"EN": "measure"}, "key": false, "dataType": "number", "subject": "value", "supplemental": null},
+                                 {"id": "CODE2", "title": {"EN": "area"}, "key": false, "dataType": "code", "domain": {"codes": [
+                                 {"idCodeList": "ECO_GAUL"}
+                                 ]}, "subject": "geo", "supplemental": null}
+                                 ]);*/
 
 
-                                $('#DSDEditorContainer').hide();
+                                //$('#DSDEditorContainer').hide();
                                 $('#DataEditorContainer').hide();
 
                             }, 2000);
@@ -88,7 +96,7 @@ define(['module'], function (module) {
                             $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
                                 var newDSD = {"columns": p.payload};
                                 //E.updateDSD("dan3", null, newDSD);
-                                E.updateDSD(uid, null, newDSD);
+                                E.updateDSD(uid, null, newDSD, datasource, contextSys);
 
                                 $('#DSDEditorContainer').hide();
                                 $('#DataEditorContainer').show();
@@ -135,11 +143,11 @@ define(['module'], function (module) {
                                 }
                                 //console.log(meta.dsd);
                                 /*console.log("data");
-                                console.log(data);*/
+                                 console.log(data);*/
 
 
                                 DE.updateData(uid, null, data, function () {
-                                    DE.updateDSD(uid, null, meta.dsd, function () {
+                                    DE.updateDSD(uid, null, meta.dsd, datasource, contextSys, function () {
                                         window.location.reload();
                                     });
                                 });
