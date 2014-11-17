@@ -67,21 +67,7 @@ define(['module'], function (module) {
                             var uid = "";
 
                             window.setTimeout(function () {
-                                /*E.setColumns([
-                                 {"id": "CODE", "title": {"EN": "item"}, "key": true, "dataType": "code", "domain": {"codes": [
-                                 {"idCodeList": "ECO_Commodity"}
-                                 ]}, "subject": "item", "supplemental": null},
-                                 {"id": "YEAR", "title": {"EN": "y"}, "key": true, "dataType": "year", "domain": null, "subject": "time", "supplemental": null},
-                                 {"id": "NUMBER", "title": {"EN": "measure"}, "key": false, "dataType": "number", "subject": "value", "supplemental": null},
-                                 {"id": "CODE2", "title": {"EN": "area"}, "key": false, "dataType": "code", "domain": {"codes": [
-                                 {"idCodeList": "ECO_GAUL"}
-                                 ]}, "subject": "geo", "supplemental": null}
-                                 ]);*/
-
-
-                                //$('#DSDEditorContainer').hide();
                                 $('#DataEditorContainer').hide();
-
                             }, 2000);
 
                             document.body.addEventListener("fx.editor.finish", function (e) {
