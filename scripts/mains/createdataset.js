@@ -60,7 +60,7 @@ define(['module'], function (module) {
                             });
 
                             var datasource = "CountrySTAT";
-                            var contextSys = "CountrySTAT";
+                            var contextSys = "UAE";
 
                             DE.init();
 
@@ -85,7 +85,7 @@ define(['module'], function (module) {
                             }, 2000);
 
                             document.body.addEventListener("fx.editor.finish", function (e) {
-                                console.log(e.detail.data);
+                                //console.log(e.detail.data);
                                 uid = e.detail.data.uid;
 
                                 $('#metadataEditorContainer').hide();
