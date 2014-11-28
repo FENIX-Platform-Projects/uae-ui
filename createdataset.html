@@ -3,55 +3,40 @@
 <head>
 
     <title>FENIX Metadata Editor</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <meta name="description" content="FENIX Structure">
     <meta name="author" content="Daniele Salvatore <daniele.salvatore [at] fao.org>">
     <meta name="author" content="Daniele Olivotti <daniele.olivotti[at]fao.org>">
+    <meta name="author" content="Nicola Selleri <nicola.selleri[at]fao.org>">
 
+    <!-- Third Party CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700|Roboto+Condensed:700,300,400' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-
+    <link rel="stylesheet" href='css/iThing-min.css'/>
     <link href="css/jqwidgets/styles/jqx.base.css" type="text/css"  rel="stylesheet"/>
-    <link rel="stylesheet" href='css/fenix-jqwidgets.css'/>
-
-    <!-- FENIX DEFAULT -->
-    <link rel="stylesheet" href="css/fenix-interface-style.css">
-    <link rel="stylesheet" href="submodules/fenix-ui-DSDEditor/css/fenix-ui-DSDEditor.css" type="text/css" />
     <link rel="stylesheet" href="css/host.css">
-
-    <!-- Bootstrap-tagsinput CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css"/>
-    <!-- Bootstrap date time picker CSS -->
     <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"/>
-    <!-- form validation -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
-    <!-- form progress -->
     <link rel="stylesheet" href="css/formprogress.css"/>
-    <!-- jQWidgets -->
     <link rel="stylesheet" href='http://fenixapps.fao.org/repository/js/jqwidgets/3.1/styles/jqx.base.css'/>
 
 
     <!-- FENIX CSS -->
-    <link rel="stylesheet" href='css/modular-editor.css'/>
-    <link rel="stylesheet" href='css/iThing-min.css'/>
-    <link rel="stylesheet" href='./submodules/fenix-ui-metadata-editor/css/pnotify.css'/>
+    <link rel="stylesheet" href="submodules/fenix-ui-common/css/fenix-style.css">
     <link rel="stylesheet" href='node_modules/nprogress/nprogress.css'/>
-
-    <link rel="stylesheet" href="./submodules/fenix-ui-metadata-editor/css/fenix_interface_structure.css">
-
-
-    <!-- FENIX DEFAULT -->
-    <link rel="stylesheet" href="css/fenix-interface-style.css">
+    <link rel="stylesheet" href='submodules/fenix-ui-metadata-editor/css/pnotify.css'/>
+    <link rel="stylesheet" href="submodules/fenix-ui-DSDEditor/css/fenix-ui-DSDEditor.css" type="text/css" />
+    <link rel="stylesheet" href='submodules/fenix-ui-metadata-editor/css/fenix-metadata-editor.css'/>
     <link rel="stylesheet" href="css/host.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="css/icons/fx-favicon.ico">
 
 </head>
 <body>
@@ -59,38 +44,42 @@
 
 <!-- FENIX DSD Editor-->
 <div class="container">
-    <div class="row">
-
-        <div class="col-md-12 page-header">
-            <h1>Fenix Data Editor</h1>
-
-            <p>Welcome to the Fenix Platform Data Editor. You can use the Column editor on the left (1) to add and modify columns. These are displayed in the right side (2), where you can check your personalized columns.  </p>
+    <div class="row fx-header">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>Fenix Data Editor<small> FENIX</small></h1>
+            </div>
         </div>
-
     </div>
 </div>
 
 
+<button id="debug_skipMeta" type="button" style="display:none">ff</button>
+<!--<button id="debug_skipMeta" type="button">ff</button>-->
 
 <!-- FENIX Metadata Editor-->
 <div id="metadataEditorContainer"></div>
 
 <!-- FENIX DSD Container-->
-<div id="DSDEditorContainer" class="container">
+<div id="DSDEditorContainer" class="container" style="visibility:hidden">
+    <p>Welcome to the Fenix Platform Data Editor. Please start by adding the metadata. Later, you can use the Column editor on the left (1) to add and modify columns. These are displayed in the right side (2), where you can check your personalized columns. </p>
     <div class="row">
         <div class="col-sm-12   ">
-            <div id="mainContainer" class="row"></div>
+            <div id="DSDEditorMainContainer" class="row"></div>
+            Upload a CSV<div id="divUplaodCSV"></div>
             <button id="btnColsEditDone" type="button" class="btn btn-default pull-right">Done</button>
+            <hr>
+            <a href="sampledata/management/fenix_data_upload_sample.csv">Download Sample CSV</a>
+            <hr>
         </div>
     </div>
 </div>
 
-<div id="DataEditorContainer" class="container">
+<div id="DataEditorContainer" class="container" style="visibility:hidden">
     <div class="row">
         <div class="col-xs-12">
             <div id="DataEditorMainContainer"></div>
             <button id="createDatasetEnd" type="button" class="btn btn-default pull-right">Done</button>
-
         </div>
     </div>
 </div>
@@ -105,6 +94,8 @@
 
 </div>
 
+<!-- Javascript
+================================================== -->
 <!-- Javascript
 ================================================== -->
 <script>
@@ -163,14 +154,14 @@
 
     if (getURLParameter("uid") != null && getURLParameter("version") == null) {
         sourceValues = {
-            "url": "http://faostat3.fao.org:7799/v2/msd/resources/metadata/uid/" + getURLParameter("uid") + "?full=true",
+            "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/metadata/uid/" + getURLParameter("uid") + "?full=true",
             "type": "get"
         };
     }
 
     if (getURLParameter("version") != null && getURLParameter("uid") != null) {
         sourceValues = {
-            "url": "http://faostat3.fao.org:7799/v2/msd/resources/metadata/" + getURLParameter("uid") + "/" + getURLParameter("version") + "?full=true",
+            "url": "http://faostat3.fao.org/d3s2/v2/msd/resources/metadata/" + getURLParameter("uid") + "/" + getURLParameter("version") + "?full=true",
             "type": "get"
         };
     }
@@ -207,6 +198,7 @@
     };
 
 </script>
+
 
 <script data-main="scripts/mains/createdataset" src="node_modules/requirejs/require.js"></script>
 

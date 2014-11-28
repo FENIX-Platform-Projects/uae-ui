@@ -2,7 +2,7 @@
 //risoluzione delle dipendenze relativa alla posizione del file questo
 require([
     '../../submodules/fenix-ui-catalog/js/paths',
-    '../../submodules/fenix-ui-analysis/js/paths',
+    '../../submodules/fenix-ui-analysis/js/paths'
 ], function (Catalog, Analysis) {
 
     var override = {
@@ -43,7 +43,15 @@ require([
                 });
 
                 new Analysis().init({
-                    catalog: new Catalog()
+                    catalog: new Catalog({
+                        catalog: {
+                            BLANK_FILTER: 'config/submodules/catalog/uae-catalog-blank-filter.json'
+                        },
+                        results: {
+                            actions: {
+                                EDIT_METADATA: { }
+                            }                        }
+                    })
                 });
 
             });
