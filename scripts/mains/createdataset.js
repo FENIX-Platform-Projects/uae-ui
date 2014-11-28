@@ -71,7 +71,7 @@ define(['module'], function (module) {
                                         datatypes: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Datatypes.json",
                                         //codelists: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Codelists_UNECA.json",
 
-                                        codelists: "config/submodules/DSDEditor/CodelistsUNECA.json",
+                                        codelists: "config/submodules/DSDEditor/CodelistsUAE.json",
                                         servicesUrls: servicesUrls
                                     }, function () {
                                         $('#DSDEditorContainer').hide();
