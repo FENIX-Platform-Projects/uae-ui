@@ -1,0 +1,71 @@
+/* UAE Theme */
+
+.navbar-brand{
+  background-image: url("img/uae-ico.svg") !important; /* To be removed */
+  background-size: 34px 44px !important;
+}
+
+
+.page-header {
+  margin: 20px 0 0 0;
+  border: none;
+
+  h1{
+    text-align: center;
+    font-size: 38px;
+  }
+
+  p{
+    text-align: center;
+  }
+}
+
+.btn{
+  background-color:transparent;
+  color: $fenix-text;
+  border-color: $fenix-text;
+  @include fx-border-radius(0);
+  font-weight: 300;
+  padding: 3px 12px;
+
+  &:hover{
+    background-color: transparent;
+    color: $fx-cool-blue;
+    border-color: $fx-cool-blue;
+  }
+  &:active{
+    background-color: transparent;
+    color: $fx-cool-blue;
+    border-color: $fx-cool-blue;
+    @include fx-box-shadow(0, 0, 0, white);
+  }
+
+}
+
+
+.btn[disabled]{
+  background-color:transparent;
+  color: $fenix-text;
+  border-color: $fenix-text;
+  @include fx-border-radius(0);
+  font-weight: 300;
+  padding: 3px 12px;
+}
+
+.white-inverted{
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+@font-face {
+  font-family: 'fontinregular';
+  src: url('fonts/fontin/fontin-regular-webfont.eot');
+  src: url('fonts/fontin/fontin-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/fontin/fontin-regular-webfont.woff') format('woff'),
+  url('fonts/fontin/fontin-regular-webfont.ttf') format('truetype'),
+  url('fonts/fontin/fontin-regular-webfont.svg#fontinregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
