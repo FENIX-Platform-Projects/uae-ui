@@ -89,7 +89,7 @@ define(['module'], function (module) {
                                     }
                                 });
 
-                                $('body').on("columnEditDone.DSDEditor.fenix", function (e, p) {
+                                $('#btnColsEditDone').click(function () {
                                     var valRes = E.validate();
                                     if (valRes && valRes.length > 0)
                                         return;
