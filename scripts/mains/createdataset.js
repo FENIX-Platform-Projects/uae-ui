@@ -104,7 +104,7 @@ define(['module'], function (module) {
                                 })
 
                                 var datasource = "CountrySTAT";
-                                var contextSys = "UNECA";
+                                var contextSys = "UAE";
 
                                 var dataEditorContainerID = "#DataEditorMainContainer";
                                 DE.init(dataEditorContainerID, { servicesUrls: servicesUrls }, null);
