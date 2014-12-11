@@ -27,6 +27,13 @@
         },
         "subject": "item"
     },
+	{
+        "val": "HS|2012",
+        "text": {
+            "EN": "HS 2012"
+        },
+        "subject": "item"
+    },
     {
         "val": "UAE_UM",
         "text": {
