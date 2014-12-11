@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FENIX</title>
+    <title>United Arab Emirates</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -21,16 +22,10 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="css/icons/fx-favicon.ico">
 
-
-    <!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
-    <script data-main="scripts/mains/index" src="scripts/lib/require.js"></script>
-
 </head>
 <body>
 
-
-
-
+<!-- Upper swiper -->
 <div class="jumbotron-wrapper">
     <div class="container">
         <div class="jumbotron">
@@ -144,25 +139,24 @@
         <div class="col-md-8">
             <h2>Highlights</h2>
 
-
             <br>
+            <div id="home-charts-tab">
 
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Chart 1</a></li>
-                <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Chart 2</a></li>
-                <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">Chart 3</a></li>
-            </ul>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Chart 1</a></li>
+                    <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Chart 2</a></li>
+                    <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">Chart 3</a></li>
+                </ul>
 
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="home"><div id="chart" data-highcharts-chart="0"></div></div>
-                <div role="tabpanel" class="tab-pane fade" id="profile"><div id="chart2" ></div></div>
-                <div role="tabpanel" class="tab-pane fade" id="messages"><div id="chart3" ></div></div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="home"><div id="chart" data-highcharts-chart="0"></div></div>
+                    <div role="tabpanel" class="tab-pane fade" id="profile"><div id="chart2" ></div></div>
+                    <div role="tabpanel" class="tab-pane fade" id="messages"><div id="chart3" ></div></div>
+                </div>
+
             </div>
-
-
-
 
 
         </div>
@@ -444,6 +438,9 @@
 
 
 </div>
+
+<!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
+<script data-main="scripts/mains/index" src="scripts/lib/require.js"></script>
 
 </body>
 </html>
