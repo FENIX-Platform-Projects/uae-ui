@@ -56,27 +56,49 @@ define(['module'], function (module) {
                                     url: 'json/fenix-ui-topmenu_config.json', active: "createdataset"
                                 });
 
+                                //Metadata
 
 
 
-                                var servicesUrls = {
-                                    metadataUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources/metadata",
-                                    dsdUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources/dsd",
-                                    dataUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources"
+                                var uid = "";
+                                var version = "";
+                                var csvData;
+
+                                var cfgDSDEdit = {
+                                    columnEditor: { codelists: "config/submodules/DSDEditor/CodelistsUAE.json" },
+                                    D3SConnector: {
+                                        datasource: "CountrySTAT",
+                                        contextSystem: "UAE",
+                                        metadataUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources/metadata",
+                                        dsdUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources/dsd",
+                                        dataUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources",
+                                        codelistUrl: "http://faostat3.fao.org:7799/v2/msd/resources/data"
+                                    }
                                 };
+                                var cfgDataEdit = {
+                                    D3SConnector: {
+                                        datasource: "CountrySTAT",
+                                        contextSystem: "UAE",
+                                        metadataUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources/metadata",
+                                        dsdUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources/dsd",
+                                        dataUrl: "http://faostat3.fao.org/d3s2/v2/msd/resources",
+                                        codelistUrl: "http://faostat3.fao.org:7799/v2/msd/resources/data"
+                                    }
+                                }
                                 var DSDEditorContainerID = '#DSDEditorMainContainer';
-                                E.init(DSDEditorContainerID,
-                                    {
-                                        subjects: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Subjects.json",
-                                        datatypes: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Datatypes.json",
-                                        //codelists: "submodules/fenix-ui-DSDEditor/config/DSDEditor/Codelists_UNECA.json",
+                                var dataEditorContainerID = "#DataEditorMainContainer";
 
-                                        codelists: "config/submodules/DSDEditor/CodelistsUAE.json",
-                                        servicesUrls: servicesUrls
-                                    }, function () {
-                                        $('#DSDEditorContainer').hide();
-                                    });
+                                E.init(DSDEditorContainerID, cfgDSDEdit, function () {
+                                    $('#DSDEditorContainer').hide();
 
+                                    //TEST
+                                    /*E.loadDSD("dan", null, function (d) {
+                                        E.setColumns(d.dsd.columns);
+                                    });*/
+                                    //E.setColumns([{ "id": "YEAR", "title": { "EN": "yy" }, "key": true, "dataType": "year", "domain": null, "subject": "time", "supplemental": null }, { "id": "CODE", "title": { "EN": "iii" }, "key": true, "dataType": "code", "domain": { "codes": [{ "idCodeList": "HS", "version": "2012" }] }, "subject": "item", "supplemental": null }, { "id": "NUMBER", "title": { "EN": "vv" }, "key": false, "dataType": "number", "subject": "value", "supplemental": null }]);
+                                    
+
+                                });
                                 DUpload.init('#divUplaodCSV');
                                 $('body').on("csvUploaded.DataUpload.fenix", function (evt, contents) {
                                     var existingCols = E.getColumns();
@@ -85,43 +107,37 @@ define(['module'], function (module) {
                                         over = confirm("Overwrite?");
                                     if (over) {
                                         E.setColumns(contents.columns);
-                                        DE.setData(contents.data);
+                                        //console.log(contents.data);
+                                        csvData = contents.data;
                                     }
                                 });
+
+                                //DataEditor
+                                DE.init(dataEditorContainerID, cfgDataEdit, function () { $('#DataEditorContainer').hide(); });
 
                                 $('#btnColsEditDone').click(function () {
                                     var valRes = E.validate();
                                     if (valRes && valRes.length > 0)
                                         return;
-                                    var newDSD = { "columns": p.payload };
-                                    E.updateDSD(uid, version, newDSD, datasource, contextSys);
+                                    var newDSD = { columns: E.getColumns() };
+                                    try {
+                                        E.updateDSD(uid, version, newDSD, null);
+                                    }
+                                    catch (e)
+                                    {
+                                        alert('Error updating Data Structure Definition');
+                                    }
 
                                     $('#DSDEditorContainer').hide();
                                     $('#DataEditorContainer').show();
                                     $('#DataEditorContainer').css('visibility', '');
 
-                                    DE.set({ "dsd": newDSD });
-                                })
-
-                                var datasource = "CountrySTAT";
-                                var contextSys = "UAE";
-
-                                var dataEditorContainerID = "#DataEditorMainContainer";
-                                DE.init(dataEditorContainerID, { servicesUrls: servicesUrls }, null);
-
-                                var uid = "";
-                                var version = "";
-                                window.setTimeout(function () {
-                                    $('#DataEditorContainer').hide();
-                                }, 2000);
-
-
-                                $('#debug_skipMeta').click(function () {
-                                    $('#metadataEditorContainer').hide();
-                                    $('#DSDEditorContainer').show();
-                                    $('#DSDEditorContainer').css('visibility', '');
+                                    DE.setDSD(newDSD, function () {
+                                        if (csvData) DE.setData(csvData);
+                                    });
                                 });
 
+                                //METADATA Editor end
                                 document.body.addEventListener("fx.editor.finish", function (e) {
                                     console.log("EDITOR FINISH");
 
@@ -133,63 +149,22 @@ define(['module'], function (module) {
                                     $('#DSDEditorContainer').css('visibility', '');
                                 }, false);
 
+                                //Data editor end
                                 $('#createDatasetEnd').on('click', function () {
-
+                                    var newDSD = DE.getDSDWithDistincts();
                                     var data = DE.getData();
-                                    var meta = DE.getMeta();
-                                    var distincts = DE.getDistincts();
 
-                                    if (distincts) {
-                                        for (var colI = 0; colI < meta.dsd.columns.length; colI++) {
-                                            var colId = meta.dsd.columns[colI].id;
-                                            var colType = meta.dsd.columns[colI].dataType;
-
-                                            if (distincts.hasOwnProperty(colId)) {
-                                                var col = meta.dsd.columns[colI];
-                                                if (colType == "code") {
-                                                    var idCL = col.domain.codes[0].idCodeList;
-                                                    var verCL = col.domain.codes[0].version;
-
-                                                    if (verCL)
-                                                        col.values = {
-                                                            codes: [
-                                                                { idCodeList: idCL, version: verCL }
-                                                            ]
-                                                        };
-                                                    else
-                                                        col.values = {
-                                                            codes: [
-                                                                { idCodeList: idCL }
-                                                            ]
-                                                        };
-                                                    col.values.codes[0].codes = [];
-                                                    for (var i = 0; i < distincts[colId].length; i++) {
-                                                        col.values.codes[0].codes.push({ code: distincts[colId][i] });
-                                                    }
-                                                }
-                                                else {
-                                                    col.values = { timeList: distincts[colId] };
-                                                }
-                                            }
-                                        }
-
-                                    }
-
-                                    //console.log(meta.dsd);
-                                    /*console.log("data");
-                                     console.log(data);*/
-
-
-                                    DE.updateData(uid, null, data, function () {
-                                        console.log("rel1");
-                                        DE.updateDSD(uid, null, meta.dsd, datasource, contextSys, function () {
-                                            console.log("rel2");
-                                            window.location.reload();
-                                        });
+                                    DE.updateDSD(uid, version, newDSD, function () {
+                                        DE.updateData(uid, version, data, null);
                                     });
-
-
                                 })
+                                //DEBUG
+                                $('#debug_skipMeta').click(function () {
+                                    $('#metadataEditorContainer').hide();
+                                    $('#DSDEditorContainer').show();
+                                    $('#DSDEditorContainer').css('visibility', '');
+                                    uid = "dan";
+                                });
                             });
                         });
                     });
@@ -197,5 +172,4 @@ define(['module'], function (module) {
             }, 0);
         });
     });
-
 });
