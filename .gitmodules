@@ -22,3 +22,6 @@
 [submodule "submodules/fenix-ui-olap"]
 	path = submodules/fenix-ui-olap
 	url = https://github.com/FENIX-Platform/fenix-ui-olap.git
+[submodule "submodules/fenix-ui-filter"]
+	path = submodules/fenix-ui-filter
+	url = https://github.com/FENIX-Platform/fenix-ui-filter.git

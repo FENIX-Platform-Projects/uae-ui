@@ -3,8 +3,9 @@
 require([
     '../../submodules/fenix-ui-catalog/js/paths',
     '../../submodules/fenix-ui-analysis/js/paths',
+    '../../submodules/fenix-ui-filter/src/js/paths',
     '../../submodules/fenix-ui-common/js/Compiler'
-], function (Catalog, Analysis, Compiler) {
+], function (Catalog, Analysis, Filter, Compiler) {
 
     var override = {
         "fenix-ui-topmenu": '../components/fenix-ui-topmenu'
@@ -15,9 +16,13 @@ require([
 
     var analysisConfig = Analysis;
     analysisConfig['baseUrl'] = '../../submodules/fenix-ui-analysis/js/';
-    analysisConfig['override'] = override;
+    //analysisConfig['override'] = override;
 
-    Compiler.resolve([catalogConfig, analysisConfig], {"FENIX_CDN": "//fenixapps.fao.org/repository"});
+    var filtersConfig = Filter;
+    filtersConfig['baseUrl'] = '../../submodules/fenix-ui-filter/src/js/';
+    filtersConfig['override'] = override;
+
+    Compiler.resolve([catalogConfig, analysisConfig, filtersConfig], {"FENIX_CDN": "//fenixapps.fao.org/repository"});
 
     require(["fenix-ui-topmenu/main"], function (TopMenu) {
 
@@ -25,7 +30,10 @@ require([
             url: 'json/fenix-ui-topmenu_config.json', active: "analysis"
         });
 
-        require(['fx-ana/start', 'fx-cat-br/start'], function (Analysis, Catalog) {
+        require(['fx-ana/start', 'fx-cat-br/start', 'fx-filter/start'],
+            function (Analysis, Catalog, Filter) {
+
+                //new Filter ( your config)
 
             new Analysis().init({
                 catalog: new Catalog({
