@@ -33,14 +33,13 @@ define([
                         labels : {
                             EN : 'Open Resource'
                         }
-
                     }
                 }
             }
 
         });
 
-        this.filter = new Filter().init();
+        this.filter = new Filter();
     };
 
     Application.prototype.bindEventListeners = function () {
@@ -48,6 +47,7 @@ define([
         var self = this;
 
         amplify.subscribe('fx.widget.catalog.open', function(){
+            console.log("open catalog")
             //that.closeOverlay();
 
             //here
@@ -75,6 +75,7 @@ define([
         $("#btn").on('click', that.openOverlay);
 
         $(".closeOverlay").on('click', function (e) {
+            console.log("close overlay")
             e.stopPropagation();
             that.closeOverlay();
         });
@@ -89,6 +90,7 @@ define([
                 height: "100%",
                 ease: Power2.easeInOut,
                 onComplete: function () {
+                    console.log("on complete open the catalog")
                     $('.overlay-content').fadeIn('fast');
                 }
             });
@@ -96,12 +98,35 @@ define([
 
     Application.prototype.closeOverlay = function () {
         $('.overlay-content').fadeOut("fast", function () {
+            console.log("fadeout fast")
 
             $('.overlay-content').hide();
             TweenLite.to($("#overlay"), 1, { width: "0%", height: "0%", ease: Power2.easeInOut});
 
         })
     };
+
+    //FILTER FUNCTION
+    Application.prototype.filterApply = function () {
+        var that = this;
+
+        // Object { code_ITEM=[2], code_FLAG=[1], year_TIME=[2]}
+        $('.overlay-content').fadeOut("fast", function () {
+            $('.overlay-content').hide();
+            TweenLite.to($("#overlay"), 1, { width: "0%", height: "0%", ease: Power2.easeInOut});
+            //that.getData(payload, $.proxy(that.addItemToDesk, that));
+//            that.showFilter();
+
+            var selected_filter_values = that.filter.getValues(true);
+            console.log("selected_filter_values")
+            console.log(selected_filter_values)
+            var original_data = that.filter.original_data;
+            var filtered_data = that.filter.dataParser(selected_filter_values);
+
+            that.addItemToDesk(filtered_data);
+        })
+    };
+
 
     return Application;
 
