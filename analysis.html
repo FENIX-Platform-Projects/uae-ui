@@ -25,12 +25,9 @@
 
         <!-- FENIX CSS-->
         <link rel="stylesheet" href="submodules/fenix-ui-common/css/fenix-style.css">
+        <link rel="stylesheet" href='submodules/fenix-ui-filter/src/css/main.css'/>
         <link rel="stylesheet" href='submodules/fenix-ui-catalog/css/fenix-ui-catalog.css'/>
         <link rel="stylesheet" href='css/host.css'/>
-        <!--Filter-->
-        <link rel="stylesheet" href='submodules/fenix-ui-filter/src/css/host.css'/>
-        <link rel="stylesheet" href='submodules/fenix-ui-filter/src/css/main.css'/>
-
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="css/icons/fx-favicon.ico">
@@ -90,13 +87,12 @@
 
         <div class="overlay-content">
             <div id="catalogContainer"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="filterContainer"><div id="fx-ana-filter-container"></div></div>
-                    </div>
+            <div id="filterHolder">
+                <div id="filterContainer">
+                    <button id="get_filter_values"> GET VALUES</button>
                 </div>
             </div>
+
         </div>
     </div>
 

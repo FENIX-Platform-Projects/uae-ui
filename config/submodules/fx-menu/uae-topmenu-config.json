@@ -50,6 +50,9 @@
          }
       }
    ],
+
+   "type" : "fixed-top",
+
    "brand":{
       "target":"index.html"
    },
