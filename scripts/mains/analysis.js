@@ -39,6 +39,9 @@ require([
             // Underscore and Backbone are not AMD-capable per default,
             // so we need to use the AMD wrapping of RequireJS
             shim: {
+                'amplify' : {
+                    deps : ['jquery']
+                }
             }
             // For easier development, disable browser caching
             // Of course, this should be removed in a production environment
