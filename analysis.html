@@ -27,6 +27,10 @@
         <link rel="stylesheet" href="submodules/fenix-ui-common/css/fenix-style.css">
         <link rel="stylesheet" href='submodules/fenix-ui-catalog/css/fenix-ui-catalog.css'/>
         <link rel="stylesheet" href='css/host.css'/>
+        <!--Filter-->
+        <link rel="stylesheet" href='submodules/fenix-ui-filter/src/css/host.css'/>
+        <link rel="stylesheet" href='submodules/fenix-ui-filter/src/css/main.css'/>
+
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="css/icons/fx-favicon.ico">
@@ -97,7 +101,8 @@
     </div>
 
     <!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
-    <script data-main="scripts/mains/analysis"  src="node_modules/requirejs/require.js"></script>
+    <!--<script data-main="scripts/mains/analysis"  src="node_modules/requirejs/require.js"></script>-->
+    <script data-main="scripts/mains/analysis" src="//fenixapps.fao.org/repository/js/requirejs/2.1.15/require.min.js"></script>
 
     </body>
 </html>
