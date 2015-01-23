@@ -21,17 +21,22 @@ define([
 
     Application.prototype.initFxComponents = function () {
 
-        this.analysis = new Analysis().init({
-            results: {
-                actions: {
-                    EDIT_METADATA: {}
-                }
-            }
-        });
+        this.analysis = new Analysis().init();
 
         this.catalog = new Catalog().init({
             BLANK_FILTER: 'config/submodules/catalog/uae-catalog-blank-filter.json',
-            container: document.querySelector('#catalogContainer')
+            container: document.querySelector('#catalogContainer'),
+            results: {
+                actions: {
+                    SELECT_RESOURCE: {
+                        event: 'open',
+                        labels : {
+                            EN : 'Open Resource'
+                        }
+
+                    }
+                }
+            }
 
         });
 
@@ -40,14 +45,19 @@ define([
 
     Application.prototype.bindEventListeners = function () {
 
-        amplify.subscribe('fx.widget.catalog.', function(){
-            alert()
+        var self = this;
+
+        amplify.subscribe('fx.widget.catalog.open', function(){
+            //that.closeOverlay();
+
+            //here
+
         })
 
 
 /*        *//*Event triggered by the catalog when "Open Data" button is clicked*//*
         $(this.o.selectors.EVENTS_LISTENERS).on('analyze', function (e, payload) {
-            that.closeOverlay();
+
             that.getData(payload, $.proxy(that.addItemToDesk, that))
         });*/
 
