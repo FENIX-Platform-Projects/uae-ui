@@ -40,7 +40,9 @@ define([
 
     Application.prototype.bindEventListeners = function () {
 
-        amplify.subscribe()
+        amplify.subscribe('fx.widget.catalog.', function(){
+            alert()
+        })
 
 
 /*        *//*Event triggered by the catalog when "Open Data" button is clicked*//*
