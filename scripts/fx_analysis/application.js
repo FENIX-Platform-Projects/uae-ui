@@ -71,9 +71,7 @@ define([
 
     Application.prototype.addToFilter = function (resource) {
 
-        console.log(resource)
-
-        console.log(FilterUtils.createConfiguration(resource))
+        this.resource = resource;
 
         this.filter.add(FilterUtils.createConfiguration(resource));
     };
@@ -82,6 +80,7 @@ define([
     Application.prototype.bindEventListeners = function () {
 
         amplify.subscribe('fx.widget.catalog.open', this, function (resource) {
+
 
             $(s.CATALOG_CONTAINER).hide();
 
@@ -116,7 +115,9 @@ define([
     };
 
     Application.prototype.filterResource = function () {
-       console.log(this.filter.getValues())
+        var filtered = FilterUtils.filterData(this.resource, this.filter.getValues());
+        this.analysis.add(filtered);
+        this.closeOverlay();
     };
 
     Application.prototype.initAnimation = function () {
@@ -183,7 +184,6 @@ define([
             that.addItemToDesk(filtered_data);
         })
     };
-
 
     return Application;
 

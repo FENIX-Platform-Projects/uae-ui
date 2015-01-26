@@ -30,7 +30,8 @@ require([
             // Specify the paths of vendor libraries
             paths: {
                 config : '../config',
-                'amplify' : '{FENIX_CDN}/js/amplify/1.1.2/amplify.min'
+                'amplify' : '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
+                'jqwidgets': '{FENIX_CDN}/js/jqwidgets/3.1/jqx-all'
             },
 
             // Underscore and Backbone are not AMD-capable per default,
