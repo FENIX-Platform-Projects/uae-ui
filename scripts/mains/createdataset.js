@@ -136,7 +136,7 @@ define(['module'], function (module) {
                                         if (csvData) DE.setData(csvData);
                                     });
                                 });
-
+node_modules
                                 //METADATA Editor end
                                 document.body.addEventListener("fx.editor.finish", function (e) {
                                     console.log("EDITOR FINISH");

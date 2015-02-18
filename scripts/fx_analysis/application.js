@@ -16,7 +16,10 @@ define([
         CATALOG_CONTAINER: '#catalogContainer',
         FILTER_CONTAINER: '#filterContainer',
         FILTER_HOLDER : '#filterHolder',
-        FILTER_BTN : '#get_filter_values'
+        FILTER_BTN : '#get_filter_values',
+        events: {
+            FILTER_OPEN_WRAPPER_APP: "filterOpenWrapperApp"
+        }
     };
 
     function Application(options) {
@@ -24,7 +27,7 @@ define([
         if (this.o === undefined) {
             this.o = {};
         }
-        //$.extend(true, this.o, defaultOptions, options);
+        $.extend(true, this.o, s, options);
     }
 
     Application.prototype.init = function () {
@@ -53,14 +56,15 @@ define([
                     }
                 }
             }
-
         });
 
-        this.filter = new Filter();
-        this.filter.init({
-            container: s.FILTER_CONTAINER,
-            plugin_prefix: '../../../submodules/fenix-ui-filter/'
-        });
+//        this.filterUtils = new FilterUtils();
+//
+//        this.filter = new Filter();
+//        this.filter.init({
+//            container: s.FILTER_CONTAINER,
+//            plugin_prefix: '../../../submodules/fenix-ui-filter/'
+//        });
 
         //TopMenu
         this.topMenu = new Menu({
@@ -71,52 +75,56 @@ define([
 
     Application.prototype.addToFilter = function (resource) {
 
-        this.resource = resource;
-
-        this.filter.add(FilterUtils.createConfiguration(resource));
+        this.resource = {original_data :resource};
+        this.recreateFilter(this, this.resource);
     };
 
 
     Application.prototype.bindEventListeners = function () {
 
+        var that = this;
         amplify.subscribe('fx.widget.catalog.open', this, function (resource) {
-
-
             $(s.CATALOG_CONTAINER).hide();
-
             this.analysis.getData(resource, $.proxy(this.addToFilter, this))
-
         });
 
         $(s.FILTER_BTN).on('click', $.proxy(this.filterResource , this));
 
-
-        /*        */
-        /*Event triggered by the catalog when "Open Data" button is clicked*/
-        /*
-         $(this.o.selectors.EVENTS_LISTENERS).on('analyze', function (e, payload) {
-
-         that.getData(payload, $.proxy(that.addItemToDesk, that))
-         });*/
-
-
-        /*
-         * FILTER
-         *
-         *
-         *         $('body').on("fx.host.component.ready", function (event, properties) {
-
-         //The host can set now the domain
-         fc.setDomain("FirstComponent", [{"label": "l10", "value":"v10"}, {"label": "l20", "value":"v20"}]);
-         });
-         * */
-
-
+        amplify.subscribe(that.o.events.FILTER_OPEN_WRAPPER_APP, function (container, model) {
+            that.resource = model;
+            that.recreateFilter(that, model);
+        });
     };
 
+    Application.prototype.recreateFilter = function (obj, model) {
+
+        this.openOverlay(function() {
+
+            $(s.FILTER_HOLDER).show();
+            $(s.CATALOG_CONTAINER).hide();
+
+            obj.filter = new Filter();
+            obj.filter.init({
+                container: s.FILTER_CONTAINER,
+                plugin_prefix: '../../../submodules/fenix-ui-filter/'
+            });
+
+            obj.filter.original_data = model.original_data;
+
+            this.filterUtils = new FilterUtils();
+
+            this.filter.add(this.filterUtils.createConfiguration(model));
+        });
+    }
+
     Application.prototype.filterResource = function () {
-        var filtered = FilterUtils.filterData(this.resource, this.filter.getValues());
-        this.analysis.add(filtered);
+        var selected_data = this.filter.getValues();
+        var filtered = (this.filterUtils.filterData(this.resource, this.filter.getValues())).original_data;
+
+        var objectToAnalysis = {};
+        $.extend(true, objectToAnalysis, {original_data : this.resource.original_data, filtered_data : filtered, selected_data : selected_data});
+
+        this.analysis.add(objectToAnalysis);
         this.closeOverlay();
     };
 
@@ -129,13 +137,15 @@ define([
         $("#btn").on('click', that.openOverlay);
 
         $(".closeOverlay").on('click', function (e) {
-            console.log("close overlay")
             e.stopPropagation();
             that.closeOverlay();
         });
     };
 
-    Application.prototype.openOverlay = function () {
+    Application.prototype.openOverlay = function (cb) {
+
+        //var callback=  $.proxy(cb, this);
+        var callback = typeof  cb === 'function' ? $.proxy(cb, this) : null;
 
         TweenLite.to(
             document.querySelector("#overlay"), 1,
@@ -145,6 +155,9 @@ define([
                 ease: Power2.easeInOut,
                 onComplete: function () {
                     $('.overlay-content').fadeIn('fast');
+                    //callback();
+                    if (callback)
+                        {callback();}
                 }
             });
     };
@@ -155,35 +168,30 @@ define([
             $('.overlay-content').hide();
             TweenLite.to($("#overlay"), 1, {
                 width: "0%", height: "0%", ease: Power2.easeInOut, onComplete: function () {
-
                     $(s.FILTER_HOLDER).hide();
                     $(s.CATALOG_CONTAINER).show();
                 }
             });
-
         })
     };
 
-    //FILTER FUNCTION
-    Application.prototype.filterApply = function () {
-        var that = this;
-
-        // Object { code_ITEM=[2], code_FLAG=[1], year_TIME=[2]}
-        $('.overlay-content').fadeOut("fast", function () {
-            $('.overlay-content').hide();
-            TweenLite.to($("#overlay"), 1, {width: "0%", height: "0%", ease: Power2.easeInOut});
-            //that.getData(payload, $.proxy(that.addItemToDesk, that));
-//            that.showFilter();
-
-            var selected_filter_values = that.filter.getValues(true);
-            console.log("selected_filter_values")
-            console.log(selected_filter_values)
-            var original_data = that.filter.original_data;
-            var filtered_data = that.filter.dataParser(selected_filter_values);
-
-            that.addItemToDesk(filtered_data);
-        })
-    };
+//    //FILTER FUNCTION
+//    Application.prototype.filterApply = function () {
+//        var that = this;
+//
+//        // Object { code_ITEM=[2], code_FLAG=[1], year_TIME=[2]}
+//        $('.overlay-content').fadeOut("fast", function () {
+//            $('.overlay-content').hide();
+//            TweenLite.to($("#overlay"), 1, {width: "0%", height: "0%", ease: Power2.easeInOut});
+//            var selected_filter_values = that.filter.getValues(true);
+//            var original_data = that.filter.original_data;
+//
+//            console.log("After GetValues click")
+//            console.log(selected_filter_values)
+//            var filtered_data = that.filter.dataParser(selected_filter_values);
+//            that.addItemToDesk(filtered_data);
+//        })
+//    };
 
     return Application;
 

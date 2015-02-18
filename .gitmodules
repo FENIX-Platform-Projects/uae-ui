@@ -25,3 +25,6 @@
 [submodule "submodules/fenix-ui-filter"]
 	path = submodules/fenix-ui-filter
 	url = https://github.com/FENIX-Platform/fenix-ui-filter.git
+[submodule "submodules/fenix-ui-menu"]
+	path = submodules/fenix-ui-menu
+	url = https://github.com/FENIX-Platform/fenix-ui-menu.git
