@@ -1,63 +1,52 @@
-// relative or absolute path of Components' main.js
-//risoluzione delle dipendenze relativa alla posizione del file questo
+/*global require*/
 require([
     '../../submodules/fenix-ui-catalog/js/paths',
-    '../../submodules/fenix-ui-analysis/js/paths'
-], function (Catalog, Analysis) {
+    '../../submodules/fenix-ui-analysis/js/paths',
+    '../../submodules/fenix-ui-menu/js/paths',
+    '../../submodules/fenix-ui-common/js/Compiler'
+], function (Catalog, Analysis, Menu, Compiler) {
 
-    var override = {
-        lib: '../lib',
-        "fenix-ui-topmenu": '../components/fenix-ui-topmenu',
-        'jqwidgets': "http://fenixapps.fao.org/repository/js/jqwidgets/3.1/jqx-all",
-        'jqueryui': "http://code.jquery.com/ui/1.10.3/jquery-ui.min",
-        'jquery': '../../node_modules/jquery/dist/jquery.min',
-        'nprogress': '../../node_modules/nprogress/nprogress',
-        'intro': '../../node_modules/intro.js/minified/intro.min',
-        'bootstrap': '../../node_modules/bootstrap/dist/js/bootstrap.min',
-        'packery': '../../node_modules/packery/dist/packery.pkgd.min',
-        'draggabilly': '../../node_modules/draggabilly/dist/draggabilly.pkgd.min',
-        'jstree': '../../node_modules/jstree/dist/jstree.min',
-        'jqrangeslider': '../lib/jqrangeslider',
-        'isotope': "../lib/isotope",
-        'pnotify': '../lib/pnotify'
-    };
+    'use strict';
 
-    /*
-     @param: prefix of Components paths to reference them also in absolute mode
-     @param: paths to override
-     @param: callback function
-     */
-    //risoluzione delle dipendenze relativa alla posizione del file questo
-    Catalog.initialize('../../submodules/fenix-ui-catalog/js', null, function () {
+    var catalogConfig = Catalog;
+    catalogConfig.baseUrl = '../../submodules/fenix-ui-catalog/js';
 
-        Analysis.initialize('../../submodules/fenix-ui-analysis/js/', override, function () {
+    var analysisConfig = Analysis;
+    analysisConfig.baseUrl = '../../submodules/fenix-ui-analysis/js/';
 
-            require([
-                'fx-ana/start'
-                , 'fx-cat-br/start'
-                , 'fenix-ui-topmenu/main'
-            ], function (Analysis, Catalog, TopMenu) {
+    var menuConfig = Menu;
+    menuConfig.baseUrl = '../../submodules/fenix-ui-menu/js';
 
-                new TopMenu({
-                    url: 'json/fenix-ui-topmenu_config.json', active: "analysis"
-                });
+    Compiler.resolve([catalogConfig, analysisConfig, menuConfig], {
+        placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
+        config: {
 
-                new Analysis().init({
-                    catalog: new Catalog({
-                        catalog: {
-                            BLANK_FILTER: 'config/submodules/catalog/uae-catalog-blank-filter.json'
-                        },
-                        results: {
-                            actions: {
-                                EDIT_METADATA: { }
-                            }                        }
-                    })
-                });
+            // Specify the paths of vendor libraries
+            paths: {
+                host: '../analysis/host',
+                underscore: "{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
 
-            });
+                //Components configuration
+                'fx-cat-br/config/services' : '../../config/submodules/catalog/services',
+                'fx-ana/config/services' : '../../config/submodules/analysis/services'
+            },
 
-        });
-
+            // Underscore and Backbone are not AMD-capable per default,
+            // so we need to use the AMD wrapping of RequireJS
+            shim: {
+                underscore: {
+                    exports: '_'
+                }
+            }
+            // For easier development, disable browser caching
+            // Of course, this should be removed in a production environment
+            //, urlArgs: 'bust=' +  (new Date()).getTime()
+        }
     });
 
+    require(['host'], function (Host) {
+
+        new Host().start();
+
+    });
 });

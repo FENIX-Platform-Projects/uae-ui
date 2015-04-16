@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FENIX</title>
+    <title>United Arab Emirates</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -21,16 +22,10 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="css/icons/fx-favicon.ico">
 
-
-    <!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
-    <script data-main="scripts/mains/index" src="scripts/lib/require.js"></script>
-
 </head>
 <body>
 
-
-
-
+<!-- Upper swiper -->
 <div class="jumbotron-wrapper">
     <div class="container">
         <div class="jumbotron">
@@ -38,15 +33,18 @@
             <div id='swiper-banner' class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide red-slide">
-                        <h1>United Arab Emirates</h1>
+                        <!--<h1>United Arab Emirates</h1>-->
 
-                        <h2>National Bureau of Statistics</h2>
+                        <!--<h2>National Bureau of Statistics</h2>-->
 
-                        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus,
-                            tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                            amet.</p>
+                        <!--<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus,-->
+                            <!--tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit-->
+                            <!--amet.</p>-->
 
-                        <p><a role="button" href="#" class="btn btn-lg btn-default white-inverted">Get started today</a>
+                        <!--<p><a role="button" href="#" class="btn btn-lg btn-default white-inverted">Get started today</a>-->
+
+                        <img class="uae-home-big-logo" src="css/img/uae-big-logo.svg" width="132px" height="170px">
+
                         </p>
                     </div>
                     <div class="swiper-slide blue-slide">
@@ -141,25 +139,24 @@
         <div class="col-md-8">
             <h2>Highlights</h2>
 
-
             <br>
+            <div id="home-charts-tab">
 
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Chart 1</a></li>
-                <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Chart 2</a></li>
-                <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">Chart 3</a></li>
-            </ul>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">Chart 1</a></li>
+                    <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Chart 2</a></li>
+                    <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">Chart 3</a></li>
+                </ul>
 
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="home"><div id="chart" data-highcharts-chart="0"></div></div>
-                <div role="tabpanel" class="tab-pane fade" id="profile"><div id="chart2" ></div></div>
-                <div role="tabpanel" class="tab-pane fade" id="messages"><div id="chart3" ></div></div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="home"><div id="chart" data-highcharts-chart="0"></div></div>
+                    <div role="tabpanel" class="tab-pane fade" id="profile"><div id="chart2" ></div></div>
+                    <div role="tabpanel" class="tab-pane fade" id="messages"><div id="chart3" ></div></div>
+                </div>
+
             </div>
-
-
-
 
 
         </div>
@@ -441,6 +438,9 @@
 
 
 </div>
+
+<!-- data-main attribute tells require.js to load scripts/main.js after require.js loads. -->
+<script data-main="scripts/mains/index" src="scripts/lib/require.js"></script>
 
 </body>
 </html>

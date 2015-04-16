@@ -22,3 +22,15 @@
 [submodule "submodules/fenix-ui-olap"]
 	path = submodules/fenix-ui-olap
 	url = https://github.com/FENIX-Platform/fenix-ui-olap.git
+[submodule "submodules/fenix-ui-menu"]
+	path = submodules/fenix-ui-menu
+	url = https://github.com/FENIX-Platform/fenix-ui-menu
+[submodule "submodules/fenix-ui-chart-creator"]
+	path = submodules/fenix-ui-chart-creator
+	url = https://github.com/FENIX-Platform/fenix-ui-chart-creator
+[submodule "submodules/fenix-ui-map-creator"]
+	path = submodules/fenix-ui-map-creator
+	url = https://github.com/FENIX-Platform/fenix-ui-map-creator
+[submodule "submodules/fenix-ui-table-creator"]
+	path = submodules/fenix-ui-table-creator
+	url = https://github.com/FENIX-Platform/fenix-ui-table-creator

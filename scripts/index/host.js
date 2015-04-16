@@ -9,6 +9,8 @@ define([
 
     Host.prototype.initFenixComponent = function () {
 
+        var self= this;
+
         new TopMenu({
             url : 'json/fenix-ui-topmenu_config.json'
         });
@@ -17,7 +19,13 @@ define([
         this.initChartSwiper();
 
         this.initLogin();
+
+        //very temp solution
         this.initCharts();
+        $('#home-charts-tab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            self.initCharts();
+        });
+
 
     };
 
@@ -65,7 +73,6 @@ define([
 
 
     };
-
 
     Host.prototype.initBannerSwiper = function () {
 
@@ -977,9 +984,7 @@ define([
             ]
         });
 
-    }
-
-
+    };
 
     return Host;
 
