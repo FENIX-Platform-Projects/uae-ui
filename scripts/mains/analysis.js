@@ -3,8 +3,9 @@ require([
     '../../submodules/fenix-ui-catalog/js/paths',
     '../../submodules/fenix-ui-analysis/js/paths',
     '../../submodules/fenix-ui-menu/js/paths',
+    '../../submodules/fenix-ui-table-creator/src/js/paths',
     '../../submodules/fenix-ui-common/js/Compiler'
-], function (Catalog, Analysis, Menu, Compiler) {
+], function (Catalog, Analysis, Menu, TableCreator, Compiler) {
 
     'use strict';
 
@@ -17,7 +18,10 @@ require([
     var menuConfig = Menu;
     menuConfig.baseUrl = '../../submodules/fenix-ui-menu/js';
 
-    Compiler.resolve([catalogConfig, analysisConfig, menuConfig], {
+    var tableCreatorConfig = TableCreator;
+    tableCreatorConfig.baseUrl = '../../submodules/fenix-ui-table-creator/src/js';
+
+    Compiler.resolve([catalogConfig, analysisConfig, menuConfig, tableCreatorConfig], {
         placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
         config: {
 
