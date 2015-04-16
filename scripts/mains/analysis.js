@@ -4,8 +4,10 @@ require([
     '../../submodules/fenix-ui-analysis/js/paths',
     '../../submodules/fenix-ui-menu/js/paths',
     '../../submodules/fenix-ui-table-creator/src/js/paths',
+    '../../submodules/fenix-ui-chart-creator/src/js/paths',
+    '../../submodules/fenix-ui-map-creator/src/js/paths',
     '../../submodules/fenix-ui-common/js/Compiler'
-], function (Catalog, Analysis, Menu, TableCreator, Compiler) {
+], function (Catalog, Analysis, Menu, TableCreator, ChartCreator, MapCreator, Compiler) {
 
     'use strict';
 
@@ -21,7 +23,13 @@ require([
     var tableCreatorConfig = TableCreator;
     tableCreatorConfig.baseUrl = '../../submodules/fenix-ui-table-creator/src/js';
 
-    Compiler.resolve([catalogConfig, analysisConfig, menuConfig, tableCreatorConfig], {
+    var chartCreatorConfig = ChartCreator;
+    chartCreatorConfig.baseUrl = '../../submodules/fenix-ui-chart-creator/src/js';
+
+    var mapCreatorConfig = MapCreator;
+    mapCreatorConfig.baseUrl = '../../submodules/fenix-ui-map-creator/src/js';
+
+    Compiler.resolve([catalogConfig, analysisConfig, menuConfig, tableCreatorConfig, chartCreatorConfig, mapCreatorConfig], {
         placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
         config: {
 
