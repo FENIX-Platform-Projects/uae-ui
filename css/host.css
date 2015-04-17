@@ -2005,8 +2005,7 @@ p.fx-strong {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
-  border-radius: 0;
-  display: none; }
+  border-radius: 0; }
 
 .fx-map {
   position: absolute;
