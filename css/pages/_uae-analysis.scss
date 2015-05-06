@@ -11,3 +11,19 @@
     z-index: 1;
   }
 }
+
+[data-plugin="metadata"] {
+  height: 100%;
+  > .container-fluid {
+   height: 100%;
+    > .row {
+      height: 100%;
+      .metadata_panel_holder {
+        overflow-y: auto;
+
+        height: 424px;
+
+      }
+    }
+  }
+}

@@ -39,11 +39,11 @@ define([
 
     Host.prototype.initFenixComponent = function () {
 
-        this.topmenu = new Menu({
+      /*  this.topmenu = new Menu({
             url: 'json/fenix-ui-topmenu_config.json',
             active: "analysis"
         });
-
+*/
         this.analysis = new Analysis({
             container: document.querySelector(s.ANALYSIS_CONTAINER),
             listenToCatalog : {

@@ -34,3 +34,12 @@
 [submodule "submodules/fenix-ui-table-creator"]
 	path = submodules/fenix-ui-table-creator
 	url = https://github.com/FENIX-Platform/fenix-ui-table-creator
+[submodule "submodules/fenix-ui-metadata-viewer"]
+	path = submodules/fenix-ui-metadata-viewer
+	url = https://github.com/FENIX-Platform/fenix-ui-metadata-viewer
+[submodule "submodules/faostat-ui-commons"]
+	path = submodules/faostat-ui-commons
+	url = https://github.com/FAOSTAT4/faostat-ui-commons
+[submodule "submodules/json-editor-faostat-theme"]
+	path = submodules/json-editor-faostat-theme
+	url = https://github.com/FAOSTAT4/json-editor-faostat-theme

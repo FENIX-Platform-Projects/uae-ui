@@ -2190,6 +2190,16 @@ p.fx-strong {
   right: 0;
   z-index: 1; }
 
+[data-plugin="metadata"] {
+  height: 100%; }
+  [data-plugin="metadata"] > .container-fluid {
+    height: 100%; }
+    [data-plugin="metadata"] > .container-fluid > .row {
+      height: 100%; }
+      [data-plugin="metadata"] > .container-fluid > .row .metadata_panel_holder {
+        overflow-y: auto;
+        height: 424px; }
+
 /* Special Modules */
 /* columns of same height styles */
 .container-xs-height {
