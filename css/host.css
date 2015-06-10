@@ -223,6 +223,12 @@
 .icojam_home2:before {
   content: "\e7c1"; }
 
+.icojam_geography_globe:before {
+  content: "\e7be"; }
+
+.icojam_notebook:before {
+  content: "\e7eb"; }
+
 /* Roboto */
 /* Roboto Import */
 /* Roboto Regular */
@@ -1908,7 +1914,7 @@ input[type="checkbox"]:checked + label {
 
 .jstree-default .jstree-node,
 .jstree-default .jstree-icon {
-  background-image: url("img/treejs-32px.png"); }
+  background-image: url("../submodules/fenix-ui-commoncss/img/treejs-32px.png"); }
 
 .jstree-default .jstree-wholerow-clicked {
   background: none;

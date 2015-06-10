@@ -20,7 +20,7 @@ define([
         OVERLAY: "#overlay",
         OVERLAY_CONTENT: '.overlay-content',
         OVERLAY_OPEN: '.open-overlay',
-        OVERLAY_CLOSE : '.close-overlay'
+        OVERLAY_CLOSE: '.close-overlay'
     };
 
     function Host() {
@@ -39,29 +39,30 @@ define([
 
     Host.prototype.initFenixComponent = function () {
 
-      /*  this.topmenu = new Menu({
-            url: 'json/fenix-ui-topmenu_config.json',
-            active: "analysis"
-        });
-*/
+        /*        this.topmenu = new Menu({
+         url: 'json/fenix-ui-topmenu_config.json',
+         active: "analysis"
+         });*/
+
         this.analysis = new Analysis({
             container: document.querySelector(s.ANALYSIS_CONTAINER),
-            listenToCatalog : {
+            listenToCatalog: {
                 active: true,
                 event: 'fx.widget.catalog.select'
             },
-            stack : {
-                active : true,
+            stack: {
+                active: true,
                 container: document.querySelector(s.MODULES_STACK_CONTAINER)
             },
-            session : {
-                active : false
+            session: {
+                active: false
             }
         }).init();
 
         this.catalog = new Catalog({
+
             container: document.querySelector(s.CATALOG_CONTAINER),
-            BLANK_FILTER: 'config/submodules/catalog/uae-catalog-blank-filter.json',
+
             results: {
                 actions: {
                     SELECT_RESOURCE: {
@@ -88,8 +89,8 @@ define([
 
         $(s.OVERLAY).show();
         $(s.OVERLAY).css({
-            height : '100%',
-            width : '100%'
+            height: '100%',
+            width: '100%'
         });
         $(s.OVERLAY_CONTENT).fadeIn('fast');
 

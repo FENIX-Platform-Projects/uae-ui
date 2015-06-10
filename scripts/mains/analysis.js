@@ -39,7 +39,7 @@ require([
     faostatCommonsConfig.baseUrl = '../../submodules/faostat-ui-commons/js';
 
     var faostatThemeConfig = FAOSTAT_THEME;
-    faostatThemeConfig['baseUrl'] = '../../submodules/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js';
+    faostatThemeConfig.baseUrl = '../../submodules/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js';
 
     Compiler.resolve([catalogConfig, analysisConfig, menuConfig, tableCreatorConfig, chartCreatorConfig, mapCreatorConfig, metadataViewerConfig, faostatCommonsConfig, faostatThemeConfig], {
         placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
@@ -51,8 +51,9 @@ require([
                 underscore: "{FENIX_CDN}/js/underscore/1.7.0/underscore.min",
 
                 //Components configuration
-                'fx-cat-br/config/services' : '../../config/submodules/catalog/services',
+
                 'fx-ana/config/services' : '../../config/submodules/analysis/services'
+
             },
 
             // Underscore and Backbone are not AMD-capable per default,
