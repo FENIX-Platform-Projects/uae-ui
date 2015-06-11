@@ -1,22 +1,22 @@
 /* UAE Variables */
-
+$fx-ui-common: './';
 // Fenix - Variables
 
 $fx-ui-common : '../submodules/fenix-ui-common';
 
 // Layout
-$host-menu-height : 50px;
+$host-menu-height : 0px;
 
 // Typography
 $small-text : 12px;
-$standard-text-size: 14px;
+$standard-text-size: 12px;
 $standard-text : normal normal 300 $standard-text-size/normal 'Roboto Condensed';
 $standard-text-bold : normal normal 500 14px/normal 'Roboto Condensed';
 $standard-text-big : normal normal 300 16px/normal 'Roboto Condensed';
 
 $fx-text-h1: normal normal 100 36px/normal 'fontinregular';
-$fx-text-h2: normal normal 100 23px/normal 'fontinregular';
-$fx-text-h3: normal normal 300 28px/normal 'Roboto';
+$fx-text-h2: normal normal 100 19px/normal 'fontinregular';
+$fx-text-h3: normal normal 300 16px/normal "Roboto";
 $fx-text-h4: normal normal 500 14px/normal 'Roboto Condensed';
 
 $fx-text-smalltitle-normal: normal normal 400 10px/normal 'Roboto';
@@ -24,7 +24,7 @@ $fx-text-smalltitle-bold: normal normal 700 10px/normal 'Roboto';
 
 // Fenix Colors
 $fenix-standard-blue: rgba(53, 166, 220, 1);
-$fx-cool-blue:  #ca1a33;
+$fx-cool-blue:  #a62d3e;
 $fx-secondary-color: desaturate( $fx-cool-blue, 50% );
 
 $fx-main-color-light: lighten( $fx-cool-blue, 40%); // Ideal for selection
@@ -39,7 +39,10 @@ $fenix-dark-bg: #666666;
 $fenix-light-bg: #f9f7f3;
 $light-purple: #EEEEFF;
 $light-brown: #f3efe0;
+$uae-hr: #cccccc;
 
+
+$quick-bg: #f2f2f2;
 
 $fenix-hr: #d8d8d8;
 

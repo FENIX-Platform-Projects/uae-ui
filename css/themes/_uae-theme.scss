@@ -1,40 +1,116 @@
 /* UAE Theme */
 
-.navbar-brand{
+body{
+  padding-top: 0;
+  background-color: #e2dedf !important;
+}
+
+.uae-header-container{
+  img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+}
+
+.swiper-header-container{
+  padding-right: -15px;
+  padding-left: -15px;
+}
+
+.navbar-brand {
   background-image: url("img/uae-ico.png") !important; /* To be removed */
   background-size: 40px 52px !important;
   background-position: 0 0 !important;
+  display: none !important;
 }
 
+.navbar {
+  background-color: transparent !important;
+  min-height: 30px;
+  margin-bottom: 0;
+  .fx-ul {
+
+    li {
+
+      a, a:active, a:focus, a:hover {
+        color: white;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+
+    .dropdown-menu{
+      a{
+        color: $fx-cool-blue;
+        text-transform: none;
+        font-weight: 300;
+        font-family: "Roboto Condensed";
+      }
+    }
+  }
+
+  .navbar-right{
+    ul{
+      margin-top: 4px;
+
+      li{
+
+
+        a{
+          padding-top: 0;
+          padding-bottom: 0;
+          color: white;
+        }
+      }
+
+    }
+  }
+
+}
+
+
+
+.container {
+  background: white;
+}
+
+.uae-menu-container {
+  background-color: $fx-cool-blue;
+}
 
 .page-header {
   margin: 20px 0 0 0;
   border: none;
 
-  h1{
+  h1 {
     text-align: center;
     font-size: 38px;
   }
 
-  p{
+  p {
     text-align: center;
   }
 }
 
-.btn{
-  background-color:transparent;
+.btn {
+  background-color: transparent;
   color: $fenix-text;
   border-color: $fenix-text;
   @include fx-border-radius(0);
   font-weight: 300;
   padding: 3px 12px;
 
-  &:hover{
+  &:hover {
     background-color: transparent;
     color: $fx-cool-blue;
     border-color: $fx-cool-blue;
   }
-  &:active{
+  &:active {
     background-color: transparent;
     color: $fx-cool-blue;
     border-color: $fx-cool-blue;
@@ -43,9 +119,8 @@
 
 }
 
-
-.btn[disabled]{
-  background-color:transparent;
+.btn[disabled] {
+  background-color: transparent;
   color: $fenix-text;
   border-color: $fenix-text;
   @include fx-border-radius(0);
@@ -53,7 +128,7 @@
   padding: 3px 12px;
 }
 
-.white-inverted{
+.white-inverted {
   background-color: transparent;
   border-color: white;
   color: white;

@@ -10,48 +10,41 @@
 //  padding-top: $host-menu-height;
 //}
 
-
-
-.fx-home-content-grid h1.fx-big-title{
+.fx-home-content-grid h1.fx-big-title {
   font-size: 40px;
   text-align: left;
 }
 
-
-
 /* FENIX UAE - FENIX part of the homepage */
 
-.fx-home-header{
+.fx-home-header {
   text-align: center;
   color: white;
   margin-top: 50px;
-  h1{
+  h1 {
 
     font-size: 59px;
     font-weight: 700;
 
-    em{
+    em {
       font-style: normal;
       font-weight: 100;
     }
   }
 
-  h3{
+  h3 {
     font-size: 16px;
     font-weight: 700;
   }
 
-  img{
+  img {
     position: relative;
     top: -6px;
   }
 
 }
 
-
-
-
-.fx-home-ico-holder{
+.fx-home-ico-holder {
   height: 50px;
   width: 50px;
   border: 1px solid $fenix-text;
@@ -63,20 +56,17 @@
   }
 }
 
-.fx-home-content-grid{
+.fx-home-content-grid {
   text-align: justify;
 
-
-  .fx-home-ico-holder{
+  .fx-home-ico-holder {
     position: absolute;
     left: 0;
     top: 2px;
   }
 
-
-
   h3 {
-    margin-top:0;
+    margin-top: 0;
     margin-bottom: 0;
     font-weight: 400;
     font-size: 14px;
@@ -84,23 +74,23 @@
     text-transform: uppercase;
   }
 
-  .fx-home-categories{
+  .fx-home-categories {
     padding-left: 71px;
     margin-bottom: 20px;
 
     position: relative;
   }
 
-  ul{
-    padding-left:0;
+  ul {
+    padding-left: 0;
     list-style: none;
 
-    li{
+    li {
       margin-bottom: 8px;
       position: relative;
       padding-left: 30px;
 
-      em{
+      em {
         font-style: normal;
         font-size: 10px;
         height: 15px;
@@ -119,63 +109,55 @@
 
   }
 
-  .fx-git-logo{
+  .fx-git-logo {
     margin-top: 23px;
   }
 
-
 }
 
-
-
-
-p.fx-strong{
+p.fx-strong {
   font-weight: 700;
 }
 
-
-
 //////////////////////////////////////
 
-
 /* Map */
-.fm-box{
+.fm-box {
   @include fx-border-radius(0);
   //display: none;
 }
 
-.fx-map{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+//.fx-map{
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
 
-.fx-map-description{
-  h2:first-child{
-    margin-top:0;
+.fx-map-description {
+  h2:first-child {
+    margin-top: 0;
   }
 
 }
 
-
 /* Highchart tabs */
-.nav-tabs > li > a{
+.nav-tabs > li > a {
   @include fx-border-radius(0px);
   border-color: transparent;
   padding: 4px 12px;
   color: $fenix-text;
 }
 
-.nav > li > a:hover, .nav > li > a:focus{
+.nav > li > a:hover, .nav > li > a:focus {
   background-color: transparent;
   border-color: transparent;
 }
 
-.nav-tabs{
+.nav-tabs {
   border: 0;
 }
 
-.tab-content{
+.tab-content {
   margin-top: 20px;
 }
 
@@ -186,27 +168,24 @@ p.fx-strong{
 
 }
 
-.fx-chart-description{
-  h2:first-child{
-    margin-top:70px;
+.fx-chart-description {
+  h2:first-child {
+    margin-top: 70px;
   }
 
 }
 
-
 /* News */
-.news-title{
+.news-title {
   margin-top: 5px;
 }
 
-.title-small-text.news{
+.title-small-text.news {
   top: 0;
   font-weight: 700;
 }
 
-
-
-.title-small-text{
+.title-small-text {
   font-family: Roboto;
   font-size: 10px;
   top: -9px;
@@ -214,19 +193,18 @@ p.fx-strong{
   font-style: normal;
 }
 
-.fx-big-data{
+.fx-big-data {
   font-size: 25px;
   font-weight: 700;
   position: relative;
 
-
 }
 
-.swiper-slide{
+.swiper-slide {
   position: relative;
 }
 
-.uae-home-big-logo{
+.uae-home-big-logo {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -245,7 +223,6 @@ p.fx-strong{
   background-position: 0 8%;
 }
 
-
 .jumbotron, .jumbotron h1, .jumbotron h2 {
   color: white;
   font-weight: normal;
@@ -257,11 +234,11 @@ p.fx-strong{
 }
 
 .jumbotron p {
-  font-size:12px;
+  font-size: 12px;
 }
 
 .jumbotron h1 {
-  font-size:30px;
+  font-size: 30px;
 }
 
 .jumbotron .swiper-container {
@@ -273,19 +250,19 @@ p.fx-strong{
 
 .jumbotron {
 
-//  background-color: $fx-cool-blue;
+  //  background-color: $fx-cool-blue;
 
-  .btn{
+  .btn {
     border-color: white;
     padding: 3px 12px;
 
-    &:hover{
+    &:hover {
       border-color: white;
     }
 
   }
 
-  .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{
+  .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
     background-color: white;
     color: $fx-cool-blue;
 
@@ -293,29 +270,77 @@ p.fx-strong{
 
 }
 
+.uae-events-info {
+  width: 50%;
+  position: relative;
+  top: 20%;
+  left: 20px;
+
+  p{
+    padding: 10px;
+    background-color: $fx-cool-blue;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    background-color: white;
+    padding: 10px;
+    margin-top: 0;
+  }
+  span {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: $fx-cool-blue;
+    color: white;
+    padding: 10px;
+
+  }
+
+  .btn.btn-default{
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    border-color: transparent !important;
+    background-color: white !important;
+    color: $fx-cool-blue !important;
+  }
+
+}
+
+.swiper-header-container{
+  background-image: url(img/home-events-bg.jpg) !important;
+  background-size: cover !important;
+  background-position: 50% 50%;
+}
 
 .swiper-container {
   width: 100%;
-
+  height: 370px;
   color: white;
-
 }
 
 .red-slide {
 
 }
+
 .blue-slide {
 
 }
+
 .orange-slide {
 
 }
+
 .green-slide {
 
 }
+
 .pink-slide {
 
 }
+
 .swiper-slide .title {
   font-style: italic;
   font-size: 42px;
@@ -323,6 +348,7 @@ p.fx-strong{
   margin-bottom: 0;
   line-height: 45px;
 }
+
 .swiper-visible-switch {
   background: $fenix-light-gray;
 }
@@ -331,185 +357,68 @@ p.fx-strong{
   background: white;
 }
 
+.quick-facts {
+  padding: 10px;
+  background-color: $quick-bg;
+  position: relative;
+  right: -16px;
 
 
+  hr {
+    border-top: 1px solid $uae-hr;
+  }
+
+  h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    // border-bottom: 1px solid $uae-hr;
+    margin-bottom: 0px;
+    margin-top: 5px;
+
+  }
+
+  p {
+    font-size: 12px;
+
+  }
+
+  p.big-text {
+    //font: normal normal 100 20px/normal "Roboto";
+
+  }
+}
+
+.quick-icons{
+  font-size: 30px;
+}
 
 
+ol {
 
-//
-//#overlay {
-//  .closeOverlay{
-//    height: 35px;
-//    width: 35px;
-//    background: url("img/icons-sprite.png") no-repeat -595px 0px;
-//    border: none;
-//  }
-//}
-//
-//
-//#fx-catalog-results{
-//  margin-top: 20px;
-//}
-//
-//.fx-analysis-page-title{
-//  font-weight: 100;
-//  color: $fenix-text;
-//}
-//.fx-analysis-page-description{
-//  color: $fenix-text;
-//}
-//
-//.well {
-//  background-color: transparent;
-//  border: none;
-//  @include fx-box-shadow(0, 0, 0, white);
-//
-//}
-//
-//.fx-catalog-toolbar{
-//  color: $fenix-text;
-//  .fx-widget-stack-btns{
-//    text-align: right;
-//    em{
-//      font-style: normal;
-//      background-color: $fenix-text;
-//      width: 30px;
-//      height: 20px;
-//      display: inline-block;
-//      color: white;
-//      text-align: center;
-//      @include fx-border-radius(3px)
-//    }
-//    input {
-//      margin-left: 33px;
-//    }
-//  }
-//}
-//
-//.btn{
-//  background-color:transparent;
-//  color: $fenix-text;
-//  border-color: $fenix-text;
-//  @include fx-border-radius(0);
-//  font-weight: 300;
-//  padding: 3px 12px;
-//
-//  &:hover{
-//    background-color: transparent;
-//    color: $fx-cool-blue;
-//    border-color: $fx-cool-blue;
-//  }
-//  &:active{
-//    background-color: transparent;
-//    color: $fx-cool-blue;
-//    border-color: $fx-cool-blue;
-//    @include fx-box-shadow(0, 0, 0, white);
-//  }
-//
-//}
-//
-//
-//.btn[disabled]{
-//  background-color:transparent;
-//  color: $fenix-text;
-//  border-color: $fenix-text;
-//  @include fx-border-radius(0);
-//  font-weight: 300;
-//  padding: 3px 12px;
-//}
-//
-//.white-inverted{
-//  background-color: transparent;
-//  border-color: white;
-//  color: white;
-//}
-//
-//
-//
-///*================= Packry =================*/
-//.fx-analysis-item {
-//  width: 50%;
-//  z-index: 200; /* Veify correct z.index */
-//}
-//
-//.fx-analysis-item.fit {
-//  width: 100%;
-//}
-//
-///*================= Overlay =================*/
-//
-///* Please review */
-//
-//#overlay {
-//  position: absolute;
-//  bottom: 0;
-//  right: 0;
-//  width: 0;
-//  height: 0;
-//  overflow: hidden;
-//  background-color: $white-alpha;
-//
-//  padding-top: $host-menu-height;
-//  z-index: 500;
-//  overflow-y: scroll;
-//
-//  .overlay-content{
-//    height: 100%;
-//    #catalogContainer{
-//      height: 100%
-//    }
-//  }
-//
-//}
-//
-//.closeOverlay {
-//  position: absolute;
-//  right: 0;
-//}
-//
-//#DSDEditorContainer{
-//  .obj-box {
-//    padding: 0;
-//  }
-//}
-//
-//
-///* //////////////////// THEMING ///////////////////// */
-//
-//
-///*///////////////* ANALYSIS */
-//
-///*  CATALOG THEMING */
-//
-//#fx-catalog-submit-btn{
-//  background-color: $fx-cool-blue;
-//}
-//
-//.fx-catalog-resume-title{
-//  color: $fx-cool-blue;
-//}
-//
-//.fx-resume-item-selected{
-//
-//  .fx-resume-module-title{
-//
-//    em{
-//      color: $fx-cool-blue;
-//    }
-//
-//  }
-//
-//}
-//
-///*///////////////* DATA EDIT */
-//
-//#metadataEditorContainer #fx-editor-form .panel-heading{
-//  color: $fx-cool-blue;
-//}
-//
-//#metadataEditorContainer #fx-editor-form .btn-success{
-//  background-color: $fx-cool-blue;
-//}
-//
-//
-//
+  list-style: none;
+  padding-left: 25px;
+  counter-reset: numList;
+}
+ol li {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+ol li:before {
+  counter-increment: numList;
+  content: counter(numList);
+
+  //float: left;
+  position: absolute;
+  left: -26px;
+
+  //font: bold 12px sans-serif;
+  text-align: center;
+  color: white;
+  line-height: 19px;
+
+  width: 20px; height: 20px;
+  background: $fx-cool-blue;
+
+  @include fx-border-radius(100%);
+}
