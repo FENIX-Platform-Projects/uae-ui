@@ -9,8 +9,9 @@ require([
     '../../submodules/fenix-ui-metadata-viewer/js/paths',
     '../../submodules/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js/paths',
     '../../submodules/faostat-ui-commons/js/paths',
+    '../../submodules/fenix-ui-common/js/paths',
     '../../submodules/fenix-ui-common/js/Compiler'
-], function (Catalog, Analysis, Menu, TableCreator, ChartCreator, MapCreator, MetadataViewer, FAOSTAT_THEME, faostatCommons, Compiler) {
+], function (Catalog, Analysis, Menu, TableCreator, ChartCreator, MapCreator, MetadataViewer, FAOSTAT_THEME, faostatCommons, FenixCommons, Compiler) {
 
     'use strict';
 
@@ -41,7 +42,10 @@ require([
     var faostatThemeConfig = FAOSTAT_THEME;
     faostatThemeConfig.baseUrl = '../../submodules/fenix-ui-metadata-viewer/submodules/json-editor-faostat-theme/js';
 
-    Compiler.resolve([catalogConfig, analysisConfig, menuConfig, tableCreatorConfig, chartCreatorConfig, mapCreatorConfig, metadataViewerConfig, faostatCommonsConfig, faostatThemeConfig], {
+    var fenixCommonConfig = FenixCommons;
+    fenixCommonConfig.baseUrl = '../../submodules/fenix-ui-common/js';
+
+    Compiler.resolve([catalogConfig, analysisConfig, menuConfig, tableCreatorConfig, chartCreatorConfig, mapCreatorConfig, metadataViewerConfig, faostatCommonsConfig, faostatThemeConfig, fenixCommonConfig], {
         placeholders: {"FENIX_CDN": "//fenixapps.fao.org/repository"},
         config: {
 
