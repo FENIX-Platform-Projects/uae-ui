@@ -83,7 +83,7 @@ define([
         $(s.OVERLAY_OPEN).on('click', _.bind(this.openOverly, this));
         $(s.OVERLAY_CLOSE).on('click', _.bind(this.closeOverly, this));
 
-        amplify.subscribe('fx.widget.analysis.bridge.success', _.bind(this.closeOverly, this));
+        amplify.subscribe('fx.widget.catalog.select', _.bind(this.closeOverly, this));
     };
 
     Host.prototype.openOverly = function () {
