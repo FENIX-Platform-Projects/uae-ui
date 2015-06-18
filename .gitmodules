@@ -43,3 +43,6 @@
 [submodule "submodules/json-editor-faostat-theme"]
 	path = submodules/json-editor-faostat-theme
 	url = https://github.com/FAOSTAT4/json-editor-faostat-theme
+[submodule "submodules/fenix-ui-filter"]
+	path = submodules/fenix-ui-filter
+	url = https://github.com/FENIX-Platform/fenix-ui-filter.git
