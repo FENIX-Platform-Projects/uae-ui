@@ -89,11 +89,15 @@ define([
     Host.prototype.openOverly = function () {
 
         $(s.OVERLAY).show();
+
         $(s.OVERLAY).css({
             height: '100%',
             width: '100%'
         });
-        $(s.OVERLAY_CONTENT).fadeIn('fast');
+
+        $(s.OVERLAY_CONTENT).fadeIn('fast', function (){
+            $(window).trigger('resize');
+        });
 
     };
 
@@ -102,6 +106,7 @@ define([
         $(s.OVERLAY_CONTENT).fadeOut("fast", function () {
 
             $(s.OVERLAY_CONTENT).hide();
+
             $(s.OVERLAY).hide();
         });
     };
