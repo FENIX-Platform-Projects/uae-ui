@@ -1,5 +1,5 @@
 define([
-    'fenix-ui-topmenu/main',
+    'fx-menu/start',
     'highcharts',
     'swiper'
 ], function (TopMenu) {
@@ -10,15 +10,15 @@ define([
     Host.prototype.initFenixComponent = function () {
 
         var self= this;
-
         new TopMenu({
-            url : 'json/fenix-ui-topmenu_config.json'
+            url : 'json/fenix-ui-topmenu_config.json',
+            template: '../../../html/templates/header.html',
+            container : '#header-holder'
         });
 
         this.initBannerSwiper();
-        this.initChartSwiper();
 
-        this.initLogin();
+        this.initChartSwiper();
 
         //very temp solution
         this.initCharts();
@@ -26,16 +26,6 @@ define([
             self.initCharts();
         });
 
-
-    };
-
-    Host.prototype.initLogin = function () {
-
-        $('.protected').hide();
-
-        $('.btn-login').on('click', function () {
-            $('.protected').show();
-        });
 
     };
 
@@ -77,7 +67,10 @@ define([
     Host.prototype.initBannerSwiper = function () {
 
         var bannerSwiper = new Swiper('#swiper-banner',{
-            keyboardControl: true
+            keyboardControl: false,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+
         })
 
     };
@@ -92,14 +85,14 @@ define([
                 type: 'spline', //Tipo di grafico:  area, areaspline, boxplot, bubble, column, line, pie, scatter, spline
 
                 alignTicks: false,
-                backgroundColor: '#f9f7f3', //Colore di background
+                backgroundColor: '#ffffff', //Colore di background
                 //borderColor: '#3fa8da', //Colore bordo intorno
                 //borderWidth: 1, //Spessore bordo intorno
                 //borderRadius: 0, //Smusso bordo intorno
                 //margin: [5,5,5,5], //Margine intorno (vince sullo spacing)
                 spacing: [20, 1, 1, 1],//Spacing intorno (molto simile al margin - Di default il bottom è 15, qui l'ho messo a 10 per essere uguale agli altri)
                 //plotBackgroundColor: 'red', //Colore di background solo area chart
-                plotBorderColor: '#f9f7f3', //Colore bordo intorno solo area chart
+                plotBorderColor: '#ffffff', //Colore bordo intorno solo area chart
                 plotBorderWidth: 0, //Spessore bordo intorno solo area chart
                 //showAxes: false, //Mostra gli assi quando le serie sono aggiunte dinamicamente
                 style: {
@@ -117,7 +110,7 @@ define([
 
                     },
                     theme: {
-                        fill: '#f9f7f3', //Colore di background pulsante reset zoom
+                        fill: '#ffffff', //Colore di background pulsante reset zoom
                         stroke: '#666666', //Colore di stroke pulsante reset zoom
                         width: 60, //Larghezza del pulsante reset
                         //r:0, //Smusso pulsante reset zoom
@@ -127,7 +120,7 @@ define([
                         },
                         states: {
                             hover: {
-                                fill: '#e6e6e6', //Colore di background hover pulsante reset zoom
+                                fill: '#ffffff', //Colore di background hover pulsante reset zoom
                                 stroke: '#666666', //Colore di stroke hover pulsante reset zoom
                                 style: {
                                     //color: 'white' //Colore testo hover pulsante reset zoom
@@ -179,7 +172,7 @@ define([
 
                 //margin: 100, //Margine dell'intero blocco legenda dall'area di PLOT (Solo quando non è floating)
                 //padding: 20, //Padding del box legenda (Ingrandisce il box)
-                backgroundColor: '#f9f7f3', //Colore di sfondo della legenda
+                backgroundColor: '#ffffff', //Colore di sfondo della legenda
                 //layout: 'horizontal', //Tipologia di legenda
                 align: 'center', //Allineamento orizzontale del box della legenda (left, center, right)
                 verticalAlign: 'bottom', //allineamento verticale della legenda (top, middle, bottom)
@@ -392,14 +385,14 @@ define([
                 type: 'spline', //Tipo di grafico:  area, areaspline, boxplot, bubble, column, line, pie, scatter, spline
 
                 alignTicks: false,
-                backgroundColor: '#f9f7f3', //Colore di background
+                backgroundColor: '#ffffff', //Colore di background
                 //borderColor: '#3fa8da', //Colore bordo intorno
                 //borderWidth: 1, //Spessore bordo intorno
                 //borderRadius: 0, //Smusso bordo intorno
                 //margin: [5,5,5,5], //Margine intorno (vince sullo spacing)
                 spacing: [20, 1, 1, 1],//Spacing intorno (molto simile al margin - Di default il bottom è 15, qui l'ho messo a 10 per essere uguale agli altri)
                 //plotBackgroundColor: 'red', //Colore di background solo area chart
-                plotBorderColor: '#f9f7f3', //Colore bordo intorno solo area chart
+                plotBorderColor: '#ffffff', //Colore bordo intorno solo area chart
                 plotBorderWidth: 0, //Spessore bordo intorno solo area chart
                 //showAxes: false, //Mostra gli assi quando le serie sono aggiunte dinamicamente
                 style: {
@@ -417,7 +410,7 @@ define([
 
                     },
                     theme: {
-                        fill: '#f9f7f3', //Colore di background pulsante reset zoom
+                        fill: '#ffffff', //Colore di background pulsante reset zoom
                         stroke: '#666666', //Colore di stroke pulsante reset zoom
                         width: 60, //Larghezza del pulsante reset
                         //r:0, //Smusso pulsante reset zoom
@@ -479,7 +472,7 @@ define([
 
                 //margin: 100, //Margine dell'intero blocco legenda dall'area di PLOT (Solo quando non è floating)
                 //padding: 20, //Padding del box legenda (Ingrandisce il box)
-                backgroundColor: '#f9f7f3', //Colore di sfondo della legenda
+                backgroundColor: '#ffffff', //Colore di sfondo della legenda
                 //layout: 'horizontal', //Tipologia di legenda
                 align: 'center', //Allineamento orizzontale del box della legenda (left, center, right)
                 verticalAlign: 'bottom', //allineamento verticale della legenda (top, middle, bottom)
@@ -692,14 +685,14 @@ define([
                 type: 'spline', //Tipo di grafico:  area, areaspline, boxplot, bubble, column, line, pie, scatter, spline
 
                 alignTicks: false,
-                backgroundColor: '#f9f7f3', //Colore di background
+                backgroundColor: '#ffffff', //Colore di background
                 //borderColor: '#3fa8da', //Colore bordo intorno
                 //borderWidth: 1, //Spessore bordo intorno
                 //borderRadius: 0, //Smusso bordo intorno
                 //margin: [5,5,5,5], //Margine intorno (vince sullo spacing)
                 spacing: [20, 1, 1, 1],//Spacing intorno (molto simile al margin - Di default il bottom è 15, qui l'ho messo a 10 per essere uguale agli altri)
                 //plotBackgroundColor: 'red', //Colore di background solo area chart
-                plotBorderColor: '#f9f7f3', //Colore bordo intorno solo area chart
+                plotBorderColor: '#ffffff', //Colore bordo intorno solo area chart
                 plotBorderWidth: 0, //Spessore bordo intorno solo area chart
                 //showAxes: false, //Mostra gli assi quando le serie sono aggiunte dinamicamente
                 style: {
@@ -717,7 +710,7 @@ define([
 
                     },
                     theme: {
-                        fill: '#f9f7f3', //Colore di background pulsante reset zoom
+                        fill: '#ffffff', //Colore di background pulsante reset zoom
                         stroke: '#666666', //Colore di stroke pulsante reset zoom
                         width: 60, //Larghezza del pulsante reset
                         //r:0, //Smusso pulsante reset zoom
@@ -779,7 +772,7 @@ define([
 
                 //margin: 100, //Margine dell'intero blocco legenda dall'area di PLOT (Solo quando non è floating)
                 //padding: 20, //Padding del box legenda (Ingrandisce il box)
-                backgroundColor: '#f9f7f3', //Colore di sfondo della legenda
+                backgroundColor: '#ffffff', //Colore di sfondo della legenda
                 //layout: 'horizontal', //Tipologia di legenda
                 align: 'center', //Allineamento orizzontale del box della legenda (left, center, right)
                 verticalAlign: 'bottom', //allineamento verticale della legenda (top, middle, bottom)

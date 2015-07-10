@@ -4,7 +4,7 @@
       "attrs": {
         "id": "view"
       },
-      "target": "view.html",
+      "target": "#",
       "label": {
         "EN": "View",
         "FR": "PI"
@@ -14,43 +14,35 @@
       "attrs": {
         "id": "analysis"
       },
-      "target": "analysis.html",
+      "target": "#",
       "label": {
         "EN": "Analysis",
         "FR": "PI"
       }
     },
     {
-      "type": "dropdown",
-      "children": [
-        {
-          "attrs": {
-            "id": "createdataset"
-          },
-          "target": "createdataset.html",
-          "label": {
-            "EN": "Create Dataset",
-            "FR": "PI"
-          }
-        }
-      ],
+      "attrs": {
+        "id": "datamng"
+      },
+      "target": "#",
       "label": {
         "EN": "Data Management",
         "FR": "PI"
       }
-    },
+    }
+  ,
     {
       "attrs": {
         "id": "modules"
       },
-      "target": "modules.html",
+      "target": "#",
       "label": {
         "EN": "Modules",
         "FR": "PI"
       }
     }
   ],
-  "type": "fixed-top",
+  "type": "static-top",
   "brand": {
     "target": "index.html"
   },
