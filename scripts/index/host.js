@@ -78,6 +78,7 @@ define([
 
     Host.prototype.initCharts = function () {
 
+
         $('#chart').highcharts({
 
             //Line chart
@@ -348,11 +349,11 @@ define([
             },
             series: [
                 {
-                    name: 'Africa',
+                    name: 'Dubai',
                     data: [21900, 20524, 21336, 22604, 22049, 20977, 23123, 23112, 22054, 22498, 23131, 22854, 23330, 24190, 24677, 26054, 25336, 24943, 24007, 25454]
                 },
                 {
-                    name: 'Southern Asia',
+                    name: 'Abu Dhabi',
                     data: [28085, 27839, 27024, 28216, 28301, 29022, 30216, 29792, 31530, 28332, 32032, 30913, 32731, 33005, 34326, 34262, 34553, 35502, 37066, 34641],
                     marker: {
                         enabled: true, //Attiva o disattiva i marker
@@ -377,6 +378,7 @@ define([
                 }
             ]
         });
+
 
         $('#chart2').highcharts({
 
@@ -948,11 +950,11 @@ define([
             },
             series: [
                 {
-                    name: 'Africa',
+                    name: 'Dubai',
                     data: [21900, 20524, 21336, 22604, 22049, 43977, 23123, 23112, 22054, 22498, 24331, 22854, 23430, 24190, 24643, 26054, 25336, 24943, 2443, 25454]
                 },
                 {
-                    name: 'Southern Asia',
+                    name: 'Abu Dhabi',
                     data: [28085, 43839, 27434, 284316, 28301, 290432, 30216, 29792, 31530, 28332, 32032, 30913, 32731, 33005, 34326, 34262, 34553, 35502, 37066, 34641],
                     marker: {
                         enabled: true, //Attiva o disattiva i marker
