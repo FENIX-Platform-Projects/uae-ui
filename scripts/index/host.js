@@ -69,6 +69,7 @@ define([
         var bannerSwiper = new Swiper('#swiper-banner',{
             keyboardControl: false,
             autoplay: 5000,
+            loop: true,
             autoplayDisableOnInteraction: false,
 
         })
