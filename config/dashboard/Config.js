@@ -234,7 +234,6 @@ define(function () {
                 },
 
 
-
                 {
                     //Time series
                     id: 'item-5',
@@ -286,7 +285,6 @@ define(function () {
                 },
 
 
-
                 {
                     //Time series
                     id: 'item-6',
@@ -332,25 +330,10 @@ define(function () {
                 }
 
 
-
-
-
-
             ]
 
 
         },
-
-
-        
-
-
-
-
-
-
-
-
 
         "education": {
             //data cube's uid
@@ -505,5 +488,5 @@ define(function () {
 
 
         }
-    }
+    };
 });

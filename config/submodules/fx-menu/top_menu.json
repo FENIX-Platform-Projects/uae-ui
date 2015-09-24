@@ -12,11 +12,11 @@
     },
     {
       "attrs": {
-        "id": "profile"
+        "id": "dashboard"
       },
-      "target": "#profile",
+      "target": "#dashboard",
       "label": {
-        "EN": "Country Profile"
+        "EN": "Dashboard"
       }
     },
     {

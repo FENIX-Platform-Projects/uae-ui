@@ -3,20 +3,18 @@ define([
     'jquery',
     'views/base/view',
     'fx-ds/start',
-    'text!templates/profile/profile.hbs',
-    'text!templates/profile/list.hbs',
-    'text!templates/profile/dashboard.hbs',
-    'text!templates/profile/bases.hbs',
-    'i18n!nls/profile',
+    'text!templates/dashboard/dashboard.hbs',
+    'text!templates/dashboard/bases.hbs',
+    //'text!templates/dashboard/profile.hbs',
+    'i18n!nls/dashboard',
     'config/Events',
-    'text!config/profile/lateral_menu.json',
-    'text!config/profile/resume_countries.json',
-    'config/profile/config',
+    'text!config/dashboard/lateral_menu.json',
+    'config/dashboard/Config',
     'handlebars',
+    'underscore',
     'amplify',
-    'bootstrap-list-filter',
     'jstree'
-], function ($, View, Dashboard, template, listTemplate, dashboardTemplate, basesTemplate, i18nLabels, E, LateralMenuConfig, resumeInfo, PC, Handlebars) {
+], function ($, View, Dashboard, template, basesTemplate, i18nLabels, E, LateralMenuConfig, PC, Handlebars, _) {
 
     'use strict';
 
@@ -43,7 +41,7 @@ define([
         // Automatically render after initialize
         autoRender: true,
 
-        className: 'profiles',
+        className: 'dashboard',
 
         // Save the template string in a prototype property.
         // This is overwritten with the compiled template function.
@@ -63,7 +61,7 @@ define([
 
             this._initVariables();
 
-            this.id ? this._printCountryDashboard() : this._printCountryList();
+            this._printCountryDashboard();
 
         },
 
@@ -73,26 +71,11 @@ define([
 
         },
 
-        _printCountryList: function () {
-
-            var template = Handlebars.compile(listTemplate),
-                html = template({countries: this.countries});
-
-            this.$content.html(html);
-
-            //Init filter
-            $(s.COUNTRY_LIST).btsListFilter(s.SEARCH_FILTER_INPUT, {
-                itemEl: s.SEARCH_ITEM_EL,
-                itemChild: s.SEARCH_ITEM_CHILD
-            });
-
-        },
-
         _printCountryDashboard: function () {
 
             var self = this;
 
-            this.$content.html(dashboardTemplate);
+            //this.$content.html(dashboardTemplate);
 
             this.$lateralMenu = this.$el.find(s.LATERAL_MENU);
 
@@ -116,7 +99,7 @@ define([
 
                 }, this));
 
-            this._printDashboard('resume');
+            //this._printDashboard('resume');
 
             //bind events from tree click to dashboard refresh
             /*
@@ -148,32 +131,9 @@ define([
             //Inject HTML
             var source = $(basesTemplate).find("[data-dashboard='" + id + "']"),
                 template = Handlebars.compile(source.prop('outerHTML')),
-                context = JSON.parse(resumeInfo),
-                html = template(context && context[this.id] ? context[this.id] : {});
+                html = template({});
 
             this.$el.find(s.DASHBOARD_CONTENT).html(html);
-        },
-
-        _createCountryFilter: function () {
-
-            //create country filter
-            return {
-                "name": "filter",
-                "parameters": {
-                    "rows": {
-                        "CountryCode": {
-                            "codes": [
-                                {
-                                    "uid": "ISO3",
-                                    "codes": [
-                                       this.id
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            };
         },
 
         _getDashboardConfig: function (id) {
@@ -188,8 +148,6 @@ define([
             }
 
             conf = $.extend(true, {}, base);
-
-            conf.filter = [this._createCountryFilter()];
 
             return conf;
         },

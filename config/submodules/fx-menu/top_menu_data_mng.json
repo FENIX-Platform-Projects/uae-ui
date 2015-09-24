@@ -15,14 +15,14 @@
     },
     {
       "attrs": {
-        "id": "profile"
+        "id": "dashboard"
       },
       "a_attrs": {
         "rel": "external"
       },
-      "target": "./index.html#profile",
+      "target": "./index.html#dashboard",
       "label": {
-        "EN": "Country Profile"
+        "EN": "Dashboard"
       }
     },
     {

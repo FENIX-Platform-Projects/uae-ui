@@ -2,20 +2,20 @@
 define([
     'jquery',
     'backbone',
-    'chaplin',
+    //'chaplin',
     'config/Config',
     'controllers/base/controller',
-    'views/profile-view',
-    'text!json/methods/models.json',
-    'q',
+    'views/dashboard-view',
+    //'text!json/methods/models.json',
+    //'q',
     'amplify'
-], function ($, Backbone, Chaplin, C, Controller, View, MethodsCollection, Q) {
+], function ($, Backbone,/* Chaplin,*/ C, Controller, View /*,MethodsCollection, Q*/) {
 
     'use strict';
 
     var ProfileController = Controller.extend({
 
-        beforeAction: function (params) {
+    /*    beforeAction: function (params) {
 
             this.currentCountryId  =  params.id;
 
@@ -47,10 +47,10 @@ define([
                 url : C.COUNTRIES_CODE_LIST
             }));
         },
-
+*/
         show: function (params) {
 
-            var conf = {
+/*            var conf = {
                 region: 'main',
                 countries: this.countries
             };
@@ -60,9 +60,11 @@ define([
                 conf.id = params.id;
             } else {
                 Backbone.history.navigate('#profile/' , {trigger: false});
-            }
+            }*/
 
-            this.view = new View(conf);
+            this.view = new View({
+                region: 'main'
+            });
         }
 
     });

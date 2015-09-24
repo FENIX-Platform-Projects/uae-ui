@@ -7,8 +7,7 @@ define(function () {
     return function (match) {
         match('', 'home#show');
         match('home', 'home#show');
-        match('profile', 'profile#show');
-        match('profile/:id', 'profile#show');
+        match('dashboard', 'dashboard#show');
         match('analysis', 'analysis#show');
         match('methods', 'methods#show');
         match('methods/:id', 'methods#show');

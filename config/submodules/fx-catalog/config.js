@@ -4,7 +4,6 @@ define(['jquery', 'fx-submodules/config/baseConfig'],
 
         'use strict';
 
-        console.log(config_base)
         //Use the following example to override properties:
         //services.SERVICE_BASE_ADDRESS = "http://fenix.fao.org/d3s_dev2/msd";
 

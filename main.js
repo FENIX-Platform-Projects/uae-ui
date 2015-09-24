@@ -13,7 +13,7 @@ require([
 */
     './submodules/fenix-ui-metadata-editor/js/paths',
     './submodules/fenix-ui-metadata-viewer/js/paths',
-    './submodules/fenix-ui-metadata-viewer/js/paths',
+    './submodules/json-editor-faostat-theme/src/js/paths',
     './submodules/fenix-ui-map-creator/src/js/paths',
     './submodules/fenix-ui-chart-creator/src/js/paths',
     './submodules/fenix-ui-table-creator/src/js/paths',
@@ -26,6 +26,8 @@ require([
              MapCreator,ChartCreator, TableCreator, FenixReport, Dashboard, Filter  ) {
 
     'use strict';
+
+
 
     var submodules_path = '../../submodules/';
 
@@ -57,7 +59,7 @@ require([
     metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/js/';
 
     var faostatThemeConfig = FAOSTAT_THEME;
-    faostatThemeConfig.baseUrl = submodules_path + 'json-editor-faostat-theme/js';
+    faostatThemeConfig.baseUrl = submodules_path + 'json-editor-faostat-theme/src/js';
 
     var mapCreatorConfig = MapCreator;
     mapCreatorConfig.baseUrl= submodules_path +'fenix-ui-map-creator/src/js/';
