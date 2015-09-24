@@ -2,18 +2,18 @@
 define([
     'controllers/base/controller',
     'views/modules-view'
-], function (Controller, HomeView) {
+], function (Controller, View) {
     'use strict';
 
-    var HomeController = Controller.extend({
+    var ModulesController = Controller.extend({
 
         show: function (params) {
 
-            this.view = new HomeView({
+            this.view = new View({
                 region: 'main'
             });
         }
     });
 
-    return HomeController;
+    return ModulesController;
 });

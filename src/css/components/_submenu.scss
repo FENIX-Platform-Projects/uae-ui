@@ -1,4 +1,4 @@
-/* RLM Subemenu */
+/* Subemenu */
 
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
@@ -58,7 +58,6 @@
       > a{
         text-transform: uppercase;
         color: $fenix-text;
-        //font: $afo-text-menu-item;
         font-size: 12px;
         position: relative;
         top: 50%;
@@ -93,8 +92,3 @@
 
 
 }
-
-.afo-dropdown-toggle{
-  margin-top: 0;
-}
-

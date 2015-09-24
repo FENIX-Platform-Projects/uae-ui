@@ -2,11 +2,11 @@
 
 define(function () {
 
-'use strict';
+    'use strict';
 
     return {
 
-        "dsd.contextSystem":{"enumeration":["cstat_afg"]}
+        "dsd.contextSystem":{"enumeration":["uneca"]}
     };
 
 });

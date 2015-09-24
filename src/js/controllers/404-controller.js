@@ -5,7 +5,7 @@ define([
 ], function (Controller, NotFoundView) {
     'use strict';
 
-    var HomeController = Controller.extend({
+    var NotFoundController = Controller.extend({
 
         show: function (params) {
 
@@ -15,5 +15,5 @@ define([
         }
     });
 
-    return HomeController;
+    return NotFoundController;
 });

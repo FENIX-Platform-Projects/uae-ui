@@ -2,11 +2,16 @@
 define([
     'views/base/view',
     'text!templates/modules/modules.hbs',
-    'i18n!nls/about',
+    'i18n!nls/modules',
+    'config/Events',
     'amplify'
-], function (View, template, i18nLabels) {
+], function (View, template, i18nLabels,E) {
 
     'use strict';
+
+    var s = {
+        MODULE_LIST: "#modules-list"
+    };
 
     var ModulesView = View.extend({
 
@@ -29,9 +34,29 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish('voh.state.change', {menu: 'modules'});
+            amplify.publish(E.STATE_CHANGE, {menu: 'modules'});
 
+            this.initVariables();
+
+
+        },
+        initVariables: function () {
+
+        },
+
+
+        unbindEventListeners: function () {
+
+        },
+
+        dispose: function () {
+
+            this.unbindEventListeners();
+
+            View.prototype.dispose.call(this, arguments);
         }
+
+
     });
 
     return ModulesView;

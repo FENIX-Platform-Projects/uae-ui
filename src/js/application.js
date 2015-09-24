@@ -2,8 +2,10 @@
 define([
     'jquery',
     'chaplin',
+    'config/Config',
+    'config/Events',
     'amplify'
-], function ($, Chaplin) {
+], function ($, Chaplin, C, E) {
 
     'use strict';
 
@@ -13,13 +15,24 @@ define([
 
         // Set your application name here so the document title is set to
         // “Controller title – Site title” (see Layout#adjustTitle)
-        title: 'Rural Livelihood Monitor',
+        title: C.CHAPLINJS_APPLICATION_TITLE,
 
         start: function () {
-            var args = [].slice.call(arguments);
             // You can fetch some data here and start app
             // (by calling supermethod) after that.
+
+            var args = [].slice.call(arguments);
+
+            this.bindEventListeners();
+
             Chaplin.Application.prototype.start.apply(this, args);
+        },
+
+        bindEventListeners: function () {
+
+            Chaplin.mediator.subscribe(E.NOT_AUTHORIZED, function () {
+                Chaplin.utils.redirectTo({url:  C.SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK});
+            });
 
         }
 

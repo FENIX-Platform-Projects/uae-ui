@@ -1,0 +1,87 @@
+[
+  {
+    "id":"UNECA_AgeRange",
+    "parent":"#",
+    "template":{
+      "id":"base"
+    },
+    "model":{
+      "title":{
+        "EN":"UNECA Age-range"
+      }
+    }
+  },
+  {
+    "id":"UNECA_ClassificationOfActivities",
+    "parent":"#",
+    "template":{
+      "id":"base"
+    },
+    "model":{
+      "title":{
+        "EN":"UNECA Classification of Activities-Domains, topics and indicators"
+      }
+    }
+  },
+  {
+    "id":"UNECA_Currencies",
+    "parent":"#",
+    "template":{
+      "id":"base"
+    },
+    "model":{
+      "title":{
+        "EN":"UNECA - Currencies"
+      }
+    }
+  },
+  {
+    "id":"UNECA_EconomicSector",
+    "parent":"#",
+    "template":{
+      "id":"base"
+    },
+    "model":{
+      "title":{
+        "EN":"UNECA - Economic sectors"
+      }
+    }
+  },
+  {
+    "id":"UNECA_Gender",
+    "parent":"#",
+    "template":{
+      "id":"base"
+    },
+    "model":{
+      "title":{
+        "EN":"UNECA - Gender"
+      }
+    }
+  },
+  {
+    "id":"UNECA_UnitMeasure",
+    "parent":"#",
+    "template":{
+      "id":"base"
+    },
+    "model":{
+      "title":{
+        "EN":"UNECA - Unit of measure"
+      }
+    }
+  },
+
+  {
+    "id":"UNECA_ISO3",
+    "parent":"#",
+    "template":{
+      "id":"base"
+    },
+    "model":{
+      "title":{
+        "EN":"UNECA Countries"
+      }
+    }
+  }
+]

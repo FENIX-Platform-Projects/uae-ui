@@ -1,0 +1,38 @@
+[
+  {
+    "title": {
+      "EN": "Title 1"
+    },
+    "body": {
+      "EN": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nisl ultricies, suscipit est ac, euismod neque. Duis a vulputate orci. Nulla mattis neque metus, eget efficitur quam rutrum vitae. Integer at leo dolor. Curabitur sapien mi, scelerisque eget lacinia id, efficitur vel neque. Integer quis dapibus ligula, id fringilla enim. Duis sed purus nec lorem gravida accumsan. Phasellus ut hendrerit risus, nec commodo dolor. "
+    },
+    "link": "link"
+  },
+  {
+    "title": {
+      "EN": "Title 2"
+    },
+    "body": {
+      "EN": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nisl ultricies, suscipit est ac, euismod neque. Duis a vulputate orci. Nulla mattis neque metus, eget efficitur quam rutrum vitae. Integer at leo dolor. Curabitur sapien mi, scelerisque eget lacinia id, efficitur vel neque. Integer quis dapibus ligula, id fringilla enim. Duis sed purus nec lorem gravida accumsan. Phasellus ut hendrerit risus, nec commodo dolor. "
+    },
+    "link": "link"
+  },
+  {
+    "title": {
+      "EN": "Title 3"
+    },
+    "body": {
+      "EN": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nisl ultricies, suscipit est ac, euismod neque. Duis a vulputate orci. Nulla mattis neque metus, eget efficitur quam rutrum vitae. Integer at leo dolor. Curabitur sapien mi, scelerisque eget lacinia id, efficitur vel neque. Integer quis dapibus ligula, id fringilla enim. Duis sed purus nec lorem gravida accumsan. Phasellus ut hendrerit risus, nec commodo dolor. "
+    },
+    "link": "link"
+  },
+  {
+    "title": {
+      "EN": "Title 4"
+    },
+    "body": {
+      "EN": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac nisl ultricies, suscipit est ac, euismod neque. Duis a vulputate orci. Nulla mattis neque metus, eget efficitur quam rutrum vitae. Integer at leo dolor. Curabitur sapien mi, scelerisque eget lacinia id, efficitur vel neque. Integer quis dapibus ligula, id fringilla enim. Duis sed purus nec lorem gravida accumsan. Phasellus ut hendrerit risus, nec commodo dolor. "
+    },
+    "link": "link"
+  }
+]

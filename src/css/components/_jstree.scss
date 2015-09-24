@@ -4,7 +4,7 @@
 li[role="treeitem"]{
 
   &:nth-child(odd){
-    background-color: $rlm-superlight-gray !important;
+    background-color: $superlight-gray !important;
   }
 
 }
@@ -101,11 +101,6 @@ ul[role="group"]{
 }
 
 
-.rlm-tree-selector{
-  height: 300px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
 
 
 

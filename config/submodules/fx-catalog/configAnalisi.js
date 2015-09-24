@@ -8,10 +8,10 @@ define([], function () {
 
     var services = {
 
-        SERVICES_BASE_ADDRESS : 'http://fenix.fao.org/d3s/msd',
-        CATALOG_BLANK_FILTER : 'config/submodules/catalog/afg-catalog-blank-filter.json'
+        SERVICE_BASE_ADDRESS: "http://fenixservices.fao.org/d3s/msd",
+        CATALOG_BLANK_FILTER : 'config/submodules/fx-catalog/blank-filter.json'
 
-        };
+    };
 
     return services;
 });

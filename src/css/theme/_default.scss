@@ -1,14 +1,21 @@
-/* RLM - Base style File */
+/* Base style File */
 
-body{
-
-  background-color: $fenix-light-bg;
-
+body {
+  background-image: url(../../src/css/img/bg-body.png);
 }
 
-.rlm-logo-blue{
-  width: 117px;
-  height: 55px;
+.navbar-brand {
+  background-image: url(../../src/css/img/uneca-ico.svg);
+  width: 310px;
+  height: 50px ;
+  position: relative;
+  left: -15px;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-color: $fx-cool-blue; }
+
+.container{
+  background-color: white;
 }
 
 .truncate {
@@ -23,67 +30,30 @@ body{
 }
 
 .btn{
-  @include fx-border-radius(5);
+  @include fx-border-radius(0);
   height: 25px;
   min-width: 100px;
   padding: 3px 12px;
   font-size: 12px;
   text-transform: uppercase;
   background-color: transparent;
-  border: 1px solid $rlm-buttons;
-  color: $rlm-buttons;
+  border: 1px solid $buttons;
+  color: $buttons;
   margin: 3px;
 
   &:hover{
-    background-color: $rlm-superlight-gray;
+    background-color: $superlight-gray;
     //border-color: transparent;
-    border: 1px solid $rlm-buttons;
-    color: $rlm-buttons;
+    border: 1px solid $buttons;
+    color: $buttons;
   }
 
 }
 
 
-
-/* TEMPORARY */
-
-.btn.btn-default.json-editor-btn-collapse {
-  color: $fx-cool-blue !important;
-  border-color: transparent !important;
-  i {
-    color: $fx-cool-blue !important;
-    &:before{
-      content:'EXPAND';
-      font-size:10px;
-      color: $fenix-text;
-    }
-  }
-}
-
-
-.btn-table-go, .btn-scores-go{
-  background-color: $rlm-buttons;
-  color: white;
-
-
-  &:hover, &:active, &:visited, &:focus{
-    background-color: $rlm-buttons;
-    border-color: transparent;
-    color: white;
-  }
-
-}
-
-.btn-reset{
+.container {
   background-color: white;
-  color: $fenix-text;
-  border-color: transparent;
-
-  &:hover, &:active, &:visited, &:focus{
-    background-color: white;
-    border-color: transparent;
-    color: $fenix-text;
-  }
 }
+
 
 

@@ -1,4 +1,2 @@
-fenix-ui
-========
-
-FENIX user interface
+# uneca-ui
+United Nations Economic Commission for Africa

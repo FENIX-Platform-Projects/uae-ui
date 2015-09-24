@@ -2,22 +2,92 @@
   "items": [
     {
       "attrs": {
-        "id": "home"
+        "id": "home",
+        "class": "home-menu-item"
       },
-      "target": "./index.html",
-      "a_attrs" : {
-        "rel" : "external"
+      "a_attrs": {
+        "rel": "external"
       },
+      "target": "./index.html#home",
       "label": {
-        "EN": "UAE Data Portal"
+        "EN": ""
+      }
+    },
+    {
+      "attrs": {
+        "id": "profile"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "./index.html#profile",
+      "label": {
+        "EN": "Country Profile"
+      }
+    },
+    {
+      "attrs": {
+        "id": "datamgmt"
+      },
+      "target": "#",
+      "label": {
+        "EN": "Data Management"
+      }
+    },
+    {
+      "attrs": {
+        "id": "analysis"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "./index.html#analysis",
+      "label": {
+        "EN": "Analysis"
+      }
+    },
+    {
+      "attrs": {
+        "id": "methods"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "./index.html#methods",
+      "label": {
+        "EN": "Methods and Standards"
+      }
+    },
+    {
+      "attrs": {
+        "id": "modules"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "./index.html#modules",
+      "label": {
+        "EN": "Thematic Modules"
       }
     }
   ],
   "rightItems": [
-
+    {
+      "attrs": {
+        "id": "login"
+      },
+      "label": {
+        "EN": "LOGIN"
+      }
+    },
+    {
+      "attrs": {
+        "id": "logout"
+      },
+      "label": {
+        "EN": "LOGOUT"
+      }
+    }
   ],
-  "type": "static-top",
-  "brand": {
-    "target": "#"
-  }
+  "type": "static-top"
 }

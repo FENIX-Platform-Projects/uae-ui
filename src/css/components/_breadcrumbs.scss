@@ -1,4 +1,4 @@
-/* RLM  BreadCrumbs */
+/* BreadCrumbs */
 
 #breadcumb_container{
   height: 35px;
@@ -42,12 +42,4 @@
 .breadcrumb > li + li:before{
   content: '|';
   color: $fenix-text;
-}
-
-.voh-home{
-  .breadcrumb{
-    display: none;
-  }
-
-
 }

@@ -1,19 +1,36 @@
-<h1>{{title}}</h1>
-<hr>
-<div class="row">
-    <div class="col-xs-6">
-        1
-    </div>
-    <div class="col-xs-6">
-        2
-    </div>
-</div>
+<div class="container-fluid">
 
-<div class="row">
-    <div class="col-xs-6">
-        3
-    </div>
-    <div class="col-xs-6">
-        3
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="row fx-header">
+                <div class="col-xs-12">
+                    <div class="page-header">
+                        <h1>{{title}}</h1>
+                        <p>{{subtitle}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modules -->
+            <div class="row modules-list-holder">
+                <div class="col-xs-12">
+                    <ul id="modules-list" class="list-unstyled">
+                        {{#each modules}}
+                                <li class="row module-group-item">
+                                    <div class="col-xs-6">
+                                        <a target="_blank" href={{isI18n link}}><img class="img-responsive" src="{{ img}}"></a>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <h2>{{i18n title}}</h2>
+                                        <p>{{{i18n body}}}</p>
+                                    </div>
+                                </li><br><hr>
+                            {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

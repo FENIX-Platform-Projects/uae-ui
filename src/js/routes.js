@@ -7,13 +7,12 @@ define(function () {
     return function (match) {
         match('', 'home#show');
         match('home', 'home#show');
-        match('download/indicator', 'download-indicator#show');
-        match('download/country', 'download-country#show');
-        match('country', 'country#show');
+        match('profile', 'profile#show');
+        match('profile/:id', 'profile#show');
+        match('analysis', 'analysis#show');
+        match('methods', 'methods#show');
+        match('methods/:id', 'methods#show');
         match('modules', 'modules#show');
-        match('standards(/)(:id)', 'standards#show');
-        match('about', 'about#show');
-        match('upload', 'upload#show');
         match('*anything', '404#show');
     };
 });

@@ -8,10 +8,10 @@ define([
     'globals/State',
     'views/base/view',
     'fx-menu/start',
-    'fx-common/AuthManager',
+    'globals/AuthManager',
     'i18n!nls/site',
     'text!templates/site.hbs'
-], function ($, Chaplin, _, Config, E, State, View, Menu, AuthManager, i18nLabels, template) {
+], function ($, Chaplin, _, C, E, State, View, Menu, AuthManager, i18nLabels, template) {
 
     'use strict';
 
@@ -34,7 +34,7 @@ define([
         template: template,
 
         getTemplateData: function () {
-            return i18nLabels;
+            return $.extend(true, {}, C, i18nLabels);
         },
 
         attach: function () {
@@ -55,36 +55,38 @@ define([
             var self = this,
                 menuConf = {
 
-                    url: Config.TOP_MENU_CONFIG,
-                    template: 'fx-menu/templates/blank-fluid.html',
-                    
+                    url: C.TOP_MENU_CONFIG,
+
+                    template: C.TOP_MENU_TEMPLATE,
+
                     //active: State.menu,
                     container: s.TOP_MENU_CONTAINER,
                     callback: _.bind(this.onMenuRendered, this),
                     breadcrumb: {
-                        active: true,
+                        active: C.TOP_MENU_SHOW_BREADCRUMB,
                         container: s.BREADCRUMB_CONTAINER,
-                        showHome: true
+                        showHome: C.TOP_MENU_SHOW_BREADCRUMB_HOME
                     },
                     footer: {
-                        active: true,
+                        active: C.TOP_MENU_SHOW_FOOTER,
                         container: s.FOOTER_MENU_CONTAINER
                     }
                 },
                 menuConfAuth = _.extend({}, menuConf, {
-                    hiddens: ['login']
+                    hiddens: C.TOP_MENU_AUTH_MODE_HIDDEN_ITEMS
                 }),
                 menuConfPub = _.extend({}, menuConf, {
-                    hiddens: ['datamng', 'upload', 'logout']
+                    hiddens: C.TOP_MENU_PUBLIC_MODE_HIDDEN_ITEMS
                 });
 
-            this.authManager = new AuthManager({
-                onLogin: function () {
+            this.authManager = AuthManager.init({
+                onLogin: _.bind(function () {
                     self.topMenu.refresh(menuConfAuth);
-                },
-                onLogout: function () {
+                }, this),
+                onLogout: _.bind(function () {
+                    Chaplin.mediator.publish(E.NOT_AUTHORIZED);
                     self.topMenu.refresh(menuConfPub);
-                }
+                }, this)
             });
 
             //Top Menu

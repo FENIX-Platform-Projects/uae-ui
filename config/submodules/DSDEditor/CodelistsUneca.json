@@ -1,0 +1,52 @@
+[
+  {
+    "val": "ISO3",
+    "text": {
+      "EN": "ISO-3"
+    },
+    "subject": "geo"
+  },
+  {
+    "val": "UNECA_AgeRange",
+    "text": {
+      "EN": "UNECA AgeRange"
+    },
+    "subject": "item"
+  },
+  {
+    "val": "UNECA_ClassificationOfActivities",
+    "text": {
+      "EN": "UNECA Class. of activities"
+    },
+    "subject": "item"
+  },
+  {
+    "val": "UNECA_Gender",
+    "text": {
+      "EN": "UNECA Gender"
+    },
+    "subject": "item"
+  },
+
+  {
+    "val": "UNECA_Currencies",
+    "text": {
+      "EN": "UNECA Currencies"
+    },
+    "subject": "item"
+  },
+  {
+    "val": "UNECA_UnitMeasure",
+    "text": {
+      "EN": "UNECA Unit of Measure"
+    },
+    "subject": "item"
+  },
+  {
+    "val": "UNECA_EconomicSector",
+    "text": {
+      "EN": "UNECA Economic Sector"
+    },
+    "subject": "item"
+  }
+]

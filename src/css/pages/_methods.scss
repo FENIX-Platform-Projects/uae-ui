@@ -1,0 +1,52 @@
+/* About */
+
+.sidebar-box{
+  //background-color: $box-bg;
+  //padding: 0 15px;
+  margin-bottom: 30px;
+  
+  >h3{
+    margin-top: 0;
+    //background-color: $fx-cool-blue;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+  }
+.sidebar-box-content{
+  padding: 15px;
+
+  h3{margin-top:0}
+
+}
+
+
+
+}
+
+.user-container{
+  padding-left: 90px;
+
+  h3{
+    margin-bottom:0;
+    //color: $fx-cool-blue-alt;
+  }
+
+  p{
+    margin-bottom:5px;
+  }
+
+.division{
+  font-weight: 500;
+}
+
+}
+
+.profile{
+  background-image: url(../../src/css/img/profile.svg);
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 15px;
+}

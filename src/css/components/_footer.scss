@@ -1,111 +1,76 @@
-/* RLM Footer */
+/* Footer */
 
-footer.voh-footer{
-  background-color: $custom-color7;
-  min-height: 160px;
+
+footer.container{
+  background-color: $footer-bg;
   color: white;
-  position: relative;
+
+  a{
+    color: $fenix-text;
+    line-height: 22px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+  }
+
+  a:link,
+  a:visited,
+  a:focus,
+  a:active{
+    text-decoration: none;
+
+  }
+
+  a:hover{
+    width: 100%;
+
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    @include animate;
+  }
 
 
-  .rlm-logo-white{
-    width: 56px;
-    height: 26px;
-    margin-bottom: 10px;
+  h4{
+    color:$footer-text;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 
 }
 
-.voh-footer-upper{
-  min-height: 100px;
-  background-color: $custom-color6;
-  padding: 15px;
+.social-holder{
+  display: inline-block;
+  width: 19%;
+  padding: 3px 2px;
 }
 
-.voh-social-holder{
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.voh-footer-social{
-
-  list-style: none;
-
-  li{
-    float: right;
-    margin: 0 6px;
-
-    @include fx-border-radius(100%);
-    cursor: pointer;
-  }
-
-  .voh-footer-social-facebook{
-      background-color: white;
-  }
-
-  .voh-footer-social-youtube{
-    background-color: white;
-  }
-
-  .voh-footer-social-twitter{
-    background-color: white;
-  }
 
 
-}
 
-.voh-footer-bottom{
-  padding-top: 15px;
-  font: $fx-text-h4;
+/* Ipad */
+@media (min-width: 768px) and (max-width: 990px) {
 
-  .pull-right{
-
-    a{
-      color: white !important;
-    }
-
+  .social-holder{
+    display: inline-block;
+    width: 20%;
+    padding: 3px 2px;
   }
 
 }
 
+/* Iphone */
 
-.footer-menu-container{
-  ul{
-    list-style: none;
-    padding-left: 0;
-
-    li{
-      display: inline-block;
-      padding: 2px 15px;
-      position: relative;
-
-      text-transform: uppercase;
-
-      a{
-        color: white;
-        text-decoration: none;
+@media (max-width: 767px) {
 
 
-        &:hover, &:active, &:visited, &:focus{
-          text-decoration: none;
-        }
-
-      }
-
-      &:before{
-        content: '|';
-        color: white;
-        position: absolute;
-        left: 0;
-      }
-
-      &:first-child:before{
-        content: '';
-      }
-
-
-    }
-
-
+  .social-holder{
+    display: inline-block;
+    width: 15%;
+    margin: 3px;
   }
+
+
+  /* End of the iPhone media query*/
+
 }
+

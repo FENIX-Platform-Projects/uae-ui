@@ -2,19 +2,81 @@
   "items": [
     {
       "attrs": {
-        "id": "home"
+        "id": "home",
+        "class": "home-menu-item"
       },
       "target": "#home",
       "label": {
-        "EN": "UAE"
+        "EN": "Home"
       }
     },
+    {
+      "attrs": {
+        "id": "profile"
+      },
+      "target": "#profile",
+      "label": {
+        "EN": "Country Profile"
+      }
+    },
+    {
+      "attrs": {
+        "id": "datamgmt"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "datamgmt.html",
+      "label": {
+        "EN": "Data Management"
+      }
+    },
+    {
+      "attrs": {
+        "id": "analysis"
+      },
+      "target": "#analysis",
+      "label": {
+        "EN": "Analysis"
+      }
+    },
+    {
+      "attrs": {
+        "id": "methods"
+      },
+      "target": "#methods",
+      "label": {
+        "EN": "Methods and Standards"
+      }
+    },
+    {
+      "attrs": {
+        "id": "modules"
+      },
+      "target": "#modules",
+      "label": {
+        "EN": "Thematic Modules"
+      }
+    }
   ],
   "rightItems": [
-
+    {
+      "attrs": {
+        "id": "login"
+      },
+      "label": {
+        "EN": "LOGIN"
+      }
+    },
+    {
+      "attrs": {
+        "id": "logout"
+      },
+      "label": {
+        "EN": "LOGOUT"
+      }
+    }
   ],
-  "type": "static-top",
-  "brand": {
-    "target": "#"
-  }
+  "type": "static-top"
+
 }

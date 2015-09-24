@@ -1,0 +1,16 @@
+{
+  "activeStyle": {
+    "color":"#00f",
+    "fillColor":"#fa0",
+    "weight": 1,
+    "opacity": 1,
+    "fillOpacity": 0.6
+  },
+  "style": {
+    "color":"#00f",
+    "fillColor":"#08f",
+    "weight": 1,
+    "opacity": 1,
+    "fillOpacity":0.4
+  }
+}

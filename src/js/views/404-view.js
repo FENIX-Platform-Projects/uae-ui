@@ -2,12 +2,13 @@
 define([
     'views/base/view',
     'text!templates/404.hbs',
+    'config/Events',
     'amplify'
-], function (View, template) {
+], function (View, template, E) {
 
     'use strict';
 
-    var HomeView = View.extend({
+    var NotFoundView = View.extend({
 
         // Automatically render after initialize
         autoRender: true,
@@ -24,10 +25,10 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish('voh.state.change', {menu: '404'});
+            amplify.publish(E.STATE_CHANGE, {menu: '404'});
 
         }
     });
 
-    return HomeView;
+    return NotFoundView;
 });
