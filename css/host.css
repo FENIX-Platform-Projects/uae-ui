@@ -5933,6 +5933,9 @@ input[type="radio"]:checked + label {
     transition: all 0.3s ease 0s; }
 
 /* Checkbox Buttons */
+input[type="checkbox"] {
+  display: none; }
+
 input[type="checkbox"] + label {
   cursor: pointer;
   margin: 0 7px;
