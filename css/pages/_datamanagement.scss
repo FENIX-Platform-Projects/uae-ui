@@ -1,0 +1,118 @@
+/* Afg Data Management */
+
+#main-container {
+  .container{
+    padding: 0;
+    width: 100%;
+
+  }
+}
+
+.uneca-datamng-welcome{
+  text-align: center;
+  width: 350px;
+  background-color: white;
+  padding: 25px;
+  position: relative;
+  left: 50%;
+  @include fx-transfor-me(translateX(-50%));
+  @include fx-border-radius(3px);
+
+
+  h3{
+    margin-top: 0;
+    font-size: 22px;
+  }
+
+  .uneca-datamng-welcome-btn{
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    background-color: $fenix-superlight-gray;
+    border: 2px solid transparent;
+    cursor: pointer;
+    @include fx-border-radius(3px);
+    @include animate;
+    margin: 5px;
+
+    &:hover{
+      border-color:$fx-cool-blue;
+
+    }
+
+    a{
+      display: inline-block;
+      position: relative;
+      top: 50%;
+      width: 100%;
+      @include fx-transfor-me(translateY(-40%));
+
+
+      span:first-child{
+        font-size: 30px;
+        color: $fenix-text;
+      }
+      span:last-child{
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      &:hover, &:active, &:focus{
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+
+}
+
+#data-mng-menu-container{
+  .fx-menu{
+
+    margin-bottom: 0;
+    background-color: $fenix-light-gray;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: normal;
+    min-height:30px;
+
+    .fx-ul{
+      a{
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
+
+    }
+
+  }
+
+  .dropdown-menu{
+    border-top: 0;
+  }
+
+}
+
+#site-container{
+
+
+
+}
+
+.fx-datamng-holder{
+  min-height: 400px;
+  background-color: $fenix-light-bg;
+  padding-top: 20px;
+
+
+  .metadata-view{
+
+    .container{
+      padding: 0;
+      width: 100%;
+
+    }
+  }
+
+}

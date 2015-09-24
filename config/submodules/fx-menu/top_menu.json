@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "attrs": {
+        "id": "home"
+      },
+      "target": "#home",
+      "label": {
+        "EN": "UAE"
+      }
+    },
+  ],
+  "rightItems": [
+
+  ],
+  "type": "static-top",
+  "brand": {
+    "target": "#"
+  }
+}

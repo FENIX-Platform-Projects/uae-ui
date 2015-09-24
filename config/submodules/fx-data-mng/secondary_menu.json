@@ -1,0 +1,78 @@
+{
+  "items": [
+    {
+      "attrs": {
+        "id": "search"
+      },
+      "target": "#search",
+      "label": {
+        "EN": "Search",
+        "FR": "PI"
+      }
+    },
+    {
+      "attrs": {
+        "id": "add"
+      },
+      "target": "#add",
+      "label": {
+        "EN": "Add",
+        "FR": "PI"
+      }
+    },
+    {
+      "type": "dropdown",
+      "attrs": {
+        "id": "dropdown"
+      },
+      "label": {
+        "EN": "Edit",
+        "FR": "PI"
+      },
+      "children": [
+        {
+          "type": "item",
+          "attrs": {
+            "id": "resume"
+          },
+          "target": "#resume",
+          "label": {
+            "EN": "Resume",
+            "FR": "PI"
+          }
+        },
+        {
+          "type": "item",
+          "attrs": {
+            "id": "metadata"
+          },
+          "target": "#metadata",
+          "label": {
+            "EN": "Metadata",
+            "FR": "PI"
+          }
+        }
+      ]
+    },
+    {
+      "attrs": {
+        "id": "delete"
+      },
+      "target": "#delete",
+      "label": {
+        "EN": "Delete",
+        "FR": "PI"
+      }
+    },
+    {
+      "attrs": {
+        "id": "close"
+      },
+      "target": "#close",
+      "label": {
+        "EN": "Close",
+        "FR": "PI"
+      }
+    }
+  ]
+}

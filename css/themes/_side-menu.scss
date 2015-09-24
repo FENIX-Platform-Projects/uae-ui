@@ -1,0 +1,243 @@
+/* Afg - Side Menu */
+
+#sidebar-wrapper{
+  padding-top: 50px;
+  background-color: $afg-custom-color1;
+
+  .sidebar-nav{
+    top: 50px;
+
+    li{
+      line-height: 50px;
+      background-color: $afg-custom-color2;
+      margin-bottom: 1px;
+      font-family: 'Roboto';
+      font-size: 14px;
+
+      &.active{
+        a {
+          color: $afg-false-white;
+          background-color: $afg-custom-color3;
+          position: relative;
+
+
+          &:before{
+            content: '';
+            width: 8px;
+            height: 100%;
+            background-color: $fx-cool-blue;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+
+
+          &:hover, &:active, &:focus, &:visited{
+            background-color: $afg-custom-color3;
+          }
+
+        }
+      }
+
+
+      a {
+        color: $afg-false-white;
+
+        &:hover, &:active, &:focus, &:visited{
+          background-color: $afg-custom-color3;
+        }
+
+      }
+    }
+
+  }
+
+  .sidebar-nav.fx-ul-right{
+    top: 350px;
+  }
+
+
+
+}
+
+#page-content-wrapper{
+  padding: 0;
+  padding-top: 50px;
+
+  .container-fluid.main-content{
+    padding-left: 0;
+
+  }
+
+}
+
+
+
+
+
+#wrapper {
+
+  .page-content-toolbar-btn{
+    left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  .page-content-toolbar-btn.pull-right{
+    right: 10px;
+    left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+  }
+
+}
+
+#wrapper.toggled {
+
+  .page-content-toolbar-btn{
+    left: 260px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+  }
+
+  .page-content-toolbar-btn.pull-right{
+    right: 10px;
+    left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+}
+
+
+#wrapper #sidebar-wrapper {
+
+  .brand-logo{
+    margin-left: 50px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    h4{
+      color: $fenix-text;
+
+    }
+
+    span{
+      color: $fenix-text;
+
+    }
+
+  }
+
+
+
+}
+
+#wrapper.toggled #sidebar-wrapper {
+
+  .brand-logo{
+    margin-left: 0px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    h4{
+      color: white;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    span{
+      color: white;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+  }
+
+
+
+}
+
+#wrapper{
+  .open-overlay.page-content-toolbar-btn{
+    left: auto;
+    position: absolute;
+    right: 250px;
+  }
+}
+
+#wrapper.toggled{
+  .open-overlay.page-content-toolbar-btn{
+    left: auto;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media(min-width:768px) {
+
+  #wrapper #sidebar-wrapper {
+
+    .brand-logo{
+      margin-left: 0px;
+
+    }
+
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+
+    .brand-logo{
+      margin-left: 0;
+
+      h4{
+        color: #333;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+      span{
+        color: #333;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+    }
+
+
+
+  }
+
+  #wrapper #sidebar-wrapper {
+    .brand-logo{
+      h4{
+        color: white;
+      }
+      span{
+        color: white;
+      }
+    }
+  }
+}
+

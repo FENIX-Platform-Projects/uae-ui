@@ -1,0 +1,111 @@
+/* RLM Footer */
+
+footer.voh-footer{
+  background-color: $custom-color7;
+  min-height: 160px;
+  color: white;
+  position: relative;
+
+
+  .rlm-logo-white{
+    width: 56px;
+    height: 26px;
+    margin-bottom: 10px;
+  }
+
+}
+
+.voh-footer-upper{
+  min-height: 100px;
+  background-color: $custom-color6;
+  padding: 15px;
+}
+
+.voh-social-holder{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.voh-footer-social{
+
+  list-style: none;
+
+  li{
+    float: right;
+    margin: 0 6px;
+
+    @include fx-border-radius(100%);
+    cursor: pointer;
+  }
+
+  .voh-footer-social-facebook{
+      background-color: white;
+  }
+
+  .voh-footer-social-youtube{
+    background-color: white;
+  }
+
+  .voh-footer-social-twitter{
+    background-color: white;
+  }
+
+
+}
+
+.voh-footer-bottom{
+  padding-top: 15px;
+  font: $fx-text-h4;
+
+  .pull-right{
+
+    a{
+      color: white !important;
+    }
+
+  }
+
+}
+
+
+.footer-menu-container{
+  ul{
+    list-style: none;
+    padding-left: 0;
+
+    li{
+      display: inline-block;
+      padding: 2px 15px;
+      position: relative;
+
+      text-transform: uppercase;
+
+      a{
+        color: white;
+        text-decoration: none;
+
+
+        &:hover, &:active, &:visited, &:focus{
+          text-decoration: none;
+        }
+
+      }
+
+      &:before{
+        content: '|';
+        color: white;
+        position: absolute;
+        left: 0;
+      }
+
+      &:first-child:before{
+        content: '';
+      }
+
+
+    }
+
+
+  }
+}

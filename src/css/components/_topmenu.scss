@@ -1,0 +1,298 @@
+/* Top Menu */
+
+.fao-header{
+  height: 105px;
+  position: relative;
+
+
+  .col-xs-12{
+    height: 105px;
+
+
+  }
+
+    .fao-logo{
+      width: 412px;
+      height: 75px;
+      position: relative;
+      top: 50%;
+      left:-22px;
+      @include fx-transfor-me(translateY(-50%));
+    }
+
+}
+
+.topmenu{
+  .container-fluid {
+    padding: 0;
+  }
+
+}
+
+.topmenu-buttons-holder{
+  padding-left: 0;
+  padding-right:0;
+}
+
+.navbar{
+  //  min-height: 40px;
+  min-height: $host-menu-height; //It has to be defined - Very important Bootstrap override
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: white;
+  overflow: hidden;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  &:before {
+    // Very cool menu effect //
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: $fx-cool-blue;
+    left: 0;
+    bottom: -5px;
+    pointer-events: none;
+  }
+
+  &:hover {
+    &:before {
+      @include animate;
+      bottom:0;
+    }
+
+  }
+}
+
+.navbar-default {
+  @include fx-gradient(#0e6da5, #0d5399);
+  //  border: none;
+
+//  li#home{
+//    display: none;
+//
+//  }
+
+
+  .navbar-nav{
+    > li {
+      // height: 50px !important;
+
+      border-right: 1px solid white;
+      > a{
+        //font: $afo-text-menu-item;
+        text-transform: uppercase;
+        height: $host-menu-height;
+        //      padding: 17px 15px 34px 15px;
+        //      line-height: 20px;
+        //      height: 50px !important;
+        //      display: inline-block !important;
+        //      border-top: 0px !important;
+        //      border-color: $custom-color4 !important;
+        //      border-bottom-color: red;
+        //      border-bottom: 0px;
+        //      border-right: 1px solid $custom-color4;
+        //      @include fx-transfor-me(translateY(-1px));
+
+
+      }
+    }
+  }
+
+
+
+}
+
+
+
+
+.navbar-brand{
+  //  background-size: 40px 40px !important;
+  height: $host-menu-height;
+  width: $host-menu-height;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: center center;
+  display: none;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+  background-color: white;
+}
+
+/* Over menu */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  color:white;
+}
+
+/* Active - hover and normal state of menu btn */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    border-bottom: 0;
+    background-color: #003a45;
+    color: white;
+}
+
+
+.navbar-header{
+  background-color: $fx-cool-blue;
+}
+
+.navbar-default .navbar-toggle{
+  border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+  background-color: transparent;
+}
+
+
+
+
+.navbar-collapse{
+  border-top: 0;
+  .navbar-nav{
+    margin-top: 0;
+
+    > li{
+
+
+      > a{
+
+      }
+    }
+
+    .dropdown.open{
+      background-color: $fenix-light-gray;
+    }
+
+  }
+
+
+}
+
+.container {
+  background-color: white;
+}
+
+
+
+
+
+
+.navbar .container {
+  background-color: transparent;
+}
+
+
+
+.fx-menu{
+  .navbar-right{
+
+    margin: 0;
+
+    > li {
+      border-right: 0;
+      //border-left: 1px solid white;
+
+    }
+ }
+}
+
+#login {
+  position: relative;
+  right:15px;
+
+
+  a{
+    height: auto;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    //top: 50%;
+    display: inline-block;
+    width: 100%;
+    top: 10px;
+    cursor: pointer;
+    //@include fx-transfor-me(translateY(-50%));
+
+    &:before{
+      display: none;
+    }
+  }
+    span{
+
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+
+  }
+}
+
+#logout {
+  position: relative;
+  right:15px;
+
+
+  a{
+    height: auto;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    //top: 50%;
+    display: inline-block;
+    width: 100%;
+    top: 10px;
+    cursor: pointer;
+    //@include fx-transfor-me(translateY(-50%));
+
+    &:before{
+      display: none;
+    }
+  }
+  span{
+
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+
+  }
+}
+
+/*//////////////////////////////////////////// Navbar Media queries */
+
+@media (min-width: 768px) and (max-width: 990px) {
+
+
+
+    .navbar-nav.fx-ul{
+    >li{
+
+      >a{
+        //font-size: 80%;
+        //padding: 15px 7px;
+
+
+      }
+
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+
+  .navbar-default .navbar-nav > li > a {
+
+    &:before {
+      display: none;
+    }
+
+  }
+
+  #login {
+    left: 0px;
+  }
+
+}

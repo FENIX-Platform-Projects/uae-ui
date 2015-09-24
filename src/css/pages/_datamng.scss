@@ -1,0 +1,90 @@
+/* RLM - Data Management */
+
+#fx-catalog-submit-btn{
+  color: $fx-cool-blue;
+}
+
+
+.fx-catalog-form-module{
+  border-color: $fenix-light-bg;
+}
+
+
+.fx-catalog-welcome{
+
+  //text-align: left;
+
+
+  .catalog-ico {
+    /*display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url(../../src/css/img/catalog-ico.svg) no-repeat;
+    background-size: contain;
+    width: 50px; /!* Width of new image *!/
+    height: 50px; /!* Height of new image *!/
+    padding-left: 50px; /!* Equal to width of new image *!/*/
+
+  }
+}
+
+/*TEMPORARY*/
+#fx-catalog-submit-btn.disabled {
+  color: $fx-cool-blue;
+}
+#fx-catalog-submit-btn {
+  color: white;
+}
+
+.fenix-result {
+  height: 250px;
+  overflow-y: hidden;
+}
+
+
+
+.fx-catalog-modular-filter-container{
+  background-color:$fenix-light-bg ;
+}
+
+.data-mng-secondary-menu-container{
+  padding: 0;
+  position: relative;
+  z-index:2;
+
+
+
+
+  .fx-menu{
+
+    background-image: none;
+    background-color: $rlm-box-bg;
+
+    .navbar-nav > li {
+
+
+//        border-right: 1px solid $fenix-dark-bg;
+
+      > a{
+        text-transform: none;
+        height: 32px;
+        color: $fenix-text !important;
+
+      }
+
+
+
+    }
+
+
+    >.container-fluid{
+      padding: 0;
+
+
+
+
+    }
+  }
+
+
+}

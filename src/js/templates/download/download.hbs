@@ -1,0 +1,68 @@
+<h1>Download Data</h1> <!-- Title doesn't work - it is static -->
+<!-- Section switcher-->
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="fx-section-switcher">
+            <li data-tab="indicator"><a href="#download/indicator"> {{ section_one}}</a></li>
+            <li data-tab="country"><a href="#download/country">{{ section_two }}</a></li>
+        </ul>
+    </div>
+</div>
+
+<br>
+
+<!-- download container -->
+<div class="download-selectors-container"></div>
+
+<!-- Toolbar -->
+<div class="row">
+    <div class="col-xs-12 rlm-buttons-holder">
+        <button id="table-go-btn" class="btn  btn-table-go pull-right"> {{ go_btn }}</button>
+        <button id="table-reset-btn" class="btn  btn-reset pull-right"> {{ reset_btn }}</button>
+    </div>
+</div>
+
+<!-- Error Holder -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="error-holder"></div>
+    </div>
+</div>
+
+<!-- Results container -->
+<div class="row">
+    <div class="col-xs-12">
+        <div id="results-container"></div>
+    </div>
+</div>
+
+
+<form id="xlsDataForm" action="http://fenixapps2.fao.org/fenix-olap-webs/go/ExportPOI2" method="POST">
+    <input id="myJson" name="myJson" type="hidden" value="">
+    <input id="myFlags" name="myFlags" type="hidden" value="{&quot;data&quot;:[{&quot;title&quot;:&quot;&quot;,&quot;label&quot;:&quot;Official data&quot;}]}">
+    <input id="footer" name="footer" type="hidden" value="RLM">
+</form>
+
+<!-- Metadata modal -->
+<!-- Large modal -->
+
+<div id="rlm-metadata-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Metadata Viewer</h4>
+            </div>
+            <div class="modal-body">
+                <div data-content="metadata-viewer-container"></div>
+            </div>
+            <div class="modal-footer">
+                FENIX Metadata
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

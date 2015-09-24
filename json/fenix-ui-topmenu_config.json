@@ -24,7 +24,7 @@
       "attrs": {
         "id": "datamng"
       },
-      "target": "#",
+      "target": "./createdataset.html",
       "label": {
         "EN": "Data Management",
         "FR": "PI"

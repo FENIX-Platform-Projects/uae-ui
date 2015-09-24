@@ -1,0 +1,51 @@
+/* RLM - Download */
+
+
+.download-selectors{
+  h1{
+    font-size: 12px;
+    display: inline-block;
+    background: $rlm-box-bg;
+    color: $fenix-text;
+    padding: 3px 5px;
+    margin-top: 3px;
+    margin-bottom: 15px;
+  }
+
+  .input.form-control{
+    width: 60%;
+    display: inline-block;
+    float: right;
+  }
+
+}
+
+.rlm-result {
+
+
+  &.w2 {
+    width: 100%;
+  }
+}
+
+
+.geo-selector-container {
+  height: 220px;
+  overflow-y: auto;
+}
+
+.geo-granularity-form{
+  height: 30px;
+}
+
+.rlm-buttons-holder{
+  height: 50px;
+  background-color: $rlm-box-bg;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .btn{
+    margin: 12px 3px;
+  }
+
+}

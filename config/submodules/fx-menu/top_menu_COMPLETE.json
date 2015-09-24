@@ -1,0 +1,113 @@
+{
+  "items": [
+    {
+      "attrs": {
+        "id": "home"
+      },
+      "target": "#home",
+      "label": {
+        "EN": "RLM"
+      }
+    },
+    {
+      "attrs": {
+        "id": "download"
+      },
+      "type": "dropdown",
+      "label": {
+        "EN": "Download"
+      },
+      "children": [
+        {
+          "attrs": {
+            "id": "indicator"
+          },
+          "target": "#download/indicator",
+          "label": {
+            "EN": "By Indicator"
+          }
+        },
+        {
+          "attrs": {
+            "id": "country"
+          },
+          "target": "#download/country",
+          "label": {
+            "EN": "By Country"
+          }
+        }
+      ]
+    },
+    {
+      "attrs": {
+        "id": "datamng"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "datamng.html",
+      "label": {
+        "EN": "Data Management"
+      }
+    },
+    {
+      "attrs": {
+        "id": "upload"
+      },
+
+      "target": "#upload",
+      "label": {
+        "EN": "Bulk Upload"
+      }
+    },
+    {
+      "attrs": {
+        "id": "modules"
+      },
+      "target": "#modules",
+      "label": {
+        "EN": "Thematic Modules"
+      }
+    },
+    {
+      "attrs": {
+        "id": "standards"
+      },
+      "target": "#standards",
+      "label": {
+        "EN": "Methods and Standards"
+      }
+    },
+    {
+      "attrs": {
+        "id": "about"
+      },
+      "target": "#about",
+      "label": {
+        "EN": "About"
+      }
+    }
+  ],
+  "rightItems": [
+    {
+      "attrs": {
+        "id": "login"
+      },
+      "label": {
+        "EN": "LOGIN"
+      }
+    },
+    {
+      "attrs": {
+        "id": "logout"
+      },
+      "label": {
+        "EN": "LOGOUT"
+      }
+    }
+  ],
+  "type": "static-top",
+  "brand": {
+    "target": "#"
+  }
+}

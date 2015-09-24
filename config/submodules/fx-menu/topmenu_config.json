@@ -1,0 +1,93 @@
+{
+  "items": [
+  {
+    "attrs": {
+      "id": "home"
+    },
+    "target": "index.html",
+    "label": {
+      "EN": "Home",
+      "FR": "PI"
+    }
+  },
+  {
+    "attrs": {
+      "id": "analysis"
+    },
+    "target": "analysis.html",
+    "label": {
+      "EN": "Search and Visualize",
+      "FR": "PI"
+    }
+  },
+  {
+    "attrs": {
+      "id": "createdataset"
+    },
+    "target": "createdataset.html",
+    "label": {
+      "EN": "Data Management",
+      "FR": "PI"
+    }
+  },
+  {
+    "attrs": {
+      "id": "modules"
+    },
+    "target": "modules.html",
+    "label": {
+      "EN": "Thematic modules",
+      "FR": "PI"
+    }
+  }
+],
+  "rightItems": [
+    {
+      "attrs": {
+        "id": "keys"
+      },
+      "target": "#",
+      "label": {
+        "EN": "Key indicators",
+        "FR": "PI"
+      }
+    },
+    {
+      "attrs": {
+        "id": "news"
+      },
+      "target": "#",
+      "label": {
+        "EN": "News",
+        "FR": "PI"
+      }
+    },
+    {
+      "attrs": {
+        "id": "documents"
+      },
+      "target": "#",
+      "label": {
+        "EN": "Documents",
+        "FR": "PI"
+      }
+    },
+    {
+      "attrs": {
+        "id": "links"
+      },
+      "target": "#",
+      "label": {
+        "EN": "Links",
+        "FR": "PI"
+      }
+    }
+  ],
+  "type": "sidemenu",
+
+  "brand": {
+    "target": "index.html"
+  },
+
+  "languages": [ ]
+}

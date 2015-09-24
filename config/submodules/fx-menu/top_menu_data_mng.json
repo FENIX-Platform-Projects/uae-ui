@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "attrs": {
+        "id": "home"
+      },
+      "target": "./index.html",
+      "a_attrs" : {
+        "rel" : "external"
+      },
+      "label": {
+        "EN": "UAE Data Portal"
+      }
+    }
+  ],
+  "rightItems": [
+
+  ],
+  "type": "static-top",
+  "brand": {
+    "target": "#"
+  }
+}
