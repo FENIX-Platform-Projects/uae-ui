@@ -1,249 +1,335 @@
-/* Homepage */
+/* Afghanistan Home */
+
+
+.country-welcome{
+  background-color: $afg-yellow;
+
+}
+
+.country-details{
+  background-image: url(img/afg-home-bg.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
 
 
 
-[data-page='home']{
+.progressbar-text{
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 23px;
+  color: white !important;
 
-  .container-breadcrumb{
-    display: none;
+  &:after{
+    content: '%';
+    position: relative;
+    right: -2px;
+    font-size: 16px;
+    top: -5px;
+
   }
 
 }
 
 
-/* Fenix - Home Page */
 
-/* HOMEPAGE */
-$uneca-home-padding: 15px;
+.home-content{
 
-.uneca-home-container{
-  .panel-body{
-    background-color: $fenix-light-bg;
-    padding: 0 15px;
+background-color: $afg-home-background;
+
+
+  .home-tile{
+    padding: 20px 15px;
+    position: relative;
+    min-height: 400px;
   }
 
-  .uneca-home-title{
-    font: $fx-text-smalltitle-bold;
-    color: $fx-cool-blue;
-    padding: $uneca-home-padding;
+  .home-tiles-title{
+    font-size: 33px;
+    color: $fenix-text;
+    margin-top: 10px;
+
+
   }
 
-  .obj-box {
-    padding: 0;
+  .country-welcome{
+    padding-bottom: 100px;
+  }
+
+  .home-detail-pointer{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $afg-yellow-light;
+
+    &:before{
+      content: '';
+      position: absolute;
+      right: -17px;
+      top:38px;
+
+      z-index: 1;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 13.5px 0 13.5px 17px;
+      border-color: transparent transparent transparent $afg-yellow-light;
+    }
+
+
+    .afg-title{
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      @include fx-transfor-me(translateY(-100%));
+    }
+
+  }
+
+  .country-details{
+
+    h1{
+      font-size: 50px;
+      color: white;
+      font-weight: 100;
+      position: absolute;
+      top: 0;
+    }
+
+
+    .home-stats-footer{
+      height: 100px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 15px 15px 15px 35px;
+      background-color: $home-stats-bg;
+
+
+
+      h3{
+        font-weight: 100;
+        font-size: 20px;
+        color: white;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      p.subtitle{
+        font-weight: 500;
+        font-size: 10px;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+      }
+
+      .col-xs-2{
+        padding-top: 12px;
+        position: relative;
+
+
+        &:before{
+          content: '';
+          position: absolute;
+          top: 50%;
+          @include fx-transfor-me(translateY(-50%));
+          background-image: url(img/arrow-right.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 8px;
+          height: 20px;
+          right: 10px;
+        }
+
+
+
+
+
+      }
+
+      .pie-holder{
+        position: relative;
+        padding-left: 90px;
+        padding-top: 12px;
+        &:before {
+          display: none;
+        }
+
+      }
+
+      .afg-home-stats{
+        height: 65px;
+        width: 65px;
+        position: absolute !important;
+        left: 10px;
+        top: 0;
+      }
+
+
+
+    }
+
+
+  }
+
+
+}
+
+.partners-holder{
+  background-color: $afg-light-blue-bg;
+  min-height: 100px;
+
+  h4{
+    font-size: 14px;
+    color: $afg-light-blue-text;
+  }
+
+  .partner-holder{
+    text-align: center;
+
+  }
+
+
+}
+
+
+ol {
+
+  list-style: none;
+  padding-left: 40px;
+  counter-reset: numList;
+}
+ol li {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+ol li:before {
+  counter-increment: numList;
+  content: counter(numList);
+  color: $afg-light-blue-big-text;
+  font-weight: 700;
+  font-size: 36px;
+
+  //float: left;
+  position: absolute;
+  left: -33px;
+  top: 7px;
+
+  //font: bold 12px sans-serif;
+  text-align: center;
+  line-height: 19px;
+
+  width: 20px; height: 20px;
+
+}
+
+.home-tile.gray{
+  background-color: $afg-blue-tile;
+  position: relative;
+
+  .news-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    padding: 15px;
+  }
+
+  h2, h4, p{
+    color: white !important;
+    border-color: white;
   }
 
   p{
-    padding: 0 $uneca-home-padding;
-    font-size: 12px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+
   }
 
-  .uneca-home-social{
-    padding: 0 $uneca-home-padding;
-    font-size: 18px;
-  }
-
-  hr{
-    border-color: $fenix-light-bg;
-    margin-bottom: 0;
-  }
-
-  .panel-heading{
-    padding: 0 15px;
-  }
-
-  .panel-default{
+  .more{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: -15px;
     border-color: transparent;
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 0;
   }
 
-  .panel-group .panel-heading .panel-title a {
-    text-transform: none;
-    color: $fx-cool-blue;
-    font-size: 14px;
-
-  }
-
-  .fx-panel-plus{
-    margin-right: 5px;
-  }
-
-  .uneca-home-panel-sub{
-    margin: 7px 0;
-    border-bottom: 1px solid  #e5e5e5;
-    &:last-child{
-      border-color: transparent;
-    }
-  }
-
-  .uneca-home-entrypoint{
-    text-align: center;
-    padding: 0 25px;
-    .col-xs-4 {
-      border-right: 1px solid #e5e5e5;
-      &:last-child{
-        border-color: transparent;
-      }
-    }
-  }
-
-  .uneca-home-entrypoint-container{
-    padding: 5px;
+  .news-image{
+    background-image: url(img/working-group.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 50%;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
   }
 
 }
 
+.home-tile.map{
+  background-color: $afg-map-tile;
+  position: relative;
+  background-image: url("img/home-map.svg");
+  background-size: 570px 371px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 
-//.fx-home-header{
-//  text-align: center;
-//  color: white;
-//  margin-top: 50px;
-//  h1{
-//
-//    font-size: 59px;
-//    font-weight: 700;
-//
-//    em{
-//      font-style: normal;
-//      font-weight: 100;
-//    }
-//  }
-//
-//  h3{
-//    font-size: 16px;
-//    font-weight: 700;
-//  }
-//
-//  img{
-//    position: relative;
-//    top: -6px;
-//  }
-//
-//}
-//
-//
-//
-//
-//.fx-home-ico-holder{
-//  height: 50px;
-//  width: 50px;
-//  border: 1px solid $fenix-text;
-//  padding: 5px;
-//
-//  img {
-//    width: 100%;
-//    height: 100%;
-//  }
-//}
-//
-//.fx-home-content-grid{
-//  text-align: justify;
-//
-//
-//  .fx-home-ico-holder{
-//    position: absolute;
-//    left: 0;
-//    top: 2px;
-//  }
-//
-//  h1{
-//    font-size: 14px;
-//    margin-top: 50px;
-//    margin-bottom: 20px;
-//
-//  }
-//
-//  h2 {
-//    margin-top:0;
-//    margin-bottom: 0;
-//    font-weight: 400;
-//    font-size: 12px;
-//    font-family: "Roboto Condensed";
-//    text-transform: uppercase;
-//  }
-//
-//  .fx-home-categories{
-//    padding-left: 71px;
-//    margin-bottom: 20px;
-//
-//    position: relative;
-//  }
-//
-//  ul{
-//    padding-left:0;
-//    list-style: none;
-//
-//    li{
-//      margin-bottom: 8px;
-//      position: relative;
-//      padding-left: 30px;
-//
-//      em{
-//        font-style: normal;
-//        font-size: 10px;
-//        height: 15px;
-//        width: 15px;
-//        @include fx-border-radius(15px);
-//        border: 1px solid $fenix-text;
-//        display: inline-block;
-//        line-height: 1.3;
-//        text-align: center;
-//        position: absolute;
-//        left: 0;
-//        top: 3px;
-//      }
-//
-//    }
-//
-//  }
-//
-//  .fx-git-logo{
-//    margin-top: 23px;
-//  }
-//
-//
-//}
-//
-//
-//
-//p.fx-strong{
-//  font-weight: 700;
-//}
-//
-//.fx-background-image{
-//  height: 210px;
-//  width: 100%;
-//  position: absolute;
-//
-//  background-image: url(img/background-home.jpg);
-//
-//
-//  -webkit-background-size: cover;
-//  -moz-background-size: cover;
-//  -o-background-size: cover;
-//  background-size: cover;
-//
-//
-//}
-//
-//@media (max-width: 490px) {
-//  .fx-background-image{
-//    height: 286px;
-//    width: 100%;
-//    position: absolute;
-//
-//    background-image: url(img/background-home.jpg);
-//
-//
-//    -webkit-background-size: cover;
-//    -moz-background-size: cover;
-//    -o-background-size: cover;
-//    background-size: cover;
-//
-//
-//  }
-//}
+  &:hover{
+    background-size: 1600px 1035px;
+    background-position: 69% 58%;
+    -webkit-transition: all 1s ease 0.2s;
+    -moz-transition: all 1s ease 0.2s;
+    -o-transition: all 1s ease 0.2s;
+    transition: all 1s ease 0.2s;
+  }
 
 
+  .afg-title {
+    position: absolute;
+    background-color: $afg-map-tile;
+    top: 16px;
+  }
 
+  h3{
+    color: $fenix-text;
+    font-size: 24px;
+    font-weight: 100;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    right: 15px;
+    
+  }
 
+}
 
+.home-tile.aims{
+  background-color: white;
 
+}
