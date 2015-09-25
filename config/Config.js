@@ -3,7 +3,7 @@ define(function () {
 
         'use strict';
 
-    var CODELIST_PREFIX = 'http://fenixservices.fao.org/d3s/msd/resources/data/uid/'
+    var CODELIST_PREFIX = 'http://fenix.fao.org/d3s/msd/resources/data/uid/'
 
         return {
 
