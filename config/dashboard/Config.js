@@ -27,7 +27,7 @@ define(function () {
                             "config": {
                                 "defaultsource": [
                                     {"value":"0101","label":"LIVE HORSES, ASSES,  MULES AND HINNIES.","selected":false},
-                                    {"value":"0102","label":"LIVE BOVINE ANIMALS","selected":false},
+                                    {"value":"0102","label":"LIVE BOVINE ANIMALS","selected":true},
                                     {"value":"0103","label":"LIVE SWINE.","selected":false},
                                     {"value":"0104","label":"LIVE SHEEP AND GOATS.","selected":false},
                                     {"value":"0105","label":"LIVE POULTRY, THAT IS TO SAY, FOWLS OF THE SPECIES GALLUS DOMESTICUS, DUCKS, GEESE, TURKEYS AND GUINEA FOWLS.","selected":false},
@@ -205,7 +205,7 @@ define(function () {
                         config: {
                             container: "#TR-item-1",
                             adapter: {
-                                type: "standard",
+                                type: "timeserie",
                                 xDimensions: 'Year',
                                 yDimensions: 'Element',
                                 valueDimensions: 'Value',
@@ -215,18 +215,11 @@ define(function () {
                                 //"title": "Top 25..."
                             },
                             creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    tooltip: {
-                                        valueSuffix: ' 1000 HA'
-                                    }
-                                }
+
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['indicator', 'year', 'domain', 'incomes', 'subregion'],
+                        //allowedFilter: ['indicator', 'year', 'domain', 'incomes', 'subregion'],
                         filter: [
                             {
                                 "name": "filter",
@@ -238,8 +231,8 @@ define(function () {
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "5622",
-                                                        "5922"
+                                                        "2620",
+                                                        "2920"
                                                     ]
                                                 }
                                             ]
@@ -264,7 +257,6 @@ define(function () {
 
                     },
 
-/*
                     {
                         id: 'TR-item-2',
                         type: 'chart',
@@ -274,46 +266,39 @@ define(function () {
                         config: {
                             container: "#TR-item-2",
                             adapter: {
-                                type: "standard",
-                                xDimensions: 'year',
-                                yDimensions: 'element',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['element']
+                                type: "timeserie",
+                                xDimensions: 'Year',
+                                yDimensions: null,
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['Element']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
                             creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    tooltip: {
-                                        valueSuffix: ' 1000 HA'
-                                    }
-                                }
+
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['indicator', 'year', 'domain', 'incomes', 'subregion'],
+                        allowedFilter: ['itemCODE'],
                         filter: [
                             {
                                 "name": "filter",
                                 "parameters": {
                                     "rows": {
 
-                                        "element": {
+                                        "Element": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "5610",
-                                                        "5910"
+                                                        "2610",
+                                                        "2910"
                                                     ]
                                                 }
                                             ]
                                         },
-                                        "item": {
+                                        "ItemCODE": {
                                             "codes": [
                                                 {
                                                     "uid": "HS",
@@ -332,7 +317,6 @@ define(function () {
                         ]
 
                     },
-
                     {
                         id: 'TR-item-3',
                         type: 'chart',
@@ -342,46 +326,39 @@ define(function () {
                         config: {
                             container: "#TR-item-3",
                             adapter: {
-                                type: "standard",
-                                xDimensions: 'year',
-                                yDimensions: 'element',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['element']
+                                type: "timeserie",
+                                xDimensions: 'Year',
+                                yDimensions: null,
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['Element']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
                             creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    tooltip: {
-                                        valueSuffix: ' 1000 HA'
-                                    }
-                                }
+
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['indicator', 'year', 'domain', 'incomes', 'subregion'],
+                        allowedFilter: ['itemCODE'],
                         filter: [
                             {
                                 "name": "filter",
                                 "parameters": {
                                     "rows": {
 
-                                        "element": {
+                                        "Element": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "5610",
-                                                        "5710"
+                                                        "2620",
+                                                        "5722"
                                                     ]
                                                 }
                                             ]
                                         },
-                                        "item": {
+                                        "ItemCODE": {
                                             "codes": [
                                                 {
                                                     "uid": "HS",
@@ -400,7 +377,6 @@ define(function () {
                         ]
 
                     },
-
                     {
                         id: 'TR-item-4',
                         type: 'chart',
@@ -410,24 +386,17 @@ define(function () {
                         config: {
                             container: "#TR-item-4",
                             adapter: {
-                                type: "standard",
-                                xDimensions: 'year',
-                                yDimensions: 'element',
-                                valueDimensions: 'value',
-                                seriesDimensions: ['element']
+                                type: "timeserie",
+                                xDimensions: 'Year',
+                                yDimensions: 'Element',
+                                valueDimensions: 'Value',
+                                seriesDimensions: ['Element']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
                             creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    tooltip: {
-                                        valueSuffix: ' 1000 HA'
-                                    }
-                                }
+
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
@@ -438,18 +407,18 @@ define(function () {
                                 "parameters": {
                                     "rows": {
 
-                                        "element": {
+                                        "Element": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "5622",
-                                                        "5722"
+                                                        "2620",
+                                                        "5710"
                                                     ]
                                                 }
                                             ]
                                         },
-                                        "item": {
+                                        "ItemCODE": {
                                             "codes": [
                                                 {
                                                     "uid": "HS",
@@ -466,7 +435,10 @@ define(function () {
                             }
 
                         ]
-                    }*/
+
+                    }
+
+
                 ]
             }
         },
@@ -475,26 +447,32 @@ define(function () {
         "livestock": {
             filter: [
                 {
-                    "type": "codelist-codes",
+                    "type": "static",
+                    "column": "item",
                     "containerType": "baseContainer",
-                    "title": "Item",
+                    "title": "Commodity",
                     "defaultCodes": ["0866"],
                     "components": [
                         {
-                            "type": "codelist-codes",
-                            "uid": "UAE_Commodity",
+                            "type": "distinct",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
+                            //"uid": "HS",
+                            //"version": null,
+                            "title": {"EN": "Distinct"},
                             // name is the ID output in tehe filter getValues()
                             "name": "item",
                             "config": {
-                                "defaultsource": [],
-                                filter: {
-                                    "uid": "UAE_Commodity",
-                                    "version": null,
-                                    "codes": ["1016", "1126", "0866", "0976"]
-                                }
+                                "defaultsource": [
+                                    {"value":"0866","label":"Cattle","selected":true},
+                                    { "value":"1016","label":"Goats","selected":false},
+                                    {"value":"1126","label":"Camels","selected":false},
+                                    {"value":"0976","label":"Sheep","selected":false}
+
+
+                                ]
                             }
+
                         }
                     ]
                 }
@@ -502,7 +480,7 @@ define(function () {
 
             dashboard: {
                 //data cube's uid
-                uid: "UNECA_Population",
+                uid: "UAE_Livestock",
 
                 //bridge configuration
                 bridge: {
@@ -518,7 +496,7 @@ define(function () {
                 metadata: {},
 
                 items: [
-                    {
+                 {
                         id: 'LS-item-1',
                         type: 'map',
                         class: "fx-map-chart",
@@ -544,7 +522,7 @@ define(function () {
                                 "name": "filter",
                                 "parameters": {
                                     "rows": {
-                                        "year": {
+                                        "Year": {
                                             "time": [
                                                 {
                                                     "from": 2013,
@@ -552,7 +530,7 @@ define(function () {
                                                 }
                                             ]
                                         },
-                                        "item": {
+                                        "ItemCode": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Commodity",
@@ -566,7 +544,69 @@ define(function () {
                                 }
                             }
                         ]
+                    },
+
+
+
+                    {
+                        id: 'LS-item-2',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#LS-item-2",
+                        config: {
+                            container: "#LS-item-2",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'Year',
+                                yDimensions: "Element",
+                                valueDimensions: 'Value',
+                                seriesDimensions: []
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                chart: {
+                                    type: "column"
+                                },
+                                tooltip: {
+                                    valueSuffix: null
+                                }
+                            }
+
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ['itemCODE'],
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+
+
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Commodity",
+                                                    "codes": ["0866"]
+
+                                                }
+                                            ]
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+                        ]
+
                     }
+
+
 
 
                 ]
