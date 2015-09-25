@@ -1,8 +1,10 @@
-/*global define, amplify*/
+/*global define, amplify, alert*/
 define([
     'jquery',
     'views/base/view',
     'fx-ds/start',
+    'fx-filter/start',
+    'fx-filter/Fx-filter-configuration-creator',
     'text!templates/dashboard/dashboard.hbs',
     'text!templates/dashboard/bases.hbs',
     //'text!templates/dashboard/profile.hbs',
@@ -14,7 +16,7 @@ define([
     'underscore',
     'amplify',
     'jstree'
-], function ($, View, Dashboard, template, basesTemplate, i18nLabels, E, LateralMenuConfig, PC, Handlebars, _) {
+], function ($, View, Dashboard, Filter, FilterConfCreator, template, basesTemplate, i18nLabels, E, LateralMenuConfig, PC, Handlebars, _) {
 
     'use strict';
 
@@ -25,6 +27,8 @@ define([
         SEARCH_ITEM_CHILD: 'a',
         SEARCH_ITEM_EL: '.country-item',
         DASHBOARD_CONTENT: "#dashboard-content",
+        FILTER_CONTENT: "filter-content",
+        FILTER_BTN: "#filter-btn",
         LATERAL_MENU: '#lateral-menu'
     };
 
@@ -63,11 +67,35 @@ define([
 
             this._printCountryDashboard();
 
+            this._bindEventListeners();
         },
 
         _initVariables: function () {
 
             this.$content = this.$el.find(s.CONTENT);
+
+            this.$filterBtn = this.$el.find(s.FILTER_BTN);
+
+        },
+
+        _bindEventListeners : function () {
+
+            var self = this;
+
+            this.$filterBtn.on('click', function (e, data) {
+
+                var filter = {};
+                var values = self.filter.getValues();
+                // TODO: funzione per distruggere dashboard e ricrearla con gli items giusti:
+
+                /*                 var filteredConfig = self._getFilteredConfig(values, self.$faostatDashboardConfig);
+                 self._renderFaostatDashboard(filteredConfig);
+                 self.faostatDashboard.filter([values]);
+                 */
+
+                // TODO: it's an array
+                self.dashboard.filter([values]);
+            });
 
         },
 
@@ -85,17 +113,8 @@ define([
                 //Limit selection e select only leafs for indicators
                 .on("select_node.jstree", _.bind(function (e, data) {
 
-                    if ( !data.instance.is_leaf(data.node) ) {
+                    self._onChangeDashboard(data.selected[0]);
 
-                        self.$lateralMenu.jstree(true).deselect_node(data.node, true);
-
-                        self.$lateralMenu.jstree(true).toggle_node(data.node);
-
-                    } else {
-
-                        self._onChangeDashboard(data.selected[0]);
-
-                    }
 
                 }, this));
 
@@ -115,9 +134,12 @@ define([
 
             this._printDashboardBase(item);
 
-            var conf = this._getDashboardConfig(item);
+            var confDashboard = this._getDashboardConfig(item),
+                confFilter = this._getFilterConfig(item);
 
-            this._renderDashboard(conf);
+            this._renderDashboard(confDashboard);
+
+            this._renderFilter(confFilter);
         },
 
         _onChangeDashboard: function (item) {
@@ -140,7 +162,7 @@ define([
 
             //get from PC the 'id' conf
 
-            var base = PC[id],
+            var base = PC[id].dashboard,
                 conf;
 
             if (!base) {
@@ -152,17 +174,54 @@ define([
             return conf;
         },
 
-        _renderDashboard: function (config) {
+        _getFilterConfig: function (id) {
 
-            if (this.unecaDashboard && this.unecaDashboard.destroy) {
-                this.unecaDashboard.destroy();
+            //get from PC the 'id' conf
+
+            var base = PC[id].filter;
+
+            if (!base) {
+                alert("Impossible to load dashboard configuration for [" + id + "]");
             }
 
-            this.unecaDashboard = new Dashboard({
+            return base;
+        },
+
+        _renderDashboard: function (config) {
+
+            if (this.dashboard && this.dashboard.destroy) {
+                this.dashboard.destroy();
+            }
+
+            this.dashboard = new Dashboard({
                 layout: "injected"
             });
 
-            this.unecaDashboard.render(config);
+            this.dashboard.render(config);
+
+        },
+
+        _renderFilter: function (config) {
+
+            var self = this;
+
+            this.filterConfCreator = new FilterConfCreator();
+
+            this.filterConfCreator.getConfiguration(config)
+                .then(function (c) {
+
+                    self.filter = new Filter();
+
+                    self.filter.init({
+                        container: s.FILTER_CONTENT,
+                        layout: 'fluidGrid'
+                    });
+
+                    var adapterMap = {};
+
+                    self.filter.add(c, adapterMap);
+
+                });
 
         }
 

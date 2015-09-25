@@ -3,74 +3,16 @@
     "multiple": false,
     "data": [
       {
-        "id": "demographic",
-        "text": "Demographic and social statistics",
-        "children": [
-          {
-            "id": "population",
-            "text": "Population"
-          },
-          {
-            "id": "education",
-            "text": "Education"
-          },
-          {
-            "id": "health",
-            "text": "Health"
-          },
-          {
-            "id": "labour",
-            "text": "Labour"
-          }
-        ]
+        "id": "trade",
+        "text": "Trade"
       },
       {
-        "id": "economics",
-        "text": "Economic statistics",
-        "children": [
-          {
-            "id": "balance_of_payments",
-            "text": "Balance of Payments"
-          },
-          {
-            "id": "gdp_constant",
-            "text": "GDP by kind of Economic Activity at Constant Prices"
-          },
-          {
-            "id": "gdp_current",
-            "text": "GDP by kind of Economic Activity at Current Prices"
-          },
-          {
-            "id": "monetary_statistics",
-            "text": "Monetary Statistics"
-          },
-          {
-            "id": "public_finance",
-            "text": "Public Finance"
-          },
-          {
-            "id": "energy",
-            "text": "Energy"
-          },
-          {
-            "id": "imports",
-            "text": "Imports"
-          }
-        ]
+        "id": "livestock",
+        "text": "Livestock"
       },
       {
-        "id": "environment",
-        "text": "Environment and multi-Domain statistics",
-        "children": [
-          {
-            "id": "infrastructure",
-            "text": "Infrastructure"
-          },
-          {
-            "id": "poverty",
-            "text": "Poverty"
-          }
-        ]
+        "id": "crops",
+        "text": "Crops"
       }
     ]
   },
