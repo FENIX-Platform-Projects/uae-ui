@@ -13,8 +13,8 @@
 
 .navbar-default{
   background-color: transparent;
-  border-top: 1px solid $fenix-light-hr;
-  border-bottom: 3px solid $fx-cool-blue;
+  //border-top: 1px solid $fenix-light-hr;
+  //border-bottom: 3px solid $fx-cool-blue;
 
 
 
@@ -24,66 +24,83 @@
 
   }
 
-  .navbar-nav{
+
+}
 
 
+.navbar {
+  background-color: transparent !important;
+  min-height: 30px;
+  margin-bottom: 0;
+  .fx-ul {
 
+    li {
 
-    li{
-
-
-
-
-      a{
-
-        border-right: 1px solid $fenix-light-hr;
-        padding: 8px 15px;
-        font-size: 14px;
-
-
-
-
+      a, a:active, a:focus, a:hover {
+        color: white;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
-
-
     }
 
+    .dropdown-menu{
+      a{
+        color: $fx-cool-blue;
+        text-transform: none;
+        font-weight: 300;
+        font-family: "Roboto Condensed";
+      }
+    }
+  }
+
+  .navbar-right{
+    ul{
+      margin-top: 4px;
+
+      li{
+
+
+        a{
+          padding-top: 0;
+          padding-bottom: 0;
+          color: white;
+        }
+      }
+
+    }
   }
 
   .fx-ul-right{
-    li{
-      a{
-        border-right-width:0;
-        border-left: 1px solid $fenix-light-hr;
+    li {
+
+      a, a:active, a:focus, a:hover {
+        color: white;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding-top: 5px;
+        padding-bottom: 5px;
         cursor: pointer;
       }
     }
   }
 
+
+}
+
+
+
+.uae-menu-container {
+  background-color: $fx-cool-blue;
 }
 
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
-  background-color: white;
-  color: $fx-cool-blue;
-  border-bottom-width: 0;
-position: relative;
 
-
-  &:before{
-    content:'';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    bottom: 0;
-    background-color: $fx-cool-blue;
-    left: 0;
-
-
-  }
-
-
-}
 
 /*//////////////////////////////////////////// Navbar Media queries */
 

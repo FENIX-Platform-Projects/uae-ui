@@ -25,53 +25,6 @@ body{
   display: none !important;
 }
 
-.navbar {
-  background-color: transparent !important;
-  min-height: 30px;
-  margin-bottom: 0;
-  .fx-ul {
-
-    li {
-
-      a, a:active, a:focus, a:hover {
-        color: white;
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 12px;
-        text-transform: uppercase;
-        padding-top: 5px;
-        padding-bottom: 5px;
-      }
-    }
-
-    .dropdown-menu{
-      a{
-        color: $fx-cool-blue;
-        text-transform: none;
-        font-weight: 300;
-        font-family: "Roboto Condensed";
-      }
-    }
-  }
-
-  .navbar-right{
-    ul{
-      margin-top: 4px;
-
-      li{
-
-
-        a{
-          padding-top: 0;
-          padding-bottom: 0;
-          color: white;
-        }
-      }
-
-    }
-  }
-
-}
 
 
 
@@ -79,9 +32,7 @@ body{
   background: white;
 }
 
-.uae-menu-container {
-  background-color: $fx-cool-blue;
-}
+
 
 .page-header {
   margin: 20px 0 0 0;

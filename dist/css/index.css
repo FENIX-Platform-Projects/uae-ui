@@ -5746,9 +5746,6 @@ div[data-module="sector"] .fx-catalog-modular-form-content {
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #a62d3e; }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  border-bottom: 1px solid #a62d3e; }
-
 /* Fenix - Object Box Component */
 .obj-box, .obj-box-radius10, .obj-box-title {
   -moz-border-bottom-colors: none;
@@ -7202,35 +7199,8 @@ body {
   background-position: 0 0 !important;
   display: none !important; }
 
-.navbar {
-  background-color: transparent !important;
-  min-height: 30px;
-  margin-bottom: 0; }
-  .navbar .fx-ul li a, .navbar .fx-ul li a:active, .navbar .fx-ul li a:focus, .navbar .fx-ul li a:hover {
-    color: white;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
-    padding-top: 5px;
-    padding-bottom: 5px; }
-  .navbar .fx-ul .dropdown-menu a {
-    color: #a62d3e;
-    text-transform: none;
-    font-weight: 300;
-    font-family: "Roboto Condensed"; }
-  .navbar .navbar-right ul {
-    margin-top: 4px; }
-    .navbar .navbar-right ul li a {
-      padding-top: 0;
-      padding-bottom: 0;
-      color: white; }
-
 .container {
   background: white; }
-
-.uae-menu-container {
-  background-color: #a62d3e; }
 
 .page-header {
   margin: 20px 0 0 0;
@@ -7386,33 +7356,45 @@ footer.uae-footer .uae-footer-bottom {
   min-height: 0; }
 
 .navbar-default {
-  background-color: transparent;
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 3px solid #a62d3e; }
+  background-color: transparent; }
   .navbar-default > .container-fluid {
     padding-left: 0; }
-  .navbar-default .navbar-nav li a {
-    border-right: 1px solid #e1e1e1;
-    padding: 8px 15px;
-    font-size: 14px; }
-  .navbar-default .fx-ul-right li a {
-    border-right-width: 0;
-    border-left: 1px solid #e1e1e1;
+
+.navbar {
+  background-color: transparent !important;
+  min-height: 30px;
+  margin-bottom: 0; }
+  .navbar .fx-ul li a, .navbar .fx-ul li a:active, .navbar .fx-ul li a:focus, .navbar .fx-ul li a:hover {
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px; }
+  .navbar .fx-ul .dropdown-menu a {
+    color: #a62d3e;
+    text-transform: none;
+    font-weight: 300;
+    font-family: "Roboto Condensed"; }
+  .navbar .navbar-right ul {
+    margin-top: 4px; }
+    .navbar .navbar-right ul li a {
+      padding-top: 0;
+      padding-bottom: 0;
+      color: white; }
+  .navbar .fx-ul-right li a, .navbar .fx-ul-right li a:active, .navbar .fx-ul-right li a:focus, .navbar .fx-ul-right li a:hover {
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
     cursor: pointer; }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  background-color: white;
-  color: #a62d3e;
-  border-bottom-width: 0;
-  position: relative; }
-  .navbar-default .navbar-nav > .active > a:before, .navbar-default .navbar-nav > .active > a:hover:before, .navbar-default .navbar-nav > .active > a:focus:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    bottom: 0;
-    background-color: #a62d3e;
-    left: 0; }
+.uae-menu-container {
+  background-color: #a62d3e; }
 
 /*//////////////////////////////////////////// Navbar Media queries */
 @media (max-width: 767px) {
@@ -7573,6 +7555,9 @@ ul[role="group"] {
 /* Third parties */
 /* Pages */
 /* UAE - Home Style */
+[data-page='home'] .container-breadcrumb {
+  display: none; }
+
 .fx-home-content-grid h1.fx-big-title {
   font-size: 40px;
   text-align: left; }
@@ -7799,12 +7784,16 @@ p.fx-strong {
 .swiper-header-container {
   position: relative;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  width: calc(100% + 30px);
+  left: -15px; }
 
 .swiper-container {
   width: 100%;
   height: 370px;
   color: white; }
+  .swiper-container .img-responsive {
+    width: 100%; }
 
 .swiper-slide .title {
   font-style: italic;
@@ -7860,6 +7849,12 @@ ol li:before {
   -ms-border-radius: 100%;
   border-radius: 100%; }
 
+@media (min-width: 768px) and (max-width: 990px) {
+  .swiper-container {
+    height: 200px; } }
+@media (max-width: 767px) {
+  .swiper-container {
+    height: 160px; } }
 /* Fenix - Analysis Page */
 #overlay .close-overlay {
   height: 35px;
