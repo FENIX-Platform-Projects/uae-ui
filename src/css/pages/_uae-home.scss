@@ -189,6 +189,10 @@ p.fx-strong {
 /* News */
 .news-title {
   margin-top: 5px;
+  color: $fx-cool-blue;
+
+
+
 }
 
 .title-small-text.news {
@@ -272,6 +276,7 @@ p.fx-strong {
     }
 
   }
+
 
   .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
     background-color: white;
@@ -381,10 +386,13 @@ p.fx-strong {
 }
 
 .quick-facts {
-  padding: 10px;
+  padding: 15px;
   background-color: $quick-bg;
   //position: relative;
   //right: -16px;
+  position: relative;
+  width: calc(100% + 30px);
+  left: -15px;
 
 
   hr {

@@ -7683,7 +7683,8 @@ p.fx-strong {
 
 /* News */
 .news-title {
-  margin-top: 5px; }
+  margin-top: 5px;
+  color: #a62d3e; }
 
 .title-small-text.news {
   top: 0;
@@ -7809,8 +7810,11 @@ p.fx-strong {
   background: white; }
 
 .quick-facts {
-  padding: 10px;
-  background-color: #f2f2f2; }
+  padding: 15px;
+  background-color: #f2f2f2;
+  position: relative;
+  width: calc(100% + 30px);
+  left: -15px; }
   .quick-facts hr {
     border-top: 1px solid #cccccc; }
   .quick-facts h4 {
