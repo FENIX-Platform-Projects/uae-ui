@@ -84,14 +84,7 @@ define([
 
             this.$filterBtn.on('click', function (e, data) {
 
-                var filter = {};
-                var values = self.filter.getValues();
-                // TODO: funzione per distruggere dashboard e ricrearla con gli items giusti:
-
-                /*                 var filteredConfig = self._getFilteredConfig(values, self.$faostatDashboardConfig);
-                 self._renderFaostatDashboard(filteredConfig);
-                 self.faostatDashboard.filter([values]);
-                 */
+                var values = self.filter.getValues()
 
                 // TODO: it's an array
                 self.dashboard.filter([values]);

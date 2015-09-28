@@ -10,7 +10,7 @@ define(function () {
             filter: [
                 {
                     "type": "static",
-                    "column": "item",
+                    "column": "ItemCODE",
                     "containerType": "baseContainer",
                     "title": "Commodity",
                     "defaultCodes": ["0102"],
@@ -19,11 +19,11 @@ define(function () {
                             "type": "distinct",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
-                            //"uid": "HS",
-                            //"version": "2012",
+                            "uid": "HS",
+                            "version": "2012",
                             "title": {"EN": "Distinct"},
                             // name is the ID output in tehe filter getValues()
-                            "name": "item",
+                            "name": "ItemCODE",
                             "config": {
                                 "defaultsource": [
                                     {"value":"0101","label":"LIVE HORSES, ASSES,  MULES AND HINNIES.","selected":false},
@@ -219,7 +219,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        //allowedFilter: ['indicator', 'year', 'domain', 'incomes', 'subregion'],
+                        allowedFilter: ['ItemCODE'],
                         filter: [
                             {
                                 "name": "filter",
@@ -280,7 +280,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['itemCODE'],
+                        allowedFilter: ['ItemCODE'],
                         filter: [
                             {
                                 "name": "filter",
@@ -340,7 +340,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['itemCODE'],
+                        allowedFilter: ['ItemCODE'],
                         filter: [
                             {
                                 "name": "filter",
@@ -400,7 +400,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['indicator', 'year', 'domain', 'incomes', 'subregion'],
+                        allowedFilter: ['ItemCODE'],
                         filter: [
                             {
                                 "name": "filter",
@@ -457,11 +457,11 @@ define(function () {
                             "type": "distinct",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
-                            //"uid": "HS",
+                            "uid": "UAE_Commodity",
                             //"version": null,
                             "title": {"EN": "Distinct"},
                             // name is the ID output in tehe filter getValues()
-                            "name": "item",
+                            "name": "ItemCode",
                             "config": {
                                 "defaultsource": [
                                     {"value":"0866","label":"Cattle","selected":true},
@@ -512,7 +512,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['item', 'year'],
+                        allowedFilter: ["ItemCode"],
                         forbiddenValues: {
                             year: {time: [{from: 2013, to: 2013}]},
                             domain: {removeFilter: true}
@@ -579,7 +579,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['itemCODE'],
+                        allowedFilter: ["ItemCode"],
                         filter: [
                             {
                                 "name": "filter",
@@ -619,7 +619,7 @@ define(function () {
             filter: [
 
                 {
-                    "type": "codelist-codes",
+                    "type": "static",
                     "containerType": "baseContainer",
                     "title": "Item",
                     "defaultCodes": ["0388"],
@@ -628,11 +628,11 @@ define(function () {
                             "type": "distinct",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
-                            //"uid": "HS",
+                            "uid": "UAE_Commodity",
                             //"version": null,
                             "title": {"EN": "Distinct"},
                             // name is the ID output in tehe filter getValues()
-                            "name": "item",
+                            "name": "ItemCode",
                             "config": {
                                 "defaultsource": [
                                     {"value":"0388","label":"Tomatoes","selected":true},
@@ -701,7 +701,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['item', 'year'],
+                        allowedFilter: ["ItemCode"],
                         forbiddenValues: {
                             year: {time: [{from: 2013, to: 2013}]},
                             domain: {removeFilter: true}
@@ -778,7 +778,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['itemCODE'],
+                        allowedFilter: ["ItemCode"],
                         filter: [
                             {
                                 "name": "filter",
@@ -832,7 +832,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['item', 'year'],
+                        allowedFilter: ["ItemCode"],
                         forbiddenValues: {
                             year: {time: [{from: 2013, to: 2013}]},
                             domain: {removeFilter: true}
@@ -909,7 +909,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['itemCODE'],
+                        allowedFilter: ["ItemCode"],
                         filter: [
                             {
                                 "name": "filter",
