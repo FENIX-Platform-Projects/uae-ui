@@ -60,7 +60,7 @@ define([
         configurePage: function () {
             this.initBannerSwiper();
 
-            this.initChartSwiper();
+            //this.initChartSwiper();
 
             //very temp solution
             this.initCharts();
@@ -71,6 +71,7 @@ define([
             var self = this;
 
             $('#home-charts-tab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                e.preventDefault();
                 self.initCharts();
             });
 
@@ -187,7 +188,7 @@ define([
                 }]
             });
 
-            $('#chart').highcharts({
+            $('#chart2').highcharts({
                 chart: {
                     type: 'column'
                 },
@@ -247,7 +248,7 @@ define([
                     }]
             });
 
-            $('#chart2').highcharts({
+            $('#chart3').highcharts({
                 chart: {
                     type: 'column'
                 },
