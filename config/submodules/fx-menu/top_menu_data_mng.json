@@ -39,18 +39,6 @@
     },
     {
       "attrs": {
-        "id": "methods"
-      },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "./index.html#methods",
-      "label": {
-        "EN": "Methods and Standards"
-      }
-    },
-    {
-      "attrs": {
         "id": "modules"
       },
       "a_attrs": {

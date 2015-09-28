@@ -9,8 +9,8 @@ define(function () {
         match('home', 'home#show');
         match('dashboard', 'dashboard#show');
         match('analysis', 'analysis#show');
-        match('methods', 'methods#show');
-        match('methods/:id', 'methods#show');
+        //match('methods', 'methods#show');
+        //match('methods/:id', 'methods#show');
         match('modules', 'modules#show');
         match('*anything', '404#show');
     };

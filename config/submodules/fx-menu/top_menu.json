@@ -28,15 +28,7 @@
         "EN": "Analysis"
       }
     },
-    {
-      "attrs": {
-        "id": "methods"
-      },
-      "target": "#methods",
-      "label": {
-        "EN": "Methods and Standards"
-      }
-    },
+
     {
       "attrs": {
         "id": "modules"
