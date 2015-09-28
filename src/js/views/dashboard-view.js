@@ -61,7 +61,7 @@ define([
             View.prototype.attach.call(this, arguments);
 
             //update State
-            amplify.publish(E.STATE_CHANGE, {menu: 'profile'});
+            amplify.publish(E.STATE_CHANGE, {menu: 'dashboard'});
 
             this._initVariables();
 

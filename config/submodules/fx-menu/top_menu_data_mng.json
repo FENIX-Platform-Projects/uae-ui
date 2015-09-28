@@ -10,7 +10,7 @@
       },
       "target": "./index.html#home",
       "label": {
-        "EN": ""
+        "EN": "HOME"
       }
     },
     {
@@ -23,15 +23,6 @@
       "target": "./index.html#dashboard",
       "label": {
         "EN": "Dashboard"
-      }
-    },
-    {
-      "attrs": {
-        "id": "datamgmt"
-      },
-      "target": "#",
-      "label": {
-        "EN": "Data Management"
       }
     },
     {
@@ -68,6 +59,15 @@
       "target": "./index.html#modules",
       "label": {
         "EN": "Thematic Modules"
+      }
+    },
+    {
+      "attrs": {
+        "id": "datamgmt"
+      },
+      "target": "#",
+      "label": {
+        "EN": "Data Management"
       }
     }
   ],

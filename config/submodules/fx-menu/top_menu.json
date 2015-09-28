@@ -21,18 +21,6 @@
     },
     {
       "attrs": {
-        "id": "datamgmt"
-      },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "datamgmt.html",
-      "label": {
-        "EN": "Data Management"
-      }
-    },
-    {
-      "attrs": {
         "id": "analysis"
       },
       "target": "#analysis",
@@ -56,6 +44,18 @@
       "target": "#modules",
       "label": {
         "EN": "Thematic Modules"
+      }
+    },
+    {
+      "attrs": {
+        "id": "datamgmt"
+      },
+      "a_attrs": {
+        "rel": "external"
+      },
+      "target": "datamgmt.html",
+      "label": {
+        "EN": "Data Management"
       }
     }
   ],

@@ -2,19 +2,23 @@
 
 /* UNECA - Variables */
 @import '../../src/css/theme/variables';
+@import '../../src/css/theme/uae-variables';
 
 /* Fenix Utils*/
 @import '../../submodules/fenix-ui-common/css/fenix-style-no-variables';
 
+/* Base */
+//@import '../../src/css/theme/default';
+@import '../../src/css/theme/uae-theme';
+
 /* Fenix Components */
 @import '../../submodules/fenix-ui-data-management/src/css/fx-data-management';
 
-/* Base */
-@import '../../src/css/theme/default';
+
 
 /* Components */
 @import '../../src/css/components/breadcrumbs';
-@import '../../src/css/components/footer';
+@import '../../src/css/components/uae-footer';
 @import '../../src/css/components/topmenu';
 @import '../../src/css/components/form';
 @import '../../src/css/components/jstree';

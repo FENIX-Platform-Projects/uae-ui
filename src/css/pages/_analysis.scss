@@ -1,6 +1,10 @@
 /* Fenix - Analysis Page */
 
 #overlay {
+
+  padding: 0;
+
+
   .close-overlay{
     height: 35px;
     width: 35px;
@@ -9,5 +13,6 @@
     position: absolute;
     right: 0;
     z-index: 1;
+
   }
 }

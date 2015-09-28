@@ -1,5 +1,5 @@
-/* UAE Variables */
-$fx-ui-common: './';
+// Path of the FENIX-UI-COMMON Submodule relative to this file
+$fx-ui-common: '../../submodules/fenix-ui-common/';
 // Fenix - Variables
 
 // Layout
@@ -23,6 +23,8 @@ $fx-text-smalltitle-bold: normal normal 700 10px/normal 'Roboto';
 // Fenix Colors
 $fenix-standard-blue: rgba(53, 166, 220, 1);
 $fx-cool-blue:  #a62d3e;
+$fx-cool-blue-alt:  #986e2e;
+
 $fx-secondary-color: desaturate( $fx-cool-blue, 50% );
 
 $fx-main-color-light: lighten( $fx-cool-blue, 40%); // Ideal for selection
