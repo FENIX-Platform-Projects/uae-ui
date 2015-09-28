@@ -110,13 +110,17 @@ define([
             //print jstree
             this.$lateralMenu.jstree(JSON.parse(LateralMenuConfig))
 
-                //Limit selection e select only leafs for indicators
                 .on("select_node.jstree", _.bind(function (e, data) {
 
                     self._onChangeDashboard(data.selected[0]);
 
 
-                }, this));
+                }, this))
+                .on("loaded.jstree", function (event, data) {
+
+                    self.$lateralMenu.jstree(true)
+                        .select_node('trade');
+                });
 
             //this._printDashboard('resume');
 
