@@ -78,7 +78,7 @@ define([
 
         },
 
-        _bindEventListeners : function () {
+        _bindEventListeners: function () {
 
             var self = this;
 
@@ -118,8 +118,7 @@ define([
                 }, this))
                 .on("loaded.jstree", function (event, data) {
 
-                    self.$lateralMenu.jstree(true)
-                        .select_node('trade');
+                    self.$lateralMenu.jstree(true).select_node('trade');
                 });
 
             //this._printDashboard('resume');
@@ -134,7 +133,7 @@ define([
 
         },
 
-        _printDashboard : function ( item ) {
+        _printDashboard: function (item) {
 
             this._printDashboardBase(item);
 
