@@ -14,7 +14,7 @@ define([], function () {
         //SERVICE_BASE_ADDRESS: "http://fenix.fao.org/d3s/msd",
         SERVICE_BASE_ADDRESS: "http://fenix.fao.org/d3s/msd",
 
-        DSD_EDITOR_CODELISTS: "config/submodules/DSDEditor/CodelistsUneca.json"
+        DSD_EDITOR_CODELISTS: "config/submodules/DSDEditor/CodelistsUAE.json"
 
     };
 

@@ -6,7 +6,7 @@ define(function () {
 
     return {
 
-        "dsd.contextSystem":{"enumeration":["uneca"]}
+        "dsd.contextSystem":{"enumeration":["UAE"]}
     };
 
 });

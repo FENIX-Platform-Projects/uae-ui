@@ -1,0 +1,44 @@
+﻿[
+    {
+        "val": "UAE_GAUL",
+        "text": {
+            "EN": "UAE GAUL"
+        },
+        "subject": "geo"
+    },
+    {
+        "val": "UAE_Elements",
+        "text": {
+            "EN": "UAE Elements"
+        },
+        "subject": "item"
+    },
+    {
+        "val": "UAE_DOMAINS",
+        "text": {
+            "EN": "UAE DOMAINS"
+        },
+        "subject": "item"
+    },
+    {
+        "val": "UAE_Commodity",
+        "text": {
+            "EN": "UAE Commodity"
+        },
+        "subject": "item"
+    },
+	{
+        "val": "HS|2012",
+        "text": {
+            "EN": "HS 2012"
+        },
+        "subject": "item"
+    },
+    {
+        "val": "UAE_UM",
+        "text": {
+            "EN": "UAE UM"
+        },
+        "subject": "um"
+    }
+]
