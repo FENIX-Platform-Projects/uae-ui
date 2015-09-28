@@ -8,10 +8,10 @@ define([
     'i18n!nls/home',
     'handlebars',
     'fx-common/WDSClient',
-    'swiper',
+    'fx-c-c/config/creators/highcharts_template',
     'highcharts',
     'amplify'
-], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient, Swiper) {
+], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient, chartTemplate) {
 
     'use strict';
 
@@ -58,7 +58,9 @@ define([
         },
 
         configurePage: function () {
-            this.initBannerSwiper();
+
+
+            //initBannerSwiperthis.();
 
             //this.initChartSwiper();
 
@@ -126,7 +128,7 @@ define([
 
         initCharts: function () {
 
-            $('#chart1').highcharts({
+            $('#chart1').highcharts($.extend(true, {}, chartTemplate, {
                 title: {
                     text: 'Gross Domestic Product'
                 },
@@ -186,9 +188,9 @@ define([
                     data: [379411.97, 403299.59, 456662.43, 542884.56, 663317.65, 815722.97, 947197.06, 1158580.53, 931152.67, 1050516.19, 1276025.00, 1367323.00, 1477594.25]
 
                 }]
-            });
+            }));
 
-            $('#chart2').highcharts({
+            $('#chart2').highcharts($.extend(true, {}, chartTemplate, {
                 chart: {
                     type: 'column'
                 },
@@ -246,9 +248,9 @@ define([
                         name: 'Import',
                         data: [147775800078.00, 202896419979.00, 247589715083.00, 291048964687.00, 388356836394.00, 565719823370.00, 447393840482.09, 485413921745.90, 602757314852.26, 667520204394.26, 685068106621.00]
                     }]
-            });
+            }));
 
-            $('#chart3').highcharts({
+            $('#chart3').highcharts($.extend(true, {}, chartTemplate, {
                 chart: {
                     type: 'column'
                 },
@@ -290,7 +292,7 @@ define([
                     name: 'UAE',
                     data: [92.53, 88.50, 76.63, 77.24]
                 }]
-            });
+            }));
         },
 
         unbindEventListeners: function () {
