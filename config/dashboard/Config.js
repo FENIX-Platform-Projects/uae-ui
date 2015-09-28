@@ -625,27 +625,48 @@ define(function () {
                     "defaultCodes": ["0388"],
                     "components": [
                         {
-                            "type": "codelist-codes",
-                            "uid": "UAE_Commodity",
+                            "type": "distinct",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
+                            //"uid": "HS",
+                            //"version": null,
+                            "title": {"EN": "Distinct"},
                             // name is the ID output in tehe filter getValues()
                             "name": "item",
                             "config": {
-                                "defaultsource": [],
-                                filter: {
-                                    "uid": "UAE_Commodity",
-                                    "version": null,
-                                    "codes": ["0388", "0399", "0394", "0397", "0358", "0393", "0567", "0463", "0641", "0083", "0446", "0639", "0497", "0512", "0571", "0569", "0221", "0619"]
-                                }
+                                "defaultsource": [
+                                    {"value":"0388","label":"Tomatoes","selected":true},
+                                    {"value":"0399","label":"Eggplants","selected":false},
+                                    {"value":"0394","label":"Squash","selected":false},
+                                    {"value":"0397","label":"Cucumber","selected":false},
+                                    {"value":"0358","label":"Cabbage","selected":false},
+                                    {"value":"0393","label":"Cauliflower","selected":false},
+                                    {"value":"0567","label":"Water Melon","selected":false},
+                                    {"value":"0463","label":"Other Vegetables","selected":false},
+                                    {"value":"0641","label":"Alfalfa","selected":false},
+                                    {"value":"0083","label":"Sorghum","selected":false},
+                                    {"value":"0446","label":"Sweet Corn","selected":false},
+                                    {"value":"0639","label":"Other Field Crops","selected":false},
+                                    {"value":"0497","label":"Lime","selected":false},
+                                    {"value":"0512","label":"Other Citrus","selected":false},
+                                    {"value":"0571","label":"Mango","selected":false},
+                                    {"value":"0571","label":"Guava","selected":false},
+                                    {"value":"0569","label":"Fig","selected":false},
+                                    {"value":"0221","label":" Almond","selected":false},
+                                    {"value":"0619","label":"Other Fruit","selected":false}
+
+
+                                ]
                             }
+
                         }
+
                     ]
                 }
             ],
             dashboard: {
                 //data cube's uid
-                uid: "UNECA_Education",
+                uid: "UAE_CropData",
 
                 //bridge configuration
                 bridge: {
@@ -660,7 +681,288 @@ define(function () {
                  * */
                 metadata: {},
 
-                items: []
+                items: [
+
+
+
+                    {
+                        id: 'CR-item-1',
+                        type: 'map',
+                        class: "fx-map-chart",
+                        //needed if layout = injected
+                        container: "#CR-item-1",
+                        config: {
+                            container: "#CR-item-1",
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 2
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ['item', 'year'],
+                        forbiddenValues: {
+                            year: {time: [{from: 2013, to: 2013}]},
+                            domain: {removeFilter: true}
+                        },
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2013,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        },
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Commodity",
+                                                    "codes": [
+                                                        "0388"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "ElementCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Elements",
+                                                    "codes": [
+                                                        "2312"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+
+
+
+                    {
+                        id: 'CR-item-2',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#CR-item-2",
+                        config: {
+                            container: "#CR-item-2",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'Year',
+                                yDimensions: "ElementCode",
+                                valueDimensions: 'Value',
+                                seriesDimensions: []
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
+
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ['itemCODE'],
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+
+
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Commodity",
+                                                    "codes": ["0388"]
+
+                                                }
+                                            ]
+                                        },
+                                        "ElementCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Elements",
+                                                    "codes": ["2312"]
+
+                                                }
+                                            ]
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+                        ]
+
+                    },
+
+
+
+                    {
+                        id: 'CR-item-3',
+                        type: 'map',
+                        class: "fx-map-chart",
+                        //needed if layout = injected
+                        container: "#CR-item-3",
+                        config: {
+                            container: "#CR-item-3",
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 2
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ['item', 'year'],
+                        forbiddenValues: {
+                            year: {time: [{from: 2013, to: 2013}]},
+                            domain: {removeFilter: true}
+                        },
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2013,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        },
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Commodity",
+                                                    "codes": [
+                                                        "0388"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "ElementCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Elements",
+                                                    "codes": [
+                                                        "2510"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+
+
+
+                    {
+                        id: 'CR-item-4',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#CR-item-4",
+                        config: {
+                            container: "#CR-item-4",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'Year',
+                                yDimensions: "ElementCode",
+                                valueDimensions: 'Value',
+                                seriesDimensions: []
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
+
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ['itemCODE'],
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+
+
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Commodity",
+                                                    "codes": ["0388"]
+
+                                                }
+                                            ]
+                                        },
+                                        "ElementCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Elements",
+                                                    "codes": ["2510"]
+
+                                                }
+                                            ]
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+                        ]
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                ]
 
 
             }
