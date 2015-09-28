@@ -106,6 +106,7 @@ input.form-control{
 .filter-holder{
   position: relative;
   padding: 10px 15px;
+  margin-top: 30px;
 
   &:before{
     content:'';
@@ -114,8 +115,20 @@ input.form-control{
     width: calc(100% - 30px);
     height: 75px;
     top: -5px;
-
     left: 15px;
+    position: absolute;
+  }
+
+  &:after{
+    content:'FILTER DATA';
+    display: inline-block;
+    background-color: $fx-cool-blue;
+    color: white;
+    //width: calc(100% - 30px);
+    ///height: 75px;
+    top: -30px;
+    left: 15px;
+    padding: 5px;
     position: absolute;
   }
 
@@ -125,6 +138,25 @@ input.form-control{
   }
 }
 
+.fx-widget .nav-tabs > li.active > a{
+  border-color: transparent !important;
+}
+
+.fx-widget .nav-tabs > li.active:before{
+  bottom: -9px;
+}
+
+.fx-filter-form-module{
+  width: 50%;
+}
+
+.fx-filter-form-module.fit{
+  width: 100%;
+}
+
+#fx-catalog-submit-btn{
+  border-color: transparent !important;
+}
 
 @font-face {
   font-family: 'fontinregular';

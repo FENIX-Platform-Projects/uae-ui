@@ -7266,7 +7266,8 @@ input.form-control {
 
 .filter-holder {
   position: relative;
-  padding: 10px 15px; }
+  padding: 10px 15px;
+  margin-top: 30px; }
   .filter-holder:before {
     content: '';
     display: block;
@@ -7276,8 +7277,32 @@ input.form-control {
     top: -5px;
     left: 15px;
     position: absolute; }
+  .filter-holder:after {
+    content: 'FILTER DATA';
+    display: inline-block;
+    background-color: #a62d3e;
+    color: white;
+    top: -30px;
+    left: 15px;
+    padding: 5px;
+    position: absolute; }
   .filter-holder .pull-right {
     margin-top: 12px; }
+
+.fx-widget .nav-tabs > li.active > a {
+  border-color: transparent !important; }
+
+.fx-widget .nav-tabs > li.active:before {
+  bottom: -9px; }
+
+.fx-filter-form-module {
+  width: 50%; }
+
+.fx-filter-form-module.fit {
+  width: 100%; }
+
+#fx-catalog-submit-btn {
+  border-color: transparent !important; }
 
 @font-face {
   font-family: 'fontinregular';
