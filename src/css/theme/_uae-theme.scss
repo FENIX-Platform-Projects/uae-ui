@@ -89,6 +89,41 @@ body{
   background-color: $fx-cool-blue-alt;
 }
 
+[data-toggle='popover']{
+  &:hover{
+    border-color: transparent;
+  }
+
+  border-color: transparent;
+}
+
+input.form-control{
+  border: 1px solid $fenix-light-hr;
+  background-color: white;
+  @include fx-border-radius(0);
+}
+
+.filter-holder{
+  position: relative;
+  padding: 10px 15px;
+
+  &:before{
+    content:'';
+    display: block;
+    background-color: $fenix-light-bg;
+    width: calc(100% - 30px);
+    height: 75px;
+    top: -5px;
+
+    left: 15px;
+    position: absolute;
+  }
+
+  .pull-right{
+    margin-top: 12px;
+
+  }
+}
 
 
 @font-face {

@@ -136,7 +136,7 @@ define([
                     enabled: false
                 },
                 colors: [ //Colori delle charts
-                    '#ca1a33',
+                    '#a62d3e',
                     '#986e2e',
                     '#744490',
                     '#E10079',
@@ -201,7 +201,7 @@ define([
                     enabled: false
                 },
                 colors: [ //Colori delle charts
-                    '#ca1a33',
+                    '#a62d3e',
                     '#986e2e',
                     '#744490',
                     '#E10079',
@@ -261,7 +261,7 @@ define([
                     enabled: false
                 },
                 colors: [ //Colori delle charts
-                    '#ca1a33',
+                    '#a62d3e',
                     '#986e2e',
                     '#744490',
                     '#E10079',

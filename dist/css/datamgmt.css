@@ -7251,6 +7251,34 @@ body {
 #datamgmt {
   background-color: #986e2e; }
 
+[data-toggle='popover'] {
+  border-color: transparent; }
+  [data-toggle='popover']:hover {
+    border-color: transparent; }
+
+input.form-control {
+  border: 1px solid #e1e1e1;
+  background-color: white;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0; }
+
+.filter-holder {
+  position: relative;
+  padding: 10px 15px; }
+  .filter-holder:before {
+    content: '';
+    display: block;
+    background-color: #f9f7f3;
+    width: calc(100% - 30px);
+    height: 75px;
+    top: -5px;
+    left: 15px;
+    position: absolute; }
+  .filter-holder .pull-right {
+    margin-top: 12px; }
+
 @font-face {
   font-family: 'fontinregular';
   src: url("../../src/css/fontin/fontin-regular-webfont.eot");
