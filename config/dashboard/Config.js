@@ -8,6 +8,36 @@ define(function () {
 
         "trade": {
             filter: [
+
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "YEAR",
+                            config: {
+                                "defaultsource": [
+                                    {"value": "2014", "label": "2014", "selected": true},
+                                    {"value": "2013", "label": "2013", "selected": false},
+                                    {"value": "2012", "label": "2012", "selected": false},
+                                    {"value": "2011", "label": "2011", "selected": false},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false},
+                                    {"value": "2008", "label": "2008", "selected": false},
+                                    {"value": "2007", "label": "2007", "selected": false}
+
+                                ],
+                                "enableMultiselection": true
+                            }
+                        }
+                    ]
+                },
+
+
                 {
                     "type": "static",
                     "column": "ItemCODE",
@@ -170,7 +200,8 @@ define(function () {
                                     {"value":"1521","label":"VEGETABLE WAXES  OTHER(THAN TRIGLYCERID ES),BEESWAX, OTHER INSECT WAXES AND SPERMACETI, WHETHER OR NOT REFINED OR COLOURED.","selected":false},
                                     {"value":"1522","label":"DEGRAS; RESIDUES RESULTING FROM THE TREATMENT OF FATTY SUBSTANCES OR ANIMAL OR VEGETABLE WAXES.","selected":false},
                                     {"value":"0506","label":"BONES AND HORN CORES, UNWORKED,DEFATTED, SIMPLY PREPARED (BUT NOT CUT TO SHAPE),TREATED WITH ACID OR DEGELATINISED; POWDER AND WASTE OF THESE PRODUCTS.","selected":false}
-                                ]
+                                ],
+                                "enableMultiselection": true
                             }
 
                         }
@@ -180,7 +211,7 @@ define(function () {
 
             dashboard: {
                 //data cube's uid
-                uid: "UAE_FT",
+                uid: "UAE_FT_V2",
 
                 //bridge configuration
                 bridge: {
@@ -205,16 +236,23 @@ define(function () {
                         config: {
                             container: "#TR-item-1",
                             adapter: {
-                                type: "timeserie",
-                                xDimensions: 'Year',
-                                yDimensions: 'Element',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['Element']
+                                type: "standard",
+                                xDimensions: 'YEAR',
+                                yDimensions: 'ElementCode',
+                                valueDimensions: 'VALUE',
+                                seriesDimensions: ['ElementCode']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
-                            creator: {
+                            creator: {                                chartObj: {
+                                chart: {
+                                    type: "column"
+                                },
+                                tooltip: {
+                                    valueSuffix: null
+                                }
+                            }
 
                             }
                         },
@@ -226,24 +264,32 @@ define(function () {
                                 "parameters": {
                                     "rows": {
 
-                                        "Element": {
+                                        "ElementCode": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "2620",
+
                                                         "2920"
                                                     ]
                                                 }
                                             ]
                                         },
-                                        "ItemCODE": {
+                                        "ItemCode": {
                                             "codes": [
                                                 {
                                                     "uid": "HS",
                                                     "version" : "2012",
                                                     "codes": ["0102"]
 
+                                                }
+                                            ]
+                                        },
+                                        "YEAR": {
+                                            "time": [
+                                                {
+                                                    "from": 2011,
+                                                    "to": 2011
                                                 }
                                             ]
                                         }
@@ -266,16 +312,24 @@ define(function () {
                         config: {
                             container: "#TR-item-2",
                             adapter: {
-                                type: "timeserie",
-                                xDimensions: 'Year',
-                                yDimensions: null,
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['Element']
+                                type: "standard",
+                                xDimensions: 'YEAR',
+                                yDimensions: 'ElementCode',
+                                valueDimensions: 'VALUE',
+                                seriesDimensions: ['ElementCode']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
                             creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
 
                             }
                         },
@@ -287,24 +341,32 @@ define(function () {
                                 "parameters": {
                                     "rows": {
 
-                                        "Element": {
+                                        "ElementCode": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "2610",
+
                                                         "2910"
                                                     ]
                                                 }
                                             ]
                                         },
-                                        "ItemCODE": {
+                                        "ItemCode": {
                                             "codes": [
                                                 {
                                                     "uid": "HS",
                                                     "version" : "2012",
                                                     "codes": ["0102"]
 
+                                                }
+                                            ]
+                                        },
+                                        "YEAR": {
+                                            "time": [
+                                                {
+                                                    "from": 2011,
+                                                    "to": 2011
                                                 }
                                             ]
                                         }
@@ -317,6 +379,7 @@ define(function () {
                         ]
 
                     },
+
                     {
                         id: 'TR-item-3',
                         type: 'chart',
@@ -326,16 +389,24 @@ define(function () {
                         config: {
                             container: "#TR-item-3",
                             adapter: {
-                                type: "timeserie",
-                                xDimensions: 'Year',
+                                type: "standard",
+                                xDimensions: 'YEAR',
                                 yDimensions: null,
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['Element']
+                                valueDimensions: 'VALUE',
+                                seriesDimensions: ['ElementCode']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
                             creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
 
                             }
                         },
@@ -347,13 +418,12 @@ define(function () {
                                 "parameters": {
                                     "rows": {
 
-                                        "Element": {
+                                        "ElementCode": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "2620",
-                                                        "5722"
+                                                        "2620"
                                                     ]
                                                 }
                                             ]
@@ -365,6 +435,14 @@ define(function () {
                                                     "version" : "2012",
                                                     "codes": ["0102"]
 
+                                                }
+                                            ]
+                                        },
+                                        "YEAR": {
+                                            "time": [
+                                                {
+                                                    "from": 2011,
+                                                    "to": 2011
                                                 }
                                             ]
                                         }
@@ -386,16 +464,177 @@ define(function () {
                         config: {
                             container: "#TR-item-4",
                             adapter: {
-                                type: "timeserie",
-                                xDimensions: 'Year',
-                                yDimensions: 'Element',
-                                valueDimensions: 'Value',
-                                seriesDimensions: ['Element']
+                                type: "standard",
+                                xDimensions: 'YEAR',
+                                yDimensions: null,
+                                valueDimensions: 'VALUE',
+                                seriesDimensions: ['ElementCode']
                             },
                             template: {
                                 //"title": "Top 25..."
                             },
                             creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
+
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ['ItemCode'],
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+
+                                        "ElementCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Elements",
+                                                    "codes": [
+                                                        "2610"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "HS",
+                                                    "version" : "2012",
+                                                    "codes": ["0102"]
+
+                                                }
+                                            ]
+                                        },
+                                        "YEAR": {
+                                            "time": [
+                                                {
+                                                    "from": 2011,
+                                                    "to": 2011
+                                                }
+                                            ]
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+                        ]
+
+                    },
+
+
+
+                    {
+                        id: 'TR-item-5',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#TR-item-5",
+                        config: {
+                            container: "#TR-item-5",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'YEAR',
+                                yDimensions: 'ElementCode',
+                                valueDimensions: 'VALUE',
+                                seriesDimensions: ['ElementCode']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
+
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: [],
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+
+                                        "ElementCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Elements",
+                                                    "codes": [
+                                                           "5722"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "HS",
+                                                    "version" : "2012",
+                                                    "codes": ["0102"]
+
+                                                }
+                                            ]
+                                        },
+                                        "YEAR": {
+                                            "time": [
+                                                {
+                                                    "from": 2011,
+                                                    "to": 2011
+                                                }
+                                            ]
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+                        ]
+
+                    },
+                    {
+                        id: 'TR-item-6',
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
+                        //needed if layout = injected
+                        container: "#TR-item-6",
+                        config: {
+                            container: "#TR-item-6",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'YEAR',
+                                yDimensions: 'ElementCode',
+                                valueDimensions: 'VALUE',
+                                seriesDimensions: ['ElementCode']
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
 
                             }
                         },
@@ -407,24 +646,31 @@ define(function () {
                                 "parameters": {
                                     "rows": {
 
-                                        "Element": {
+                                        "ElementCode": {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
                                                     "codes": [
-                                                        "2620",
                                                         "5710"
                                                     ]
                                                 }
                                             ]
                                         },
-                                        "ItemCODE": {
+                                        "ItemCode": {
                                             "codes": [
                                                 {
                                                     "uid": "HS",
                                                     "version" : "2012",
                                                     "codes": ["0102"]
 
+                                                }
+                                            ]
+                                        },
+                                        "YEAR": {
+                                            "time": [
+                                                {
+                                                    "from": 2011,
+                                                    "to": 2011
                                                 }
                                             ]
                                         }
@@ -438,7 +684,6 @@ define(function () {
 
                     }
 
-
                 ]
             }
         },
@@ -446,6 +691,31 @@ define(function () {
 
         "livestock": {
             filter: [
+
+                {
+                    "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "year",
+                            config: {
+                                "defaultsource": [
+
+                                    {"value": "2013", "label": "2013", "selected": true},
+                                    {"value": "2012", "label": "2012", "selected": false},
+                                    {"value": "2011", "label": "2011", "selected": false},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false}
+
+                                ]
+                            }
+                        }
+                    ]
+                },
                 {
                     "type": "static",
                     "column": "item",
@@ -595,6 +865,14 @@ define(function () {
 
                                                 }
                                             ]
+                                        },
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2011,
+                                                    "to": 2011
+                                                }
+                                            ]
                                         }
 
 
@@ -620,6 +898,31 @@ define(function () {
 
                 {
                     "type": "static",
+                    "containerType": "baseContainer",
+                    "title": "Year",
+                    "components": [
+                        {
+                            "type": "time",
+                            "componentType": "dropDownList-FENIX",
+                            "lang": "EN",
+                            "name": "year",
+                            config: {
+                                "defaultsource": [
+
+                                    {"value": "2013", "label": "2013", "selected": true},
+                                    {"value": "2012", "label": "2012", "selected": false},
+                                    {"value": "2011", "label": "2011", "selected": false},
+                                    {"value": "2010", "label": "2010", "selected": false},
+                                    {"value": "2009", "label": "2009", "selected": false}
+
+                                ]
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "type": "codelist-codes",
                     "containerType": "baseContainer",
                     "title": "Item",
                     "defaultCodes": ["0388"],
@@ -803,6 +1106,15 @@ define(function () {
 
                                                 }
                                             ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2013,
+                                                    "to": 2013
+                                                }
+                                            ]
                                         }
 
 
@@ -934,6 +1246,15 @@ define(function () {
 
                                                 }
                                             ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2013,
+                                                    "to": 2013
+                                                }
+                                            ]
                                         }
 
 
@@ -944,23 +1265,6 @@ define(function () {
                         ]
 
                     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 ]
 
