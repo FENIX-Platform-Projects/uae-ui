@@ -392,7 +392,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'YEAR',
-                                yDimensions: null,
+                                yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
                                 seriesDimensions: ['ItemCode']
                             },
@@ -467,7 +467,7 @@ define(function () {
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'YEAR',
-                                yDimensions: null,
+                                yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
                                 seriesDimensions: ['ItemCode']
                             },
