@@ -20,6 +20,7 @@ define(function () {
                             "lang": "EN",
                             "name": "YEAR",
                             config: {
+                                "enableMultiselection": true,
                                 "defaultsource": [
                                     {"value": "2014", "label": "2014", "selected": true},
                                     {"value": "2013", "label": "2013", "selected": false},
@@ -30,8 +31,7 @@ define(function () {
                                     {"value": "2008", "label": "2008", "selected": false},
                                     {"value": "2007", "label": "2007", "selected": false}
 
-                                ],
-                                "enableMultiselection": true
+                                ]
                             }
                         }
                     ]
@@ -40,7 +40,7 @@ define(function () {
 
                 {
                     "type": "static",
-                    "column": "ItemCODE",
+                    "column": "ItemCode",
                     "containerType": "baseContainer",
                     "title": "Commodity",
                     "defaultCodes": ["0102"],
@@ -50,11 +50,12 @@ define(function () {
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
                             "uid": "HS",
-                            "version": "2012",
+  "version": "2012",
                             "title": {"EN": "Distinct"},
                             // name is the ID output in tehe filter getValues()
-                            "name": "ItemCODE",
+                            "name": "ItemCode",
                             "config": {
+                                "enableMultiselection": true,
                                 "defaultsource": [
                                     {"value":"0101","label":"LIVE HORSES, ASSES,  MULES AND HINNIES.","selected":false},
                                     {"value":"0102","label":"LIVE BOVINE ANIMALS","selected":true},
@@ -200,8 +201,7 @@ define(function () {
                                     {"value":"1521","label":"VEGETABLE WAXES  OTHER(THAN TRIGLYCERID ES),BEESWAX, OTHER INSECT WAXES AND SPERMACETI, WHETHER OR NOT REFINED OR COLOURED.","selected":false},
                                     {"value":"1522","label":"DEGRAS; RESIDUES RESULTING FROM THE TREATMENT OF FATTY SUBSTANCES OR ANIMAL OR VEGETABLE WAXES.","selected":false},
                                     {"value":"0506","label":"BONES AND HORN CORES, UNWORKED,DEFATTED, SIMPLY PREPARED (BUT NOT CUT TO SHAPE),TREATED WITH ACID OR DEGELATINISED; POWDER AND WASTE OF THESE PRODUCTS.","selected":false}
-                                ],
-                                "enableMultiselection": true
+                                ]
                             }
 
                         }
@@ -240,7 +240,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ElementCode']
+                                seriesDimensions: ['ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -257,7 +257,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['ItemCODE'],
+                        allowedFilter: ['ItemCode','YEAR'],
                         filter: [
                             {
                                 "name": "filter",
@@ -288,8 +288,8 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2014,
+                                                    "to": 2014
                                                 }
                                             ]
                                         }
@@ -302,6 +302,7 @@ define(function () {
                         ]
 
                     },
+
 
                     {
                         id: 'TR-item-2',
@@ -316,7 +317,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ElementCode']
+                                seriesDimensions: ['ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -334,7 +335,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['ItemCODE'],
+                        allowedFilter: ['ItemCode','YEAR'],
                         filter: [
                             {
                                 "name": "filter",
@@ -365,8 +366,8 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2014,
+                                                    "to": 2014
                                                 }
                                             ]
                                         }
@@ -393,7 +394,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: null,
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ElementCode']
+                                seriesDimensions: ['ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -411,7 +412,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['ItemCODE'],
+                        allowedFilter: ['ItemCode','YEAR'],
                         filter: [
                             {
                                 "name": "filter",
@@ -428,7 +429,7 @@ define(function () {
                                                 }
                                             ]
                                         },
-                                        "ItemCODE": {
+                                        "ItemCode": {
                                             "codes": [
                                                 {
                                                     "uid": "HS",
@@ -441,8 +442,8 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2014,
+                                                    "to": 2014
                                                 }
                                             ]
                                         }
@@ -468,7 +469,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: null,
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ElementCode']
+                                seriesDimensions: ['ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -486,7 +487,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['ItemCode'],
+                        allowedFilter: ['ItemCode','YEAR'],
                         filter: [
                             {
                                 "name": "filter",
@@ -516,8 +517,8 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2014,
+                                                    "to": 2014
                                                 }
                                             ]
                                         }
@@ -546,7 +547,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ElementCode']
+                                seriesDimensions: ['ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -564,7 +565,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: [],
+                        allowedFilter: ['ItemCode','YEAR'],
                         filter: [
                             {
                                 "name": "filter",
@@ -594,8 +595,8 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2014,
+                                                    "to": 2014
                                                 }
                                             ]
                                         }
@@ -621,7 +622,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ElementCode']
+                                seriesDimensions: ['ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -639,7 +640,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ['ItemCODE'],
+                        allowedFilter: ['ItemCode','YEAR'],
                         filter: [
                             {
                                 "name": "filter",
@@ -669,8 +670,8 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2014,
+                                                    "to": 2014
                                                 }
                                             ]
                                         }
@@ -1271,6 +1272,8 @@ define(function () {
 
             }
         }
+
+
     };
 
 });
