@@ -240,7 +240,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ItemCode']
+                                seriesDimensions: ['geo','ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -288,7 +288,7 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2014,
+                                                    "from": 2012,
                                                     "to": 2014
                                                 }
                                             ]
@@ -317,7 +317,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ItemCode']
+                                seriesDimensions: ['geo','ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -366,7 +366,7 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2014,
+                                                    "from": 2012,
                                                     "to": 2014
                                                 }
                                             ]
@@ -394,7 +394,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ItemCode']
+                                seriesDimensions: ['geo','ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -442,7 +442,7 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2014,
+                                                    "from": 2012,
                                                     "to": 2014
                                                 }
                                             ]
@@ -469,7 +469,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ItemCode']
+                                seriesDimensions: ['geo','ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -517,7 +517,7 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2014,
+                                                    "from": 2012,
                                                     "to": 2014
                                                 }
                                             ]
@@ -547,7 +547,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ItemCode']
+                                seriesDimensions: ['geo','ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -595,7 +595,7 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2014,
+                                                    "from": 2012,
                                                     "to": 2014
                                                 }
                                             ]
@@ -622,7 +622,7 @@ define(function () {
                                 xDimensions: 'YEAR',
                                 yDimensions: 'ElementCode',
                                 valueDimensions: 'VALUE',
-                                seriesDimensions: ['ItemCode']
+                                seriesDimensions: ['geo','ItemCode']
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -670,7 +670,7 @@ define(function () {
                                         "YEAR": {
                                             "time": [
                                                 {
-                                                    "from": 2014,
+                                                    "from": 2012,
                                                     "to": 2014
                                                 }
                                             ]
@@ -702,8 +702,9 @@ define(function () {
                             "type": "time",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
-                            "name": "year",
+                            "name": "Year",
                             config: {
+                                "enableMultiselection": true,
                                 "defaultsource": [
 
                                     {"value": "2013", "label": "2013", "selected": true},
@@ -767,72 +768,24 @@ define(function () {
                 metadata: {},
 
                 items: [
-                 {
-                        id: 'LS-item-1',
-                        type: 'map',
-                        class: "fx-map-chart",
-                        //needed if layout = injected
-                        container: "#LS-item-1",
-                        config: {
-                            container: "#LS-item-1",
-                            leaflet: {
-                                zoomControl: false,
-                                attributionControl: true,
-                                scrollWheelZoom: false,
-                                minZoom: 2
-                            }
-                        },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ["ItemCode"],
-                        forbiddenValues: {
-                            year: {time: [{from: 2013, to: 2013}]},
-                            domain: {removeFilter: true}
-                        },
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-                                        "Year": {
-                                            "time": [
-                                                {
-                                                    "from": 2013,
-                                                    "to": 2013
-                                                }
-                                            ]
-                                        },
-                                        "ItemCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UAE_Commodity",
-                                                    "codes": [
-                                                        "0866"
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    },
+
 
 
 
                     {
-                        id: 'LS-item-2',
+                        id: 'LS-item-1',
                         type: 'chart',
                         class: "fx-timeseries-ecample",
                         //needed if layout = injected
-                        container: "#LS-item-2",
+                        container: "#LS-item-1",
                         config: {
-                            container: "#LS-item-2",
+                            container: "#LS-item-1",
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
                                 yDimensions: "Element",
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ["ADM","ItemCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -850,7 +803,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ["ItemCode"],
+                        allowedFilter: ["ItemCode", "Year"],
                         filter: [
                             {
                                 "name": "filter",
@@ -883,6 +836,58 @@ define(function () {
 
                         ]
 
+                    },
+
+
+
+                    {
+                        id: 'LS-item-2',
+                        type: 'map',
+                        class: "fx-map-chart",
+                        //needed if layout = injected
+                        container: "#LS-item-2",
+                        config: {
+                            container: "#LS-item-2",
+                            leaflet: {
+                                zoomControl: false,
+                                attributionControl: true,
+                                scrollWheelZoom: false,
+                                minZoom: 2
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ["ItemCode","Year"],
+                        forbiddenValues: {
+                            year: {time: [{from: 2013, to: 2013}]},
+                            domain: {removeFilter: true}
+                        },
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2013,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        },
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Commodity",
+                                                    "codes": [
+                                                        "0866"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
                     }
 
 
@@ -906,8 +911,10 @@ define(function () {
                             "type": "time",
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
-                            "name": "year",
+                            "name": "Year",
                             config: {
+
+                                "enableMultiselection": true,
                                 "defaultsource": [
 
                                     {"value": "2013", "label": "2013", "selected": true},
@@ -923,7 +930,7 @@ define(function () {
                 },
 
                 {
-                    "type": "codelist-codes",
+                    "type": "static",
                     "containerType": "baseContainer",
                     "title": "Item",
                     "defaultCodes": ["0388"],
@@ -988,15 +995,89 @@ define(function () {
                 items: [
 
 
-
                     {
                         id: 'CR-item-1',
-                        type: 'map',
-                        class: "fx-map-chart",
+                        type: 'chart',
+                        class: "fx-timeseries-ecample",
                         //needed if layout = injected
                         container: "#CR-item-1",
                         config: {
                             container: "#CR-item-1",
+                            adapter: {
+                                type: "standard",
+                                xDimensions: 'Year',
+                                yDimensions: "ElementCode",
+                                valueDimensions: 'Value',
+                                seriesDimensions: ["ADMCODE","ItemCode"]
+                            },
+                            template: {
+                                //"title": "Top 25..."
+                            },
+                            creator: {
+                                chartObj: {
+                                    chart: {
+                                        type: "column"
+                                    },
+                                    tooltip: {
+                                        valueSuffix: null
+                                    }
+                                }
+
+                            }
+                        },
+                        // for now it takes the id, TODO: add uid as well
+                        allowedFilter: ["ItemCode","Year"],
+                        filter: [
+                            {
+                                "name": "filter",
+                                "parameters": {
+                                    "rows": {
+
+
+                                        "ItemCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Commodity",
+                                                    "codes": ["0388"]
+
+                                                }
+                                            ]
+                                        },
+                                        "ElementCode": {
+                                            "codes": [
+                                                {
+                                                    "uid": "UAE_Elements",
+                                                    "codes": ["2312"]
+
+                                                }
+                                            ]
+                                        },
+
+                                        "Year": {
+                                            "time": [
+                                                {
+                                                    "from": 2013,
+                                                    "to": 2013
+                                                }
+                                            ]
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+                        ]
+
+                    },
+                    {
+                        id: 'CR-item-2',
+                        type: 'map',
+                        class: "fx-map-chart",
+                        //needed if layout = injected
+                        container: "#CR-item-2",
+                        config: {
+                            container: "#CR-item-2",
                             leaflet: {
                                 zoomControl: false,
                                 attributionControl: true,
@@ -1049,22 +1130,20 @@ define(function () {
                         ]
                     },
 
-
-
                     {
-                        id: 'CR-item-2',
+                        id: 'CR-item-3',
                         type: 'chart',
                         class: "fx-timeseries-ecample",
                         //needed if layout = injected
-                        container: "#CR-item-2",
+                        container: "#CR-item-3",
                         config: {
-                            container: "#CR-item-2",
+                            container: "#CR-item-3",
                             adapter: {
                                 type: "standard",
                                 xDimensions: 'Year',
                                 yDimensions: "ElementCode",
                                 valueDimensions: 'Value',
-                                seriesDimensions: []
+                                seriesDimensions: ["ADMCODE","ItemCode"]
                             },
                             template: {
                                 //"title": "Top 25..."
@@ -1082,7 +1161,7 @@ define(function () {
                             }
                         },
                         // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ["ItemCode"],
+                        allowedFilter: ["ItemCode","Year"],
                         filter: [
                             {
                                 "name": "filter",
@@ -1103,7 +1182,7 @@ define(function () {
                                             "codes": [
                                                 {
                                                     "uid": "UAE_Elements",
-                                                    "codes": ["2312"]
+                                                    "codes": ["2510"]
 
                                                 }
                                             ]
@@ -1127,16 +1206,14 @@ define(function () {
 
                     },
 
-
-
                     {
-                        id: 'CR-item-3',
+                        id: 'CR-item-4',
                         type: 'map',
                         class: "fx-map-chart",
                         //needed if layout = injected
-                        container: "#CR-item-3",
+                        container: "#CR-item-4",
                         config: {
-                            container: "#CR-item-3",
+                            container: "#CR-item-4",
                             leaflet: {
                                 zoomControl: false,
                                 attributionControl: true,
@@ -1187,85 +1264,11 @@ define(function () {
                                 }
                             }
                         ]
-                    },
-
-
-
-                    {
-                        id: 'CR-item-4',
-                        type: 'chart',
-                        class: "fx-timeseries-ecample",
-                        //needed if layout = injected
-                        container: "#CR-item-4",
-                        config: {
-                            container: "#CR-item-4",
-                            adapter: {
-                                type: "standard",
-                                xDimensions: 'Year',
-                                yDimensions: "ElementCode",
-                                valueDimensions: 'Value',
-                                seriesDimensions: []
-                            },
-                            template: {
-                                //"title": "Top 25..."
-                            },
-                            creator: {
-                                chartObj: {
-                                    chart: {
-                                        type: "column"
-                                    },
-                                    tooltip: {
-                                        valueSuffix: null
-                                    }
-                                }
-
-                            }
-                        },
-                        // for now it takes the id, TODO: add uid as well
-                        allowedFilter: ["ItemCode"],
-                        filter: [
-                            {
-                                "name": "filter",
-                                "parameters": {
-                                    "rows": {
-
-
-                                        "ItemCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UAE_Commodity",
-                                                    "codes": ["0388"]
-
-                                                }
-                                            ]
-                                        },
-                                        "ElementCode": {
-                                            "codes": [
-                                                {
-                                                    "uid": "UAE_Elements",
-                                                    "codes": ["2510"]
-
-                                                }
-                                            ]
-                                        },
-
-                                        "Year": {
-                                            "time": [
-                                                {
-                                                    "from": 2013,
-                                                    "to": 2013
-                                                }
-                                            ]
-                                        }
-
-
-                                    }
-                                }
-                            }
-
-                        ]
-
                     }
+
+
+
+
 
                 ]
 
