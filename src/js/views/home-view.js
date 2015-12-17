@@ -15,7 +15,10 @@ define([
 
     'use strict';
 
-    var s = {};
+    var s = {
+        TOGGLE_INFO : "#home-toggle-info",
+        MORE_INFO : "#more-info"
+    };
 
     var HomeView = View.extend({
 
@@ -50,6 +53,8 @@ define([
 
         initComponents: function () {
 
+            this.$el.find(s.MORE_INFO).slideUp(0);
+
             this.WDSClient = new WDSClient({
                 serviceUrl: C.WDS_URL,
                 datasource: C.DB_NAME,
@@ -75,6 +80,11 @@ define([
             $('#home-charts-tab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
                 e.preventDefault();
                 self.initCharts();
+            });
+
+
+            this.$el.find(s.TOGGLE_INFO).on('click', function () {
+                self.$el.find(s.MORE_INFO).slideToggle();
             });
 
         },
