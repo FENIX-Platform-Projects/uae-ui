@@ -23,8 +23,8 @@ define(function () {
                                 "enableMultiselection": true,
                                 "defaultsource": [
                                     {"value": "2014", "label": "2014", "selected": true},
-                                    {"value": "2013", "label": "2013", "selected": false},
-                                    {"value": "2012", "label": "2012", "selected": false},
+                                    {"value": "2013", "label": "2013", "selected": true},
+                                    {"value": "2012", "label": "2012", "selected": true},
                                     {"value": "2011", "label": "2011", "selected": false},
                                     {"value": "2010", "label": "2010", "selected": false},
                                     {"value": "2009", "label": "2009", "selected": false},
@@ -823,8 +823,8 @@ define(function () {
                                         "Year": {
                                             "time": [
                                                 {
-                                                    "from": 2011,
-                                                    "to": 2011
+                                                    "from": 2013,
+                                                    "to": 2013
                                                 }
                                             ]
                                         }
