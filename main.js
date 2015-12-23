@@ -110,6 +110,7 @@ require([
                     "highcharts" : '//code.highcharts.com/highcharts',
                     "swiper" :"{FENIX_CDN}/js/swiper/3.0.7/dist/js/swiper.min",
                     amplify: '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
+                    loglevel: '{FENIX_CDN}/js/loglevel/1.4.0/loglevel',
 
                     nls: "../../i18n",
                     config: "../../config",
