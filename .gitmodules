@@ -55,3 +55,6 @@
 [submodule "submodules/fenix-ui-dashboard"]
 	path = submodules/fenix-ui-dashboard
 	url = https://github.com/FENIX-Platform/fenix-ui-dashboard
+[submodule "submodules/fenix-ui-datamanagement-commons"]
+	path = submodules/fenix-ui-datamanagement-commons
+	url = https://github.com/FENIX-Platform/fenix-ui-datamanagement-commons.git

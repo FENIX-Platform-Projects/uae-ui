@@ -12,7 +12,7 @@ require([
     './submodules/fenix-ui-dataUpload/js/paths',
 */
     './submodules/fenix-ui-metadata-editor/js/paths',
-    './submodules/fenix-ui-metadata-viewer/js/paths',
+    './submodules/fenix-ui-metadata-viewer/src/js/paths',
     './submodules/json-editor-faostat-theme/src/js/paths',
     './submodules/fenix-ui-map-creator/src/js/paths',
     './submodules/fenix-ui-chart-creator/src/js/paths',
@@ -121,6 +121,10 @@ require([
                     'fx-common/config/auth_users' : '../../config/auth_users.json',
 
                     "fx-cat-br/config/fx-catalog-blank-filter": '../../config/submodules/fx-catalog/blankFilter',
+                    "fx-cat-br/config/fx-catalog-collapsible-menu-config": '../../config/submodules/fx-catalog/fx-catalog-collapsible-menu-config',
+                    "fx-cat-br/config/fx-catalog-filter-mapping": '../../config/submodules/fx-catalog/fx-catalog-filter-mapping',
+                    "fx-cat-br/config/fx-catalog-modular-form-config": '../../config/submodules/fx-catalog/fx-catalog-modular-form-config',
+
 
                     'fx-ana/config/services' : '../../config/submodules/fx-analysis/Config',
 
