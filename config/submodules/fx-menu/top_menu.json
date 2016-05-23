@@ -28,17 +28,6 @@
         "EN": "Analysis"
       }
     },
-
-    {
-      "attrs": {
-        "id": "modules"
-      },
-      "target": "#modules",
-      "label": {
-        "EN": "Thematic Modules"
-      }
-    },
-
     {
       "attrs": {
         "id": "datamgmt"

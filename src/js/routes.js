@@ -11,7 +11,7 @@ define(function () {
         match('analysis', 'analysis#show');
         //match('methods', 'methods#show');
         //match('methods/:id', 'methods#show');
-        match('modules', 'modules#show');
+        //match('modules', 'modules#show');
         match('*anything', '404#show');
     };
 });

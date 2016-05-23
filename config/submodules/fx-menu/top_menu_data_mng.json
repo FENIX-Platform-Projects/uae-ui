@@ -39,18 +39,6 @@
     },
     {
       "attrs": {
-        "id": "modules"
-      },
-      "a_attrs": {
-        "rel": "external"
-      },
-      "target": "./index.html#modules",
-      "label": {
-        "EN": "Thematic Modules"
-      }
-    },
-    {
-      "attrs": {
         "id": "datamgmt"
       },
       "target": "#",
