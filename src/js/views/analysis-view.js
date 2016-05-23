@@ -64,10 +64,22 @@ define([
                         SELECT_RESOURCE: {
                             event: 'select',
                             labels: {
-                                EN: 'Select Resource'
+                                EN: 'View'
                             }
-
+                        },
+                        METADATA: {
+                            event: 'metadata',
+                            labels: {
+                                EN: 'Metadata'
+                            }
+                        },
+                        DOWNLOAD: {
+                            event: 'download',
+                            labels: {
+                                EN: 'Download'
+                            }
                         }
+
                     }
                 }
 
