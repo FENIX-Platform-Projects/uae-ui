@@ -46,7 +46,7 @@ define(function () {
                 }
             }
         },
-
+/*
         "referenceArea": {
             "id": "fx-referenceArea-id",
             "type": "codes",
@@ -63,7 +63,7 @@ define(function () {
                 }
             }
         },
-
+*/
         "sector": {
             "id": "fx-sector-id",
             "type": "codes",

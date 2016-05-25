@@ -6,7 +6,7 @@ define(function () {
 
     return {
 
-        "dsd.contextSystem":{"enumeration":["UAE", "FAOSTAT"]}
+        "dsd.contextSystem":{"enumeration":["UAE"]}
     };
 
 });

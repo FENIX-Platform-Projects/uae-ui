@@ -13,7 +13,9 @@ require([
 */
     './submodules/fenix-ui-metadata-editor/js/paths',
     './submodules/fenix-ui-metadata-viewer/src/js/paths',
+/*
     './submodules/json-editor-faostat-theme/src/js/paths',
+*/
     './submodules/fenix-ui-map-creator/src/js/paths',
     './submodules/fenix-ui-chart-creator/src/js/paths',
     './submodules/fenix-ui-table-creator/src/js/paths',
@@ -22,7 +24,7 @@ require([
     './submodules/fenix-ui-filter/src/js/paths'
 
 ], function (Compiler, Common, Menu, Analysis, Catalog,
-             DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,FAOSTAT_THEME,
+             DataEditor, DSDEditor, /*DataUpload,*/MetadataEditor, MetadataViewer,/*FAOSTAT_THEME,*/
              MapCreator,ChartCreator, TableCreator, FenixReport, Dashboard, Filter  ) {
 
     'use strict';
@@ -56,11 +58,11 @@ require([
     metadataEditorConfig.baseUrl = submodules_path +'fenix-ui-metadata-editor/js/';
 
     var metadataViewerConfig = MetadataViewer;
-    metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/js/';
-
+    metadataViewerConfig.baseUrl= submodules_path +'fenix-ui-metadata-viewer/src/js/';
+/*
     var faostatThemeConfig = FAOSTAT_THEME;
     faostatThemeConfig.baseUrl = submodules_path + 'json-editor-faostat-theme/src/js';
-
+*/
     var mapCreatorConfig = MapCreator;
     mapCreatorConfig.baseUrl= submodules_path +'fenix-ui-map-creator/src/js/';
 
@@ -80,7 +82,7 @@ require([
     filterConfig.baseUrl =  submodules_path +'fenix-ui-filter/';
 
     Compiler.resolve([commonConfig, menuConfig, analysisConfig,catalogConfig,
-            dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,faostatThemeConfig,
+            dataEditorConfig,dsdEditorConfig,/*dataUploadConfig,*/metadataEditorConfig,metadataViewerConfig,/*faostatThemeConfig,*/
             mapCreatorConfig,chartCreatorConfig,tableCreatorConfig,fenixReportConfig,filterConfig, dashboardConfig],
         {
             placeholders: {"FENIX_CDN": "//fenixrepo.fao.org/cdn"},
@@ -111,6 +113,8 @@ require([
                     "swiper" :"{FENIX_CDN}/js/swiper/3.0.7/dist/js/swiper.min",
                     amplify: '{FENIX_CDN}/js/amplify/1.1.2/amplify.min',
                     loglevel: '{FENIX_CDN}/js/loglevel/1.4.0/loglevel',
+                    'packery': '{FENIX_CDN}/js/packery/1.4.3/dist/packery.pkgd.min',
+
 
                     nls: "../../i18n",
                     config: "../../config",
@@ -132,7 +136,7 @@ require([
 
                     'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi',
 
-                    'fx-ds/config/config' : '../../config/submodules/fx-dashboard/config'
+                    'fx-dashboard/config/config' : '../../config/submodules/fx-dashboard/config'
 
                 },
 
@@ -175,4 +179,5 @@ require([
             scrollTo: C.CHAPLINJS_SCROLL_TO
         });
     });
+
 });

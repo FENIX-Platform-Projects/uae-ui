@@ -32,7 +32,8 @@ define(function () {
             SECURITY_NOT_AUTHORIZED_REDIRECTION_LINK : "home",
 
             COUNTRIES_CODE_LIST : CODELIST_PREFIX + "UNECA_ISO3",
-            CODELIST_URL : CODELIST_PREFIX
+            CODELIST_URL : CODELIST_PREFIX,
+            MD_EXPORT_URL : 'http://fenix.fao.org/d3s'
 
 
 /*

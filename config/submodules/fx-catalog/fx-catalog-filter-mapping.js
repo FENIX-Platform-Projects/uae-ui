@@ -17,9 +17,11 @@ define(function () {
         "referencePeriod": {
             "path" : "meContent.seReferencePopulation.referencePeriod"
         },
+        /*
         "referenceArea": {
             "path" : "meContent.seReferencePopulation.referenceArea"
         },
+        */
         "sector": {
             "path" : "meContent.seCoverage.coverageSectors"
         },

@@ -50,7 +50,7 @@ define(function () {
                             "componentType": "dropDownList-FENIX",
                             "lang": "EN",
                             "uid": "HS",
-  "version": "2012",
+                            "version": "2012",
                             "title": {"EN": "Distinct"},
                             // name is the ID output in tehe filter getValues()
                             "name": "ItemCode",

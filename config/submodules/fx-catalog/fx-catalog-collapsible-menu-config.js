@@ -33,6 +33,7 @@ define(function () {
                         },
                         "icon": "fa fa-clock-o fa-lg fa-fw"
                     },
+                    /*
                     {
                         "module": "referenceArea",
                         "label": {
@@ -40,6 +41,7 @@ define(function () {
                         },
                         "icon": "fa fa-clock-o fa-lg fa-fw"
                     },
+                    */
                     {
                         "module": "sector",
                         "label": {
@@ -55,7 +57,8 @@ define(function () {
                         "icon": "fa fa-globe fa-lg fa-fw"
                     }
                 ]
-            },
+            }
+/*            ,
             {
                 "title": {
                     "EN": "ACCESSIBILITY"
@@ -107,6 +110,7 @@ define(function () {
                     }
                 ]
             }
+*/
         ]
     };
 
