@@ -3,9 +3,9 @@
 require([
     './submodules/fenix-ui-common/js/Compiler',
     './submodules/fenix-ui-common/js/paths',
-    './submodules/fenix-ui-menu/js/paths',
-    './submodules/fenix-ui-analysis/js/paths',
-    './submodules/fenix-ui-catalog/js/paths',
+    './submodules/fenix-ui-menu/src/js/paths',
+    './submodules/fenix-ui-analysis/src/js/paths',
+    './submodules/fenix-ui-catalog/src/js/paths',
     './submodules/fenix-ui-DataEditor/js/paths',
     './submodules/fenix-ui-DSDEditor/js/paths',
 /*
@@ -37,13 +37,13 @@ require([
     commonConfig.baseUrl = submodules_path + 'fenix-ui-common/js';
 
     var menuConfig = Menu;
-    menuConfig.baseUrl = submodules_path + '/fenix-ui-menu/js';
+    menuConfig.baseUrl = submodules_path + '/fenix-ui-menu/src/js';
 
     var analysisConfig = Analysis;
-    analysisConfig.baseUrl = submodules_path +'fenix-ui-analysis/js/';
+    analysisConfig.baseUrl = submodules_path +'fenix-ui-analysis/src/js/';
 
     var catalogConfig = Catalog;
-    catalogConfig.baseUrl = submodules_path +'fenix-ui-catalog/js/';
+    catalogConfig.baseUrl = submodules_path +'fenix-ui-catalog/src/js/';
 
     var dataEditorConfig = DataEditor;
     dataEditorConfig.baseUrl = submodules_path +'fenix-ui-DataEditor/js/';
@@ -130,13 +130,13 @@ require([
                     "fx-cat-br/config/fx-catalog-modular-form-config": '../../config/submodules/fx-catalog/fx-catalog-modular-form-config',
 
 
-                    'fx-ana/config/services' : '../../config/submodules/fx-analysis/Config',
+                    //'fx-ana/config/services' : '../../config/submodules/fx-analysis/Config',
 
-                    'fx-filter/config/config' : '../../config/submodules/fx-filter/Config',
+                    //'fx-filter/config/config' : '../../config/submodules/fx-filter/Config',
 
-                    'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi',
+                    //'fx-cat-br/config/config': '../../config/submodules/fx-catalog/configAnalisi',
 
-                    'fx-dashboard/config/config' : '../../config/submodules/fx-dashboard/config'
+                    //'fx-dashboard/config/config' : '../../config/submodules/fx-dashboard/config'
 
                 },
 

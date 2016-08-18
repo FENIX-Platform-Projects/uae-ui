@@ -8,7 +8,7 @@ define([
     'i18n!nls/home',
     'handlebars',
     'fx-common/WDSClient',
-    'fx-c-c/config/creators/highcharts_template',
+    'fx-chart/config/renderers/highcharts_shared',
     'highcharts',
     'amplify'
 ], function (View, C, Q, E, template, i18nLabels, Handlebars, WDSClient, chartTemplate) {
